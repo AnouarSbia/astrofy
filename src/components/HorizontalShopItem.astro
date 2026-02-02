@@ -15,7 +15,9 @@ const {
 import { Image } from "astro:assets";
 ---
 
-<div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]">
+<div
+  class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
+>
   <a href={url}>
     <div class="hero-content flex-col md:flex-row">
       {
@@ -31,10 +33,10 @@ import { Image } from "astro:assets";
         )
       }
       <div class="grow w-full p-5 md:p-0">
-        <h1 class="text-xl font-bold">
+        <h2 class="text-xl font-bold">
           {title}
           {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
-        </h1>
+        </h2>
         <div>
           <span class="text-xl mr-1"> {pricing}</span>
           <span class="text-md opacity-50 line-through">{oldPricing}</span>
