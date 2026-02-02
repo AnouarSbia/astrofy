@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"astro dev\"",
+    "dev:cloud": "tinacms dev -c \"astro dev\"",
     "start": "astro dev",
     "build": "tinacms build && astro build",
     "preview": "astro preview",
