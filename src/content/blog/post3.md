@@ -2,7 +2,7 @@
 title: "Comment réussir un test A/B e-commerce : guide complet"
 description: "Apprenez à mettre en place des tests A/B efficaces sur votre boutique e-commerce. Méthodologie, outils, erreurs à éviter et exemples concrets."
 pubDate: "Jan 25 2026"
-heroImage: "/post_img.webp"
+heroImage: "/blog_hero_abtesting.png"
 pillar: "cro"
 tags: ["cro", "ab-testing", "e-commerce", "shopify"]
 ---

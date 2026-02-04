@@ -2,7 +2,7 @@
 title: "SEO E-commerce : le guide complet pour 2026"
 description: "Stratégie SEO complète pour sites e-commerce : architecture, pages produits, contenu, technique. Guide actionnable avec exemples concrets."
 pubDate: "Jan 20 2026"
-heroImage: "/post_img.webp"
+heroImage: "/blog_hero_ecommerce.png"
 pillar: "seo"
 tags: ["seo", "e-commerce", "shopify", "wordpress"]
 ---

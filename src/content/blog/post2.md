@@ -2,7 +2,7 @@
 title: "Core Web Vitals : le guide complet pour WordPress en 2026"
 description: "Optimisez les performances de votre site WordPress avec ce guide complet sur les Core Web Vitals : LCP, FID, CLS expliqués et solutions pratiques."
 pubDate: "Jan 28 2026"
-heroImage: "/post_img.webp"
+heroImage: "/blog_hero_wordpress.png"
 pillar: "wordpress"
 tags: ["wordpress", "seo", "performance"]
 ---

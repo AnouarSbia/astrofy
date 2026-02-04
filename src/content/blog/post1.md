@@ -2,7 +2,7 @@
 title: "5 erreurs SEO qui tuent votre trafic Shopify (et comment les corriger)"
 description: "Découvrez les erreurs SEO les plus courantes sur Shopify et les solutions concrètes pour améliorer votre référencement et augmenter vos ventes."
 pubDate: "Feb 01 2026"
-heroImage: "/post_img.webp"
+heroImage: "/blog_hero_shopify.png"
 pillar: "shopify"
 tags: ["shopify", "seo", "e-commerce"]
 ---
