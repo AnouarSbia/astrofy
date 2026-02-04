@@ -1,0 +1,87 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    url: string;
+    image?: string;
+    pillar?: "seo" | "cro" | "shopify" | "wordpress";
+    readingTime?: string;
+    pubDate?: Date;
+    badge?: string;
+}
+
+const { title, description, url, image, pillar, readingTime, pubDate, badge } =
+    Astro.props;
+
+const pillarColors = {
+    seo: "badge-primary",
+    cro: "badge-secondary",
+    shopify: "badge-accent",
+    wordpress: "badge-info",
+};
+
+const pillarLabels = {
+    seo: "SEO",
+    cro: "CRO",
+    shopify: "Shopify",
+    wordpress: "WordPress",
+};
+---
+
+<a href={url} class="group block">
+    <div
+        class="card card-side bg-base-100 hover:bg-base-200 transition-colors border border-base-300 hover:border-primary/30"
+    >
+        {
+            image && (
+                <figure class="w-48 hidden md:block">
+                    <img src={image} alt={title} class="h-full object-cover" />
+                </figure>
+            )
+        }
+        <div class="card-body p-4 md:p-6">
+            <div class="flex items-center gap-2 mb-1">
+                {
+                    pillar && (
+                        <span class={`badge badge-sm ${pillarColors[pillar]}`}>
+                            {pillarLabels[pillar]}
+                        </span>
+                    )
+                }
+                {
+                    badge && (
+                        <span class="badge badge-sm badge-outline">
+                            {badge}
+                        </span>
+                    )
+                }
+                {
+                    readingTime && (
+                        <span class="text-xs text-base-content/50">
+                            {readingTime}
+                        </span>
+                    )
+                }
+            </div>
+            <h3
+                class="card-title text-lg group-hover:text-primary transition-colors"
+            >
+                {title}
+            </h3>
+            <p class="text-sm text-base-content/70 line-clamp-2">
+                {description}
+            </p>
+            {
+                pubDate && (
+                    <div class="text-xs text-base-content/50 mt-2">
+                        {pubDate.toLocaleDateString("fr-FR", {
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric",
+                        })}
+                    </div>
+                )
+            }
+        </div>
+    </div>
+</a>

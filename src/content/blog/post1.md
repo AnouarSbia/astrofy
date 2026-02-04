@@ -1,56 +1,75 @@
 ---
-title: "Demo Post 1"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: "Sep 10 2022"
+title: "5 erreurs SEO qui tuent votre trafic Shopify (et comment les corriger)"
+description: "Découvrez les erreurs SEO les plus courantes sur Shopify et les solutions concrètes pour améliorer votre référencement et augmenter vos ventes."
+pubDate: "Feb 01 2026"
 heroImage: "/post_img.webp"
-tags: ["tokio"]
+pillar: "shopify"
+tags: ["shopify", "seo", "e-commerce"]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer
-malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas
-pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse
-platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada
-fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea
-dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst
-quisque sagittis purus sit amet.
+Le SEO sur Shopify n'est pas aussi simple qu'on le pense. Après avoir audité des dizaines de boutiques, j'ai identifié **5 erreurs récurrentes** qui sabotent le référencement de la plupart des e-commerçants.
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum
-quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet.
-Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus.
-Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit
-ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt
-dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus
-arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed
-tempus urna et pharetra pharetra massa massa ultricies mi.
+## 1. Contenu dupliqué sur les variantes produits
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam
-sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec.
-Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna
-fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et
-egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel
-turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra
-nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim
-praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus
-egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam
-ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor
-purus non. Amet dictum sit amet justo donec enim.
+**Le problème :** Shopify crée une URL distincte pour chaque variante de produit (couleur, taille...). Résultat : Google voit 10 pages quasi-identiques pour un seul produit.
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut
-consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra.
-Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor
-dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor
-dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque
-eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices
-tincidunt arcu. Id cursus metus aliquam eleifend mi.
+**La solution :**
+- Ajouter une balise canonical vers le produit principal
+- Utiliser le paramètre `?variant=` au lieu d'URLs séparées
+- Configurer vos balises canoniques dans `theme.liquid`
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus
-imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu
-cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt
-dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat
-sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida.
-Egestas integer eget aliquet nibh praesent tristique magna.
+```liquid
+<link rel="canonical" href="{{ canonical_url }}" />
+```
+
+## 2. Méta-descriptions génériques
+
+**Le problème :** Beaucoup de boutiques utilisent la même description par défaut pour toutes les pages, ou pire, laissent le champ vide.
+
+**La solution :**
+- Rédiger une méta-description unique pour chaque produit (150-160 caractères)
+- Inclure le mot-clé principal + un call-to-action
+- Utiliser les champs SEO natifs de Shopify
+
+**Exemple :**
+> ❌ "Découvrez notre produit de qualité. Livraison rapide."
+> ✅ "Sneakers éco-responsables en cuir recyclé | Fabriquées en France | Livraison gratuite dès 50€"
+
+## 3. Images non optimisées
+
+**Le problème :** Des images lourdes (5-10 MB) qui ralentissent le site et plombent les Core Web Vitals.
+
+**La solution :**
+- Compresser les images avant upload (< 200 KB idéalement)
+- Utiliser le format WebP natif de Shopify
+- Ajouter des balises ALT descriptives avec mots-clés
+- Activer le lazy loading
+
+## 4. Structure d'URL bancale
+
+**Le problème :** Les URLs Shopify par défaut sont parfois longues et peu optimisées : `/collections/all/products/super-produit-bleu-edition-limitee-2024`
+
+**La solution :**
+- Modifier les handles de produits pour les raccourcir
+- Privilégier les URLs courtes et descriptives
+- Éviter les mots inutiles (le, de, avec...)
+
+**Avant :** `/products/t-shirt-homme-coton-bio-bleu-marine-taille-m`
+**Après :** `/products/t-shirt-coton-bio-bleu`
+
+## 5. Ignorer les collections
+
+**Le problème :** Les pages de collections sont souvent négligées alors qu'elles ont un énorme potentiel SEO pour les requêtes génériques.
+
+**La solution :**
+- Ajouter du contenu unique à chaque collection (200-500 mots)
+- Optimiser les titres et méta-descriptions
+- Créer des collections thématiques ciblant des mots-clés spécifiques
+
+---
+
+## Conclusion
+
+Ces 5 erreurs sont corrigeables en quelques heures et peuvent avoir un impact significatif sur votre trafic organique. Commencez par un audit de vos pages les plus importantes, puis corrigez ces problèmes un par un.
+
+**Besoin d'un audit complet ?** [Contactez-moi](/about) pour une analyse personnalisée de votre boutique Shopify.

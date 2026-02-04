@@ -7,15 +7,43 @@ const { sideBarActiveItemID } = Astro.props;
 
 <div class="drawer-side z-40">
   <label for="my-drawer" class="drawer-overlay"></label>
-  <aside class="px-2 pt-2 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col">
-    <div class="w-fit mx-auto mt-5 mb-6">
+  <aside
+    class="px-2 pt-2 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col"
+  >
+    <div class="w-fit mx-auto mt-5 mb-4">
       <a href="/">
-        <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto">
-          <div class="w-[8.5rem]">
-            <Image class="mask mask-circle" format="webp" width={300} height={300} src="/profile.webp" alt="Profile image" />
-          </div>
+        <div class="w-44">
+          <Image
+            format="webp"
+            width={400}
+            height={200}
+            src="/logo.png"
+            alt="AnouarLab"
+            class="object-contain w-full"
+          />
         </div>
       </a>
+    </div>
+    <!-- Profile Photo -->
+    <div class="flex items-center gap-3 px-4 py-3 mb-2">
+      <div class="avatar">
+        <div
+          class="w-12 rounded-full ring-2 ring-primary ring-offset-base-100 ring-offset-1"
+        >
+          <Image
+            format="webp"
+            width={100}
+            height={100}
+            src="/profile.webp"
+            alt="Anouar Sbia"
+            class="rounded-full"
+          />
+        </div>
+      </div>
+      <div>
+        <p class="font-semibold text-sm">Anouar Sbia</p>
+        <p class="text-xs opacity-70">Consultant SEO & CRO</p>
+      </div>
     </div>
     <SideBarMenu sideBarActiveItemID={sideBarActiveItemID} />
     <SideBarFooter />

@@ -1,0 +1,110 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import createSlug from "../lib/createSlug";
+
+const allPosts = await getCollection("blog");
+const wordpressPosts = allPosts
+    .filter((post) => post.data.pillar === "wordpress")
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout
+    title="WordPress | AnouarLab"
+    sideBarActiveItemID="wordpress"
+    description="WordPress optimisé : performance, SEO et sécurité."
+>
+    <!-- Hero - Minimal -->
+    <div class="py-16">
+        <p class="text-sm uppercase tracking-widest text-primary/60 mb-4">
+            Lab 04
+        </p>
+
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            WordPress
+        </h1>
+
+        <p class="text-lg text-base-content/70 max-w-xl">
+            Performance, SEO, plugins. Guides techniques pour un site rapide.
+        </p>
+    </div>
+
+    <!-- Topics - Minimal -->
+    <section class="py-12 border-t border-base-300">
+        <div class="flex flex-wrap gap-3">
+            <a
+                href="/blog?tag=wp-vitesse"
+                class="text-sm px-4 py-2 border border-base-300 rounded-full hover:border-primary transition-colors"
+            >
+                Vitesse
+            </a>
+            <a
+                href="/blog?tag=wp-seo"
+                class="text-sm px-4 py-2 border border-base-300 rounded-full hover:border-primary transition-colors"
+            >
+                SEO
+            </a>
+            <a
+                href="/blog?tag=wp-plugins"
+                class="text-sm px-4 py-2 border border-base-300 rounded-full hover:border-primary transition-colors"
+            >
+                Plugins
+            </a>
+            <a
+                href="/blog?tag=headless"
+                class="text-sm px-4 py-2 border border-base-300 rounded-full hover:border-primary transition-colors"
+            >
+                Headless
+            </a>
+        </div>
+    </section>
+
+    <!-- Articles - Minimal -->
+    <section class="py-12 border-t border-base-300">
+        <h2 class="text-xl font-bold mb-8">Articles</h2>
+
+        {
+            wordpressPosts.length > 0 ? (
+                <div class="space-y-8">
+                    {wordpressPosts.map((post) => (
+                        <a
+                            href={
+                                "/blog/" +
+                                createSlug(post.data.title, post.slug)
+                            }
+                            class="group block"
+                        >
+                            <article class="border-b border-base-300 pb-8">
+                                <h3 class="text-lg font-medium group-hover:text-primary transition-colors">
+                                    {post.data.title}
+                                </h3>
+                                <p class="text-base-content/60 mt-2 line-clamp-2">
+                                    {post.data.description}
+                                </p>
+                            </article>
+                        </a>
+                    ))}
+                </div>
+            ) : (
+                <p class="text-base-content/60">
+                    Premiers articles en préparation.
+                    <a href="#newsletter" class="text-primary hover:underline">
+                        S'inscrire
+                    </a>{" "}
+                    pour être notifié.
+                </p>
+            )
+        }
+    </section>
+
+    <!-- Newsletter - Minimal -->
+    <section id="newsletter" class="py-16 border-t border-base-300">
+        <div class="max-w-md">
+            <h2 class="text-xl font-bold mb-4">Newsletter WordPress</h2>
+            <p class="text-base-content/60 mb-6">
+                Guide vitesse et base de données plugins.
+            </p>
+            <a href="#" class="btn btn-primary btn-sm">S'inscrire</a>
+        </div>
+    </section>
+</BaseLayout>

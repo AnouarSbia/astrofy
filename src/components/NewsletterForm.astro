@@ -1,0 +1,57 @@
+---
+/**
+ * Newsletter Form Component
+ *
+ * Supports multiple providers:
+ * - Buttondown (free, simple)
+ * - ConvertKit
+ * - Mailchimp
+ *
+ * Set NEWSLETTER_USERNAME in .env file
+ */
+
+export interface Props {
+    title?: string;
+    description?: string;
+    topic?: string;
+}
+
+const {
+    title = "Newsletter",
+    description = "Recevez les résultats de nos expériences. Pas de spam.",
+    topic = "",
+} = Astro.props;
+
+// Get username from environment or use placeholder
+const buttondownUser = import.meta.env.NEWSLETTER_USERNAME || "anouarlab";
+const formAction = `https://buttondown.email/api/emails/embed-subscribe/${buttondownUser}`;
+---
+
+<section id="newsletter" class="py-16 border-t border-base-300">
+    <div class="max-w-lg">
+        <h2 class="text-2xl font-bold mb-4">{title}</h2>
+        <p class="text-base-content/60 mb-6">{description}</p>
+
+        <form
+            action={formAction}
+            method="post"
+            target="_blank"
+            class="flex flex-col sm:flex-row gap-3"
+        >
+            <input type="hidden" name="tag" value={topic} />
+            <input
+                type="email"
+                name="email"
+                id="bd-email"
+                placeholder="votre@email.com"
+                required
+                class="input input-bordered flex-1 bg-base-100"
+            />
+            <button type="submit" class="btn btn-primary"> S'inscrire </button>
+        </form>
+
+        <p class="text-xs text-base-content/40 mt-4">
+            Vous pouvez vous désinscrire à tout moment.
+        </p>
+    </div>
+</section>

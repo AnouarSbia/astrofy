@@ -1,0 +1,51 @@
+---
+/**
+ * Breadcrumbs Component
+ *
+ * Renders accessible breadcrumb navigation with Schema.org markup
+ */
+
+export interface Props {
+    items: {
+        label: string;
+        href?: string;
+    }[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="text-sm text-base-content/60 mb-6">
+    <ol
+        class="flex flex-wrap items-center gap-2"
+        itemscope
+        itemtype="https://schema.org/BreadcrumbList"
+    >
+        {
+            items.map((item, index) => (
+                <li
+                    class="flex items-center gap-2"
+                    itemprop="itemListElement"
+                    itemscope
+                    itemtype="https://schema.org/ListItem"
+                >
+                    {index > 0 && <span class="text-base-content/40">/</span>}
+                    {item.href ? (
+                        <a
+                            href={item.href}
+                            itemprop="item"
+                            class="hover:text-primary transition-colors"
+                        >
+                            <span itemprop="name">{item.label}</span>
+                        </a>
+                    ) : (
+                        <span itemprop="name" class="text-base-content">
+                            {item.label}
+                        </span>
+                    )}
+                    <meta itemprop="position" content={String(index + 1)} />
+                </li>
+            ))
+        }
+    </ol>
+</nav>

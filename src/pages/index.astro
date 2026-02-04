@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
+import LeadMagnetCTA from "../components/LeadMagnetCTA.astro";
+import NewsletterForm from "../components/NewsletterForm.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug";
 
@@ -12,71 +14,114 @@ const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Bonjour 👋</div>
-    <div class="text-5xl font-bold">Je suis AnouarLab</div>
-    <div class="text-3xl py-3 font-bold">Consultant SEO</div>
-    <div class="py-2">
-      <text class="text-lg">
-        J'aide les entreprises à améliorer leur visibilité en ligne et leur
-        positionnement sur les moteurs de recherche. Expert en <b
-          >SEO technique</b
-        >, <b>stratégie de contenu</b> et <b>analytics</b>, je délivre des
-        résultats mesurables pour une croissance organique durable.
-      </text>
-    </div>
-    <div class="mt-8">
-      <a class="btn" href="#contact"> Me contacter</a>
-      <a href="#services" class="btn btn-outline ml-5"> Mes Services </a>
-    </div>
-  </div>
+  <!-- Hero Section - Minimal -->
+  <div class="py-16">
+    <p class="text-sm uppercase tracking-widest text-primary/60 mb-4">
+      Laboratoire Digital
+    </p>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">
-      Mes derniers projets {"</>"}
+    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+      SEO & CRO Testés.<br />
+      Résultats Prouvés.
+    </h1>
+
+    <p class="text-lg text-base-content/70 max-w-xl mb-10">
+      Expériences, études de cas et guides basés sur des données réelles — pas
+      des opinions.
+    </p>
+
+    <div class="flex gap-4">
+      <a class="btn btn-primary" href="#labs">Explorer</a>
+      <a href="#newsletter" class="btn btn-ghost">Newsletter</a>
     </div>
   </div>
 
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
+  <!-- Labs Section - Minimal Grid -->
+  <section id="labs" class="py-16 border-t border-base-300">
+    <h2 class="text-2xl font-bold mb-10">Labs</h2>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Derniers articles</div>
-  </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <a href="/seo" class="group block">
+        <p class="text-sm text-primary/60 mb-1">01</p>
+        <h3
+          class="text-xl font-semibold group-hover:text-primary transition-colors"
+        >
+          SEO
+        </h3>
+        <p class="text-base-content/60 mt-2">
+          Référencement naturel, technique, contenu.
+        </p>
+      </a>
 
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
+      <a href="/cro" class="group block">
+        <p class="text-sm text-primary/60 mb-1">02</p>
+        <h3
+          class="text-xl font-semibold group-hover:text-primary transition-colors"
+        >
+          CRO
+        </h3>
+        <p class="text-base-content/60 mt-2">
+          Optimisation conversions, tests A/B, tunnels.
+        </p>
+      </a>
+
+      <a href="/shopify" class="group block">
+        <p class="text-sm text-primary/60 mb-1">03</p>
+        <h3
+          class="text-xl font-semibold group-hover:text-primary transition-colors"
+        >
+          Shopify
+        </h3>
+        <p class="text-base-content/60 mt-2">
+          Vitesse, SEO, conversions e-commerce.
+        </p>
+      </a>
+
+      <a href="/wordpress" class="group block">
+        <p class="text-sm text-primary/60 mb-1">04</p>
+        <h3
+          class="text-xl font-semibold group-hover:text-primary transition-colors"
+        >
+          WordPress
+        </h3>
+        <p class="text-base-content/60 mt-2">Performance, plugins, headless.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Articles Section - Minimal -->
+  <section class="py-16 border-t border-base-300">
+    <div class="flex justify-between items-center mb-10">
+      <h2 class="text-2xl font-bold">Articles récents</h2>
+      <a href="/blog" class="text-sm text-primary hover:underline"
+        >Voir tout →</a
+      >
+    </div>
+
+    <div class="space-y-8">
+      {
+        last_posts.map((post) => (
+          <a
+            href={"/blog/" + createSlug(post.data.title, post.slug)}
+            class="group block"
+          >
+            <article class="border-b border-base-300 pb-8">
+              <h3 class="text-lg font-medium group-hover:text-primary transition-colors">
+                {post.data.title}
+              </h3>
+              <p class="text-base-content/60 mt-2 line-clamp-2">
+                {post.data.description}
+              </p>
+            </article>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <NewsletterForm
+    title="Newsletter"
+    description="Recevez les résultats de nos expériences. Pas de spam."
+  />
 </BaseLayout>

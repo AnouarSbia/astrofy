@@ -1,16 +1,122 @@
 ---
-title: "Demo Post 2"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: "Sep 11 2022"
+title: "Core Web Vitals : le guide complet pour WordPress en 2026"
+description: "Optimisez les performances de votre site WordPress avec ce guide complet sur les Core Web Vitals : LCP, FID, CLS expliqués et solutions pratiques."
+pubDate: "Jan 28 2026"
 heroImage: "/post_img.webp"
+pillar: "wordpress"
+tags: ["wordpress", "seo", "performance"]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+Les **Core Web Vitals** sont devenus un facteur de ranking officiel de Google. Si votre site WordPress est lent, vous perdez à la fois des visiteurs ET des positions dans les résultats de recherche.
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+## Qu'est-ce que les Core Web Vitals ?
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+Google mesure 3 métriques principales :
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+| Métrique | Signification | Seuil acceptable |
+|----------|---------------|------------------|
+| **LCP** | Largest Contentful Paint | < 2.5s |
+| **FID** | First Input Delay | < 100ms |
+| **CLS** | Cumulative Layout Shift | < 0.1 |
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+## 1. Optimiser le LCP (Largest Contentful Paint)
+
+Le LCP mesure le temps d'affichage du plus grand élément visible. Souvent, c'est une image hero ou un titre H1.
+
+### Solutions WordPress :
+
+**Optimisation des images :**
+```php
+// Dans functions.php - forcer le lazy loading sauf pour l'image above the fold
+add_filter('wp_img_tag_add_loading_attr', function($value, $image, $context) {
+    if (strpos($image, 'hero') !== false) {
+        return false; // Pas de lazy loading sur le hero
+    }
+    return $value;
+}, 10, 3);
+```
+
+**Recommandations :**
+- Utiliser le format WebP avec fallback
+- Précharger l'image LCP : `<link rel="preload" as="image">`
+- Servir les images via un CDN
+
+## 2. Améliorer le FID (First Input Delay)
+
+Le FID mesure la réactivité. Un FID élevé = JavaScript bloquant le thread principal.
+
+### Solutions WordPress :
+
+**Réduire le JavaScript :**
+- Désactiver les plugins inutiles
+- Différer les scripts non-critiques
+- Éviter les sliders et carrousels lourds
+
+**Code à ajouter dans functions.php :**
+```php
+// Différer le chargement de jQuery
+add_action('wp_enqueue_scripts', function() {
+    wp_script_add_data('jquery', 'strategy', 'defer');
+}, 10);
+```
+
+## 3. Corriger le CLS (Cumulative Layout Shift)
+
+Le CLS détecte les "sauts" de layout pendant le chargement. Très frustrant pour l'utilisateur.
+
+### Causes principales sur WordPress :
+
+- Images sans dimensions définies
+- Publicités/embeds qui s'insèrent tardivement
+- Polices web qui causent un FOIT (Flash of Invisible Text)
+
+### Solutions :
+
+```css
+/* Réserver l'espace pour les images */
+img {
+    aspect-ratio: attr(width) / attr(height);
+    width: 100%;
+    height: auto;
+}
+
+/* Éviter le FOIT pour les polices */
+@font-face {
+    font-family: 'MaPolice';
+    font-display: swap;
+}
+```
+
+## Outils de mesure
+
+1. **PageSpeed Insights** - Données de terrain + labo
+2. **Chrome DevTools** - Onglet Performance
+3. **Search Console** - Rapport Core Web Vitals
+4. **WebPageTest** - Tests avancés multi-localisation
+
+## Plugins WordPress recommandés
+
+| Plugin | Utilité |
+|--------|---------|
+| **WP Rocket** | Cache + optimisation globale |
+| **ShortPixel** | Compression images WebP |
+| **Perfmatters** | Désactiver scripts inutiles |
+| **Flying Scripts** | Différer JavaScript |
+
+## Checklist rapide
+
+- [ ] Images au format WebP avec dimensions
+- [ ] Préchargement de l'image LCP
+- [ ] Scripts non-critiques en defer/async
+- [ ] Polices avec font-display: swap
+- [ ] Plugins non-utilisés désactivés
+- [ ] Cache navigateur configuré
+- [ ] CDN activé
+
+---
+
+## Conclusion
+
+Les Core Web Vitals ne sont pas qu'un facteur SEO — c'est surtout une meilleure expérience utilisateur. Un site rapide convertit mieux, réduit le taux de rebond, et améliore votre image de marque.
+
+**Votre site WordPress est lent ?** [Discutons de votre projet](/about) pour un audit performance complet.
