@@ -1,0 +1,205 @@
+﻿The Friction Report 2026: Technical Debt and the Silent Recession of Conversion
+Executive Summary: The State of the Merchant in Q1 2026
+The ecommerce landscape of early 2026 is defined not by a lack of consumer demand, but by a crisis of technical fidelity. As we analyze the operational reality for mid-to-high volume merchants—specifically those generating between $5M and $50M in Gross Merchandise Value (GMV)—we observe a "Silent Recession" in conversion efficiency and data integrity. While top-line traffic remains a battleground, the true erosion of profitability is occurring in the invisible infrastructure that connects the shopper to the checkout.
+The release of Shopify's "Winter Editions '25," colloquially dubbed "The Boring Edition," was intended to signal a pivot toward stability, speed, and fundamental tooling.1 However, for the enterprise strategist and the merchant operator, the reality on the ground is far from boring; it is fraught with friction. The forced migration to Checkout Extensibility, fully mandated for critical pages as of August 2025, has left a wake of broken data pipelines and attribution blind spots.3 Simultaneously, the external search environment has been radically reshaped by Google’s aggressive deployment of AI Overviews (AIO), creating a "zero-click" ecosystem that punishes traditional SEO strategies and demands a new form of "Answer Engine Optimization".5
+This report, based on a deep-dive analysis of merchant forums, technical documentation, and community signals from late 2025 through February 2026, identifies the five critical "Pain Points" affecting merchants right now. These are not theoretical trends; they are active bleeding points in Profit and Loss statements. They represent "Operational Drag" that creates a glass ceiling for scaling, "SEO Friction" that renders products invisible to the new generation of AI agents, and "CRO Killers" that silently destroy conversion rates on mobile devices before the customer even reaches the cart.
+For the expert strategist, these pain points represent the most potent opportunities for high-value intervention. The merchant who resolves the pixel discrepancy or decodes the algorithm of AEO will not merely survive the technical turbulence of 2026; they will secure a dominant position in the new algorithmic shelf space.
+________________
+Pain Point 1: The "Black Box" Checkout & Pixel Data Hemorrhage
+Category: CRO Killer / Operational Drag
+The Real Problem: The "Sandboxed" Reality of Checkout Extensibility
+As of February 2026, the transition to Shopify's Checkout Extensibility is theoretically complete. The hard deadlines have passed: checkout.liquid was deprecated for Information, Shipping, and Payment pages on August 13, 2024, and the final curtain fell on the Thank You and Order Status pages on August 28, 2025.3 For the uninitiated, this was marketed as a necessary evolution for platform security, speed, and upgrade safety.9 However, the practical fallout for data tracking fidelity has been nothing short of catastrophic for merchants who rely on precision analytics.
+The core of the problem lies in the architectural shift from an open Document Object Model (DOM) to a "Sandboxed" environment. In the legacy checkout.liquid era, merchants and marketers could inject JavaScript directly into the checkout pages. This allowed for granular tracking, DOM scraping, and direct access to the Shopify data object—a transparent, albeit insecure, window into user behavior. In the new Checkout Extensibility regime, tracking logic is relegated to "Web Pixels" or "App Pixels" that run in a secure, isolated sandbox (often implemented via iframes or web workers).10
+This isolation has created a severe "Data Hemorrhage." Merchants are no longer seeing a single version of the truth. Instead, they are navigating a labyrinth of discrepancies between Shopify’s native analytics, Google Analytics 4 (GA4), and Meta Ads Manager. Reports from the field indicate that GA4 can report traffic volumes up to 3.5 times higher than Shopify’s native data due to conflicting pixel implementations and double-firing events.12 Conversely, and perhaps more damagingly, "purchase" events—the gold standard of ROAS (Return on Ad Spend) optimization—are being lost at an alarming rate.
+
+
+  
+
+
+
+The sandbox environment introduces a critical vulnerability known as the "Race Condition." When a customer completes a purchase, the browser attempts to execute the sandboxed pixel scripts. However, modern consumer behavior is fast; users frequently close the browser tab immediately after the payment confirmation appears, or they are instantaneously redirected to a third-party post-purchase upsell page or a payment gateway return URL. If the sandboxed environment—which has lower priority than the main thread—has not finished its execution cycle before the tab closes, the "purchase" event is never sent.11 In high-volume stores, this latency can account for 30% of missing orders in ad platform reporting, creating a massive blind spot in attribution models.
+Why It Hurts: The ROAS Illusion and Financial Bleed
+The impact of this technical obscurity is not merely an analytics nuisance; it is a direct financial bleed that distorts decision-making at the executive level. When ad platforms like Meta, Google, and TikTok do not receive the "purchase" signal, their machine learning optimization algorithms fail to function correctly. They cannot "learn" which user profiles are profitable, leading to inefficient bidding and wasted spend.
+The consequences manifest in three distinct ways:
+1. Broken Attribution and Scalability Fear: A merchant might be spending $50,000 per month on acquisition campaigns. Due to signal loss, the ad platform might report a ROAS of 1.5, suggesting the campaign is burning cash. In reality, if the missing 30% of conversion data were attributed, the ROAS might be a healthy 3.0. This "ROAS Illusion" causes merchants to scale back or pause highly profitable campaigns because the data they see contradicts the reality of their bank account.13
+2. The "Race Condition" Penalty: The latency inherent in the sandbox environment specifically punishes fast-moving, high-intent buyers—often the most valuable customer segment. By missing these conversions, the ad algorithms inadvertently optimize away from this behavior, skewing targeting toward slower, less decisive users who keep tabs open longer.11
+3. Configuration Conflict Hell: In a panic to resolve these discrepancies, many merchants have layered "Custom Pixels" (manual code) on top of standard "App Pixels" (like the official Google & YouTube app). This creates a chaotic environment where some events are double-counted while others are missed entirely.12 For example, a manual Google Ads Remarketing script added via Customer Events might conflict with the native app’s tracking, triggering duplicate page_view and session_start events for every visit, rendering engagement metrics useless.12
+The SEO/CRO Opportunity: Server-Side Salvation
+The opportunity for the strategist lies in recognizing that client-side tracking is no longer sufficient. The "SEO Opportunity" in this context is actually a data infrastructure opportunity: the implementation of Server-Side Tracking (CAPI) via a First-Party Domain.
+The Fix: The industry standard for 2026 is a robust "Dual-Pixel" setup. This involves maintaining the browser-based pixel (for broad signal capture) but rigorously deduplicating it against server-side events sent directly via the Conversion API (CAPI). This architecture typically requires a Google Tag Manager (GTM) server-side container.14 By moving the tracking logic to the server, merchants can bypass the fragility of the browser sandbox, ignore ad blockers, and ensure that the "purchase" signal is sent the moment the order is created in the Shopify backend, regardless of whether the user closes their browser tab.
+The Hook (Copywriter Strategy):
+"You aren't losing customers. You're losing the proof they exist. Your ad account is flying blind because 30% of your revenue is invisible to the algorithm. Stop optimizing for the data you see, and start capturing the data you're bleeding. The sandbox is a trap—build a server-side bridge over it."
+________________
+Pain Point 2: The "Zero-Click" Erasure & The Rise of AEO
+Category: SEO Friction / Traffic Decline
+The Real Problem: Google is Now an "Answer Engine"
+The Search Engine Optimization (SEO) landscape of 2026 bears little resemblance to the keyword-centric battles of 2024. The defining shift has been the maturation and ubiquitous deployment of Google’s AI Overviews (formerly known as SGE - Search Generative Experience). As of Q1 2026, data indicates that AI Overviews are appearing for approximately 13-16% of all ecommerce queries globally.5 More critically, for informational queries that typically feed the top of the funnel (e.g., "how to choose running shoes for flat feet"), AI Overviews are triggered in nearly 90% of searches.17
+The fundamental pain point is the "Zero-Click" phenomenon. In the past, a user searching for product comparisons would click through to a blog post, a review site, or a collection page. In 2026, the AI Overview provides a comprehensive, synthesized answer directly on the Search Engine Results Page (SERP). It aggregates product specs, pros and cons, pricing, and "best for" recommendations into a single, dominant block that pushes traditional organic blue links far below the fold.
+This displacement of real estate has created a "Zero-Click Zone" at the top of the screen. Users are consuming the AI-generated answer and leaving the search page without ever visiting a merchant's site. Studies covering hundreds of thousands of keywords reveal that the presence of an AI Overview can slash click-through rates (CTR) for top-ranking pages by 34.5%.5 For many high-volume merchants, this manifests as a mysterious, stubborn 20-40% drop in organic traffic, even while their keyword rankings ostensibly remain stable.6 The "traditional" product page—heavy on lifestyle imagery but light on structured, machine-readable text—is becoming invisible to the Large Language Models (LLMs) that power these answers.19
+Why It Hurts: The Funnel Has Shortened and Narrowed
+The financial impact of this shift is the erasure of the "Top of Funnel" (ToFu) traffic that brands rely on for new customer acquisition.
+1. Commercial Intent Shift: The reach of AI Overviews is expanding into commercial intent. Queries like "buy waterproof tent 4 person" are increasingly triggering AI comparisons that aggregate data from multiple sources. If a merchant's product data is not structured perfectly for the AI to parse, their products are excluded from the consideration set entirely.20 The user makes a decision based on the AI summary and may navigate directly to a competitor or a marketplace, bypassing the discovery phase on the merchant's site.
+2. The "Citation" Economy: In this new paradigm, traffic is no longer driven by "ranking" in position #1; it is driven by being cited as a source in the AI summary. A site can hold the top organic position but be completely excluded from the AI overview if its content lacks "Information Density" or the specific schema markup the AI requires to verify facts.19 The AI prioritizes sources that it deems authoritative and "fact-dense," often favoring forums like Reddit or massive aggregators over individual brand stores.22
+The SEO Opportunity: Answer Engine Optimization (AEO)
+The strategic pivot for 2026 must be a move from traditional SEO (optimizing for links and keywords) to AEO (Answer Engine Optimization) and GEO (Generative Engine Optimization).
+The Fix:
+* Structured Data is the New Copy: The only language the AI speaks with fluency is JSON-LD. Merchants must implement deep, nested Schema markup that goes far beyond the basics. This includes Product, FAQPage, MerchantReturnPolicy, and ShippingDetails schema.20 This structured data allows the AI to "read" the product specifications (dimensions, materials, compatibility) without having to guess or hallucinate.
+* The "LLM-Ready" Product Page: Product descriptions must evolve. Marketing fluff is ignored by the AI. To be cited, content needs high "Information Density." This means including clear, factual definitions ("What is [Product Name]?"), detailed specifications tables, and direct, concise answers to common customer questions in an FAQ section directly on the product page.19 The goal is to make the content "machine-readable."
+* Brand Authority via Digital PR: The AI trusts brands that are corroborated by other trusted nodes in the knowledge graph. "Digital PR" becomes a critical SEO tactic—getting cited on Reddit, industry news sites, and niche comparison blogs teaches the AI that the brand is an authority worth referencing.23
+The Hook (Copywriter Strategy):
+"Your product page is speaking a language the new buyer—the AI—doesn't understand. While you optimize for keywords, your competitor is optimizing for context. To survive the Zero-Click era, you don't need more traffic; you need more citations. Turn your store into a data engine that feeds the AI, or watch your brand disappear from the answer."
+________________
+Pain Point 3: The Mobile "Phantom" Friction & Sticky Cart Bugs
+Category: CRO Killer / Mobile Experience
+The Real Problem: Theme Debt & Core Web Vitals Failure
+While Shopify’s "Dawn" theme and its Online Store 2.0 successors provided a strong foundation, the ecosystem has accumulated significant "theme debt" by 2026. The layering of third-party apps, custom liquid code, and legacy scripts has created a fragile mobile experience. Although mobile traffic continues to dominate the share of visits, conversion rates on mobile devices lag significantly behind desktop.26
+Deep research into community troubleshooting logs identifies two specific, persistent technical bugs plaguing merchants using popular themes like Dawn, Atelier, and their derivatives:
+1. The "Sticky ATC" Glitch: A critical conversion element on mobile is the "Sticky Add to Cart" (ATC) button—the bar that remains fixed at the bottom of the screen as the user scrolls, ensuring the purchase action is always available. In 2026, a widespread issue has emerged where this button frequently disappears, flickers, or becomes unclickable when the user scrolls past specific dynamic sections, such as "Accordion" blocks (collapsible content) or review widgets. This "Phantom Friction" is often caused by JavaScript conflicts between the theme’s native sticky observer and the DOM manipulation scripts of third-party apps.27
+2. CLS (Cumulative Layout Shift) Nightmares: Merchants are reporting widespread failures in Google’s Core Web Vitals, specifically "Poor" scores for Cumulative Layout Shift (CLS) on mobile pages. This occurs when images load without defined width and height attributes, or when apps inject promotional banners, scarcity timers, or announcement bars after the initial page load. This causes the entire page content to "jump" or shift downward, frustrating users and causing them to lose their place.30
+Why It Hurts: The Interaction Cost and "Rage Clicks"
+Every millisecond of delay or visual instability on mobile increases the "Interaction Cost" for the user. In the hyper-distracted environment of mobile commerce, friction is fatal.
+* The "Double Tap" Menu Failure: Beyond the sticky cart, users are reporting mobile navigation menus that are fundamentally broken. Some require multiple taps to open sub-categories because the touch targets are obscured or the JavaScript event listeners are lagging. In severe cases, menus fail to render entirely due to missing <html> tags or class attributes in the theme.liquid file—a regression often caused by sloppy code edits.33 If a user cannot navigate the catalog, they bounce immediately.
+* Rage Clicks and the Invisible Path: When the Sticky ATC button vanishes or shifts due to CLS, the user experiences a "Rage Click" moment—tapping where the button should be, only to hit nothing or, worse, an unwanted link. This friction disrupts the purchase flow. If the user has to scroll back up to the top of the page to find the primary "Buy" button, the cognitive load increases, and conversion rates can drop by 10-15% for that session.
+* The SEO Double Whammy: Google’s algorithms penalize sites with poor Core Web Vitals. A high CLS score is a direct ranking signal. Therefore, this technical debt hits the merchant twice: first by lowering their organic search rankings, and second by destroying the conversion rate of the traffic that actually arrives.30
+The CRO Opportunity: Technical Hygiene Over App Bloat
+The solution to these mobile woes is not to install another "optimization app," but to perform rigorous code remediation.
+The Fix:
+* Hard-Coding Stability: To resolve CLS, merchants must audit their theme code to ensure every image tag has explicit aspect ratio or dimension attributes. Furthermore, space for dynamic app blocks (like review stars or installment payment widgets) must be "reserved" using CSS min-height properties. This ensures that even if the content loads late, the layout does not jump.31
+* CSS over JS for Sticky Elements: The "Sticky ATC" glitches are best resolved by moving away from complex JavaScript Intersection Observers. Instead, developers should utilize modern, pure CSS position: sticky implementations or "bottom-0 fixed" positioning that is less prone to script conflict. If apps are the culprit, they must be isolated or replaced with lightweight alternatives.27
+* The Navigation Audit: A specialized audit of the mobile navigation DOM structure is required. Ensuring that the mobile drawer is accessible, that touch targets meet the 44x44px standard, and that the no-js fallback classes are correctly handled in the theme liquid files is essential for restoring navigation integrity.34
+The Hook (Copywriter Strategy):
+"Your mobile store is fighting your customers. Every time the page jumps, you lose trust. Every time the 'Buy' button disappears, you lose a sale. You don't have a traffic problem; you have a stability problem. Fix the phantom friction, and you unlock the revenue currently vanishing into thin air."
+________________
+Pain Point 4: The Scale Ceiling (Shopify Flow & Operational Drag)
+Category: Operational Drag / Scaling Limits
+The Real Problem: Shopify Flow's "Glass Ceiling"
+Shopify Flow has become the touted backbone of automation for Shopify Plus merchants, promising to eliminate manual tasks. However, as merchants scale into the "High Volume" category (thousands of customers or orders per day), they are hitting a hard, largely undocumented wall: the 100-item loop limit.
+When a merchant attempts to run a scheduled workflow to process data in bulk—for example, "Get Order Data" to find all orders from the last month that need a specific tag, or "Get Customer Data" to identify loyalty members who haven't purchased in 90 days—Shopify Flow stops processing after the 100th item. This is a hard platform limit on the Get Data actions within a loop.35
+This limitation effectively breaks any true "batch" automation for enterprise-level stores. A store with a customer base of 50,000 cannot use Flow to perform a daily audit of customer tags, nor can it use Flow to sync inventory for large catalogs across locations, without encountering this ceiling.39 The tool is designed for event-based triggers (e.g., "Trigger when Order #1234 is created"), not for state-based bulk processing.
+Why It Hurts: The Cost of Workarounds and "Spaghetti Code"
+The impact of this limitation is "Operational Drag"—the slow accumulation of inefficiencies that retard growth.
+1. Regression to Manual Labor: Faced with this limit, operations teams are often forced back into the archaic practice of manual CSV exports and imports to manage customer segments or update order statuses. This introduces a high risk of human error and data corruption, defeating the purpose of an "automated" platform.
+2. The "Daisy-Chain" Disaster: To bypass the limit, developers and merchants often build fragile, "daisy-chained" workflows. They might create a workflow that triggers itself, or set up multiple scheduled flows to run back-to-back (e.g., at 9:00 AM, 9:10 AM, 9:20 AM) in the hopes of catching "updates" in smaller batches. This creates a "Spaghetti Code" mess of automation that is impossible to debug, monitor, or maintain reliability.36
+3. App Bloat and Cost: Ultimately, merchants are forced to subscribe to third-party automation apps like MESA, Mechanic, or specialized tagging apps. These tools add hundreds of dollars a month to the tech stack and introduce yet another third-party dependency, simply to perform functions that the native platform ostensibly supports but fails to scale.35
+The Operational Opportunity: Off-Platform Automation Architecture
+The solution for high-volume merchants requires an architectural shift. It involves acknowledging that Shopify Flow is the correct tool for triggers, but the wrong tool for bulk processing.
+The Fix:
+* Middleware Adoption: The opportunity lies in adopting "Middleware" solutions. Savvy merchants are using low-code integration platforms like n8n (which can be self-hosted for security and cost) or Make.com. In this architecture, Shopify Flow is used only to send a signal (a webhook) to the middleware. The middleware then handles the heavy lifting, iterating through thousands of records without the 100-item cap.35
+* GraphQL Mastery: The true "Plus" capability is unlocking the Shopify Admin API's GraphQL endpoints. Unlike the visual Flow editor, GraphQL queries allow for efficient retrieval of specific data fields (cursors) and can handle pagination, allowing a merchant to query 10,000 orders in a single, efficient run. For the enterprise strategist, building custom apps or scripts that leverage GraphQL is the only scalable path forward.36
+The Hook (Copywriter Strategy):
+"You've outgrown the 'drag-and-drop' dream. When your automation stops at customer #100, your growth stops too. Stop trying to force a consumer-grade tool to run an enterprise operation. It's time to build a data pipeline that scales with your GMV, not one that caps it."
+________________
+Pain Point 5: The Trust Crisis (Security, Hallucinations, and Theft)
+Category: Security / Operational Risk
+The Real Problem: Theft & Unreliable Intelligence
+In 2026, the threats to a merchant's business have evolved. They are no longer just about "hackers" stealing credit cards; they are about competitors stealing intellectual property and AI tools eroding decision-making confidence.
+1. Frontend Code Theft: The barrier to entry for "cloning" a store has dropped to zero. Bad actors and aggressive competitors are utilizing sophisticated scrapers to clone not just the design (images and CSS), but the actual frontend logic of successful stores. Because many Shopify apps and theme customizations are "embedded" in the frontend (Liquid + JavaScript), the code is visible to anyone who knows how to inspect the browser source. Developers are reporting instances where exact replicas of their proprietary "Bundle Builders," "Quizzes," or "Customizers"—which cost tens of thousands of dollars to develop—are appearing on competitor sites days after launch.41
+2. Sidekick Hallucinations: Shopify’s AI assistant, "Sidekick," was promised as an "analyst-in-a-box" that would democratize data access. However, deep research reveals a troubling pattern of "Hallucinations." Merchants are reporting that Sidekick confidently provides wrong financial data. It might report $0 in sales for a specific product that the merchant knows has sold, or miscalculate abandoned cart values by over 50%.43 This is not just a glitch; it is a "Confidence Trap." The AI presents the data with high certainty, leading merchants to make fatal strategic errors.
+
+
+  
+
+
+
+Why It Hurts: Erosion of Edge & Margin
+The damage here is twofold: the loss of competitive advantage and the destruction of margin through bad intelligence.
+* Competitive Bleed: If a competitor clones a merchant's unique functionality (USP), the merchant loses their differentiation overnight. The "moat" they built with custom code is drained dry.41
+* The "Bad Data" Decision Loop: If a merchant relies on Sidekick telling them "You have 500 abandoned carts worth $10k" when the reality is $5k, they might aggressively overspend on retargeting ads to recover that revenue. This destroys their contribution margin. They are spending real dollars to chase phantom revenue based on a hallucinated metric.44
+* Chargeback Fraud: Parallel to this, merchants are facing a surge in "Friendly Fraud" and "Triangulation Fraud." The cost of doing business now includes a standard "Chargeback Tax"—$15 per dispute plus the loss of goods. The win rate for these disputes remains abysmal as banks default to consumer protection, further compressing margins.45
+The Security Opportunity: Obfuscation & Verification
+The strategy for 2026 is "Zero Trust" architecture for both code and data.
+The Fix:
+* Backend Logic Migration: Merchants and developers must move proprietary logic away from the frontend. Shopify Functions allow for custom logic (like bundling or discounts) to run on Shopify’s servers, where it is invisible to scrapers. Any remaining frontend JavaScript should be obfuscated, minified, and split into multiple chunks to make reverse-engineering prohibitively difficult.41
+* Trust, But Verify: The operational mandate for AI is "Augmentation, not Replacement." Sidekick should be used for qualitative tasks (drafting copy, suggesting layout changes) but never for quantitative financial reporting. Financial "truth" must be pulled from raw CSV export data or verified third-party analytics apps that have audit trails.44
+* Aggressive Fraud Defense: Implementing aggressive fraud filters (like Shopify Protect or specialized third-party apps like Signifyd or NoFraud) is no longer optional. The liability must be shifted away from the merchant. It is better to pay a percentage fee for insurance than to bleed revenue through unwinnable chargebacks.45
+The Hook (Copywriter Strategy):
+"Your code is your castle, but you've left the drawbridge down. While you're asking the AI for advice (and getting wrong answers), your competitors are copy-pasting your hard work. 2026 is the year of 'Zero Trust'—verify your data, obfuscate your logic, and lock down your revenue."
+________________
+Strategic Conclusion: The Path Forward
+The overarching theme for the mid-to-high volume merchant in 2026 is not "Growth at all Costs," but "Precision at Scale." The "Silent Recession" of conversion is a technical problem, not a product problem. The merchants who will dominate this year are those who treat their store not just as a visual catalog, but as a high-fidelity data engine.
+The winners of Q1 2026 will be defined by their ability to execute on five technical fronts:
+1. Bridge the Data Gap: Implementing server-side tracking to capture the 30% of "invisible" revenue.
+2. Speak 'Machine': Structuring data for AEO to ensure visibility in the Zero-Click era.
+3. Stabilize the Core: ruthlessly eliminating mobile friction (CLS and Sticky Bugs) to lower interaction costs.
+4. Scale Intelligently: Breaking past the 100-loop limit by adopting robust middleware architecture.
+5. Defend the Castle: Protecting IP through backend logic and verifying AI intelligence before deploying capital.
+The technology has advanced, but it has also become more opaque. The expert strategist's role is to peel back the layers of the "Black Box," exposing the friction points that others miss, and giving control back to the merchant. The era of easy growth is over; the era of technical precision has begun.
+Priority Matrix for Q1 2026 Action:
+Pain Point
+	Urgency
+	Difficulty
+	Expected Impact
+	First Action Step
+	Data Hemorrhage
+	Critical
+	High
+	Recovery of 15-30% attributable revenue
+	Implement CAPI via GTM Server-Side.
+	Mobile Friction
+	High
+	Moderate
+	Immediate 10-15% Conversion Lift
+	CSS Audit for CLS & Sticky Elements.
+	Zero-Click SEO
+	High
+	High
+	Defense against 40% Traffic Drop
+	Implement nested JSON-LD Schema.
+	Scale Ceiling
+	Medium
+	High
+	Operational Efficiency / Labor Savings
+	Migrate bulk flows to n8n/Make.
+	Security/Trust
+	Medium
+	Moderate
+	Margin Protection
+	Move logic to Shopify Functions.
+	Sources des citations
+1. Shopify Editions Winter '25 - Shop Circle, consulté le février 4, 2026, https://shopcircle.co/blogs/news/shopify-winter-editions-2025
+2. Shopify Winter Editions 2025: 12 key updates according to Code by Isa Leeflang, consulté le février 4, 2026, https://www.code.digital/blog/winter-editions-2025-12-key-updates-according-to-code
+3. Shopify Checkout Extensibility Deadline Is Coming - Digital Position, consulté le février 4, 2026, https://www.digitalposition.com/resources/blog/ppc/shopify-checkout-extensibility-deadline-august-28-2025-is-coming-heres-how-to-not-screw-it-up/
+4. Upgrading and replacing your Thank you and Order status pages - Shopify Help Center, consulté le février 4, 2026, https://help.shopify.com/en/manual/checkout-settings/customize-checkout-configurations/upgrade-thank-you-order-status/plus-upgrade-guide
+5. Google's AI Overview Statistics (2025) - SellersCommerce, consulté le février 4, 2026, https://www.sellerscommerce.com/blog/ai-overview-statistics/
+6. As AI Eats Web Traffic, Don't Panic—Evolve - Kellogg Insight, consulté le février 4, 2026, https://insight.kellogg.northwestern.edu/article/as-ai-eats-web-traffic-dont-panic-evolve
+7. Shopify Checkout Extensibility: Your Ultimate Guide - Mucky Puddle, consulté le février 4, 2026, https://www.muckypuddle.com/blogs/news/shopify-checkout-extensibility-ultimate-guide
+8. Best Practices for Checkout Extensibility in Shopify: Dos and Don'ts - Total Commerce, consulté le février 4, 2026, https://totalcommerce.partners/blogs/articles/best-practices-for-checkout-extensibility-in-shopify-dos-and-donts
+9. Shopify Extensions are the Future of Customizing Shopify Checkout, consulté le février 4, 2026, https://www.shopify.com/enterprise/blog/checkout-extensibility-winter-editions
+10. Shopify Checkout Extensibility Review: 8 Months In and Dozens of Implementations, consulté le février 4, 2026, https://www.analytics-ninja.com/blog/2025/01/checkout-extensibility-review.html
+11. Checkout Extensibility Upgrade AMA: Custom Web Pixels with Domaine, consulté le février 4, 2026, https://community.shopify.com/c/community-events/checkout-extensibility-upgrade-ama-custom-web-pixels-with/m-p/2680246
+12. GA4 reporting 3.5x more traffic than Shopify – Massive Meta Ads discrepancy since Dec 15th : r/GoogleAnalytics - Reddit, consulté le février 4, 2026, https://www.reddit.com/r/GoogleAnalytics/comments/1q77cjs/ga4_reporting_35x_more_traffic_than_shopify/
+13. Meta ads conversion tracking issue : Some conversions are not showing up, consulté le février 4, 2026, https://community.shopify.com/t/meta-ads-conversion-tracking-issue-some-conversions-are-not-showing-up/397264
+14. Missing or incorrect data between Facebook, Shopify and Google analytics? : r/PPC - Reddit, consulté le février 4, 2026, https://www.reddit.com/r/PPC/comments/pgrehb/missing_or_incorrect_data_between_facebook/
+15. Miss data send from custom pixel to GTM - Shopify Community, consulté le février 4, 2026, https://community.shopify.com/t/miss-data-send-from-custom-pixel-to-gtm/371681
+16. Shopify Meta Pixel + GTM Integration (Full Event Tracking Tutorial) - YouTube, consulté le février 4, 2026, https://www.youtube.com/watch?v=LNThgmmaMDQ
+17. Semrush AI Overviews Study: What 2025 SEO Data Tells Us About Google's Search Shift, consulté le février 4, 2026, https://www.semrush.com/blog/semrush-ai-overviews-study/
+18. Are Traditional Rankings Dying Because of AI Search Results? : r/ShopifySEO - Reddit, consulté le février 4, 2026, https://www.reddit.com/r/ShopifySEO/comments/1qo4s2m/are_traditional_rankings_dying_because_of_ai/
+19. Experiment: why some Shopify products show up in AI search and others don't - Reddit, consulté le février 4, 2026, https://www.reddit.com/r/shopify_geeks/comments/1q6kahq/experiment_why_some_shopify_products_show_up_in/
+20. SEO + Shopify GEO optimization Guide 2026 | Mgroup, consulté le février 4, 2026, https://mgroupweb.com/blogs/seo-shopify-geo-optimization-guide-2026/
+21. 2025 Organic Traffic Crisis: Zero-Click & AI Impact Analysis Report - The Digital Bloom, consulté le février 4, 2026, https://thedigitalbloom.com/learn/2025-organic-traffic-crisis-analysis-report/
+22. AI + Shopify in 2026? - Reddit, consulté le février 4, 2026, https://www.reddit.com/r/shopify/comments/1q79rhx/ai_shopify_in_2026/
+23. What Is AEO? Rank in AI Search via Answer Engine Optimization (2025) - Shopify, consulté le février 4, 2026, https://www.shopify.com/blog/what-is-aeo
+24. How to Rank Your Shopify Store on Google in 2026 | AEO Guide - Connect Infosoft, consulté le février 4, 2026, https://www.connectinfosoft.com/blog/how-to-rank-my-shopify-store-on-google-in-2026/
+25. How to Optimize Your Shopify Website According to AEO & GEO - Mobikasa, consulté le février 4, 2026, https://www.mobikasa.com/blog/how-to-optimize-your-shopify-website-according-to-aeo-and-geo/
+26. Shopify Checkout Optimization 2026: Why 72% of Carts Are Abandoned—And the 7 Fixes That Actually Work : r/elogic_commerce - Reddit, consulté le février 4, 2026, https://www.reddit.com/r/elogic_commerce/comments/1qls9tc/shopify_checkout_optimization_2026_why_72_of/
+27. Sticky add to cart on mobile - Shopify Community, consulté le février 4, 2026, https://community.shopify.com/t/sticky-add-to-cart-on-mobile/565297
+28. Sticky add to cart glitches on Atelier theme - Shopify Community, consulté le février 4, 2026, https://community.shopify.com/t/sticky-add-to-cart-glitches-on-atelier-theme/579765
+29. How do i customise/remove the default Add to cart sticky on mobile? : r/shopify - Reddit, consulté le février 4, 2026, https://www.reddit.com/r/shopify/comments/1ns6ozk/how_do_i_customiseremove_the_default_add_to_cart/
+30. How to fix CLS Cumulative Layout Shift Speed - Shopify Community, consulté le février 4, 2026, https://community.shopify.com/c/technical-q-a/how-to-fix-cls-cumulative-layout-shift-speed-100-of-my-pages/m-p/2991191/highlight/true
+31. How to optimize Cumulative Layout Shift (CLS) on Shopify sites, consulté le février 4, 2026, https://performance.shopify.com/blogs/blog/how-to-optimize-cumulative-layout-shift-cls-on-shopify-sites
+32. CLS Issue in Dawn theme - Shopify Community, consulté le février 4, 2026, https://community.shopify.com/t/cls-issue-in-dawn-theme/380717
+33. Menu on Mobile is not expanded - Shopify Community, consulté le février 4, 2026, https://community.shopify.com/t/menu-on-mobile-is-not-expanded/583878
+34. Menu problem on mobile - Shopify Community, consulté le février 4, 2026, https://community.shopify.com/t/menu-problem-on-mobile/418792
+35. Create a loop to overcome 100 customer maximum - Shopify Community, consulté le février 4, 2026, https://community.shopify.com/t/create-a-loop-to-overcome-100-customer-maximum/398423
+36. 100 customers limitation when you schedule a workflow - Shopify Community, consulté le février 4, 2026, https://community.shopify.com/c/shopify-flow-app/100-customers-limitation-when-you-schedule-a-workflow/m-p/2199313
+37. 100 customers limitation when you schedule a workflow - Shopify Community, consulté le février 4, 2026, https://community.shopify.com/t/100-customers-limitation-when-you-schedule-a-workflow/244325
+38. The Complete Shopify Flow Guide: Automate Your Shopify Store in 2026 - MESA, consulté le février 4, 2026, https://www.getmesa.com/blog/shopify-flow-guide/
+39. Shopify flow - How to reach all products in store, and not be limited by the 100 products?, consulté le février 4, 2026, https://community.shopify.com/t/shopify-flow-how-to-reach-all-products-in-store-and-not-be-limited-by-the-100-products/316974
+40. 10 Advanced Shopify Flow Workflows That Generate Revenue (Not Just Save Time), consulté le février 4, 2026, https://www.revize.app/blog/advanced-shopify-flow-workflows-2025
+41. How do you deal with Shopify developers stealing frontend app code? - Reddit, consulté le février 4, 2026, https://www.reddit.com/r/shopify/comments/1qqs6p9/how_do_you_deal_with_shopify_developers_stealing/
+42. Larger competitor has cloned our website! What can we do!? : r/shopify - Reddit, consulté le février 4, 2026, https://www.reddit.com/r/shopify/comments/1brwujs/larger_competitor_has_cloned_our_website_what_can/
+43. Beware of Shopify's AI Help Assistant – It wasted days of my time with wrong answers!, consulté le février 4, 2026, https://www.reddit.com/r/shopify/comments/1naqu3h/beware_of_shopifys_ai_help_assistant_it_wasted/
+44. Be extremely careful with Sidekick. : r/shopify - Reddit, consulté le février 4, 2026, https://www.reddit.com/r/shopify/comments/1m4169l/be_extremely_careful_with_sidekick/
+45. Key Shopify Statistics & Indicators for 2026 - Chargebacks 911, consulté le février 4, 2026, https://chargebacks911.com/chargeback-types/shopify-chargebacks/shopify-statistics/
+46. Is anyone else gettin an insane amount of chargebacks? : r/shopify - Reddit, consulté le février 4, 2026, https://www.reddit.com/r/shopify/comments/1qd45t5/is_anyone_else_gettin_an_insane_amount_of/
+47. Best Chargeback Solutions for Shopify (2026 Edition) | Recover Revenue & Prevent Disputes - Chargeflow, consulté le février 4, 2026, https://www.chargeflow.io/blog/best-chargeback-solutions-for-shopify-2026
