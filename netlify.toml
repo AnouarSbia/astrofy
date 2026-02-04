@@ -14,6 +14,14 @@
   to = "/admin/index.html"
   status = 200
 
+# Handle Netlify Forms POST redirect to /merci
+# This converts the POST redirect to a GET request for the static page
+[[redirects]]
+  from = "/merci"
+  to = "/merci/index.html"
+  status = 200
+  force = true
+
 # SEO-friendly 404 page
 [[redirects]]
   from = "/*"
