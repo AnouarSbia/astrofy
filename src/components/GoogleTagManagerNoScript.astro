@@ -1,0 +1,22 @@
+---
+/**
+ * Google Tag Manager NoScript Component
+ * 
+ * Must be placed immediately after the opening <body> tag.
+ */
+
+const gtmId = import.meta.env.GTM_ID || import.meta.env.PUBLIC_GTM_ID;
+---
+
+{gtmId && (
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe 
+            src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+            height="0" 
+            width="0" 
+            style="display:none;visibility:hidden"
+        ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+)}

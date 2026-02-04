@@ -3,6 +3,9 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SideBar from "../components/SideBar.astro";
+import GoogleTagManager from "../components/GoogleTagManager.astro";
+import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
+import AnalyticsTracker from "../components/AnalyticsTracker.astro";
 import { ViewTransitions } from "astro:transitions";
 
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
@@ -20,16 +23,17 @@ const {
 <!doctype html>
 <html lang="fr" data-theme="anouarlab">
   <head>
+    <GoogleTagManager />
     <BaseHead
       title={title}
       description={description}
       image={image}
-      ,
       ogType={ogType}
     />
     {TRANSITION_API && <ViewTransitions />}
   </head>
   <body>
+    <GoogleTagManagerNoScript />
     <div class="bg-base-100 drawer lg:drawer-open">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content bg-base-100">
@@ -43,5 +47,6 @@ const {
       </div>
       {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
     </div>
+    <AnalyticsTracker />
   </body>
 </html>

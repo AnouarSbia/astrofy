@@ -1,0 +1,110 @@
+---
+/**
+ * Analytics Tracker Component
+ *
+ * Automatically tracks:
+ * - CTA clicks (buttons with data-track-cta attribute)
+ * - Newsletter form submissions
+ * - Scroll depth (25%, 50%, 75%, 100%)
+ * - Outbound link clicks
+ */
+---
+
+<script>
+    // DataLayer helper
+    function pushEvent(eventName: string, data: Record<string, any> = {}) {
+        if (window.dataLayer) {
+            window.dataLayer.push({ event: eventName, ...data });
+        }
+    }
+
+    // Track CTA clicks
+    document.querySelectorAll("[data-track-cta]").forEach((el) => {
+        el.addEventListener("click", () => {
+            const ctaName = el.getAttribute("data-track-cta") || "unknown";
+            const ctaLocation = el.closest("section")?.id || "page";
+            pushEvent("cta_click", {
+                cta_name: ctaName,
+                cta_location: ctaLocation,
+            });
+        });
+    });
+
+    // Track all primary button clicks
+    document.querySelectorAll(".btn-primary").forEach((el) => {
+        el.addEventListener("click", () => {
+            const buttonText = el.textContent?.trim() || "unknown";
+            const href = el.getAttribute("href") || "";
+            pushEvent("button_click", {
+                button_text: buttonText,
+                button_href: href,
+                page_path: window.location.pathname,
+            });
+        });
+    });
+
+    // Track newsletter form submissions
+    document.querySelectorAll('form[action*="buttondown"]').forEach((form) => {
+        form.addEventListener("submit", () => {
+            const topic =
+                form
+                    .querySelector('input[name="tag"]')
+                    ?.getAttribute("value") || "general";
+            pushEvent("newsletter_signup", { newsletter_topic: topic });
+        });
+    });
+
+    // Track scroll depth
+    let scrollMilestones = [25, 50, 75, 100];
+    let trackedMilestones: number[] = [];
+
+    function getScrollPercentage() {
+        const scrollTop = window.scrollY;
+        const docHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+        return Math.round((scrollTop / docHeight) * 100);
+    }
+
+    window.addEventListener(
+        "scroll",
+        () => {
+            const percentage = getScrollPercentage();
+            scrollMilestones.forEach((milestone) => {
+                if (
+                    percentage >= milestone &&
+                    !trackedMilestones.includes(milestone)
+                ) {
+                    trackedMilestones.push(milestone);
+                    pushEvent("scroll_depth", {
+                        scroll_percentage: milestone,
+                        page_path: window.location.pathname,
+                    });
+                }
+            });
+        },
+        { passive: true },
+    );
+
+    // Track outbound links
+    document.querySelectorAll('a[href^="http"]').forEach((el) => {
+        const href = el.getAttribute("href") || "";
+        if (!href.includes(window.location.hostname)) {
+            el.addEventListener("click", () => {
+                pushEvent("outbound_click", {
+                    outbound_url: href,
+                    link_text: el.textContent?.trim() || "unknown",
+                });
+            });
+        }
+    });
+
+    // Track mailto links
+    document.querySelectorAll('a[href^="mailto:"]').forEach((el) => {
+        el.addEventListener("click", () => {
+            pushEvent("contact_click", {
+                contact_type: "email",
+                page_path: window.location.pathname,
+            });
+        });
+    });
+</script>

@@ -1,43 +1,160 @@
 ---
 import { type BlogSchema } from "../content/config";
 import BaseLayout from "./BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import NewsletterForm from "../components/NewsletterForm.astro";
 import dayjs from "dayjs";
+import "dayjs/locale/fr";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 
 export interface Props extends BlogSchema {}
 
-const { title, description, pubDate, updatedDate, heroImage, badge, tags = [] } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  badge,
+  tags = [],
+  pillar,
+} = Astro.props;
 dayjs.extend(localizedFormat);
-const displayDate = dayjs(pubDate).format("ll")
+dayjs.locale("fr");
+const displayDate = dayjs(pubDate).format("LL");
+const isoDate = dayjs(pubDate).format("YYYY-MM-DD");
+const isoUpdatedDate = updatedDate
+  ? dayjs(updatedDate).format("YYYY-MM-DD")
+  : null;
 import { Image } from "astro:assets";
+
+// Breadcrumb items
+const breadcrumbItems = [
+  { label: "Accueil", href: "/" },
+  { label: "Blog", href: "/blog" },
+  { label: title },
+];
+
+// Article Schema
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description: description,
+  image: heroImage ? new URL(heroImage, Astro.site).href : undefined,
+  datePublished: isoDate,
+  dateModified: isoUpdatedDate || isoDate,
+  author: {
+    "@type": "Person",
+    name: "Anouar Sbia",
+    url: "https://anouarlab.fr/about",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "AnouarLab",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://anouarlab.fr/logo.png",
+    },
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": Astro.url.href,
+  },
+};
 ---
 
-<BaseLayout title={title} description={description} image={heroImage}, ogType="article">
+<BaseLayout
+  title={title}
+  description={description}
+  image={heroImage}
+  ogType="article"
+>
+  <!-- Article Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
   <main class="md:flex md:justify-center">
     <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
-      {heroImage && <Image width={750} height={422} format="webp" src={heroImage} alt={title} class="w-full mb-6" />}
-      <h1 class="title my-2 text-4xl font-bold">{title}</h1>
-      {pubDate && <time>{displayDate}</time>}
-      <br />
-      {badge && <div class="badge badge-secondary my-1">{badge}</div>}
+      <!-- Breadcrumbs -->
+      <Breadcrumbs items={breadcrumbItems} />
+
       {
-        tags &&
-          tags.map((tag) => (
-            <a href={`/blog/tag/${tag}`} class="badge badge-outline ml-2 no-underline">
-              {tag}
-            </a>
-          ))
+        heroImage && (
+          <Image
+            width={750}
+            height={422}
+            format="webp"
+            src={heroImage}
+            alt={title}
+            class="w-full mb-6"
+          />
+        )
       }
+      <h1 class="title my-2 text-4xl font-bold">{title}</h1>
+
+      <div class="flex items-center gap-4 text-base-content/60 text-sm mb-4">
+        {pubDate && <time datetime={isoDate}>{displayDate}</time>}
+        {badge && <span class="badge badge-secondary">{badge}</span>}
+      </div>
+
       {
-        updatedDate && (
-          <div>
-            {" "}
-            Last updated on <time>{updatedDate}</time>{" "}
+        tags && tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mb-6">
+            {tags.map((tag) => (
+              <a
+                href={`/blog/tag/${tag}`}
+                class="badge badge-outline no-underline hover:badge-primary"
+              >
+                {tag}
+              </a>
+            ))}
           </div>
         )
       }
+
+      {
+        updatedDate && (
+          <div class="text-sm text-base-content/60 mb-4">
+            Mis à jour le{" "}
+            <time datetime={isoUpdatedDate}>
+              {dayjs(updatedDate).format("LL")}
+            </time>
+          </div>
+        )
+      }
+
       <div class="divider my-2"></div>
       <slot />
+
+      <!-- Author Box -->
+      <div class="mt-12 p-6 bg-base-200 rounded-lg not-prose">
+        <div class="flex items-center gap-4">
+          <img
+            src="/profile.webp"
+            alt="Anouar Sbia"
+            class="w-16 h-16 rounded-full object-cover"
+          />
+          <div>
+            <p class="font-semibold">Anouar Sbia</p>
+            <p class="text-sm text-base-content/70">Consultant SEO & CRO</p>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-base-content/70">
+          J'aide les entreprises e-commerce à augmenter leur trafic organique et
+          leurs conversions.
+          <a href="/about" class="text-primary hover:underline"
+            >En savoir plus →</a
+          >
+        </p>
+      </div>
     </article>
   </main>
+
+  <!-- Newsletter -->
+  <div class="max-w-[750px] mx-auto mt-12">
+    <NewsletterForm
+      title="Vous avez aimé cet article ?"
+      description="Recevez mes meilleurs conseils SEO et CRO chaque semaine."
+    />
+  </div>
 </BaseLayout>
