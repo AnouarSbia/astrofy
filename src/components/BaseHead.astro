@@ -13,9 +13,13 @@ export interface Props {
 const {
 	title,
 	description,
-	image = "/social_img.webp",
+	image = "/cover_og.png",
 	ogType = "website",
 } = Astro.props;
+
+const siteName = "AnouarLab";
+const twitterHandle = "@anouarlab";
+const locale = "fr_FR";
 ---
 
 <!-- Global Metadata -->
@@ -23,6 +27,9 @@ const {
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/png" href="/favicon.png" />
 <meta name="generator" content={Astro.generator} />
+<meta name="author" content="Anouar Sbia" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#556B2F" />
 
 <!-- Google Fonts - Inter -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,13 +51,21 @@ const {
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={`${title} - ${siteName}`} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content={locale} />
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content={twitterHandle} />
+<meta name="twitter:creator" content={twitterHandle} />
+<meta name="twitter:url" content={Astro.url} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(image, Astro.url)} />
+<meta name="twitter:image:alt" content={`${title} - ${siteName}`} />
 
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
