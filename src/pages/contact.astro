@@ -154,7 +154,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("astro:page-load", () => {
             const urlParams = new URLSearchParams(window.location.search);
             const subjectParam = urlParams.get("subject");
 
