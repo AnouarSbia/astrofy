@@ -5,6 +5,7 @@ const blogSchema = z.object({
     pubDate: z.coerce.date(),
     updatedDate: z.string().optional(),
     heroImage: z.string().optional(),
+    heroImageAlt: z.string().optional(),
     badge: z.string().optional(),
     pillar: z.enum(['seo', 'cro', 'shopify', 'wordpress']).optional(),
     readingTime: z.string().optional(),

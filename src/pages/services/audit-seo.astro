@@ -133,17 +133,83 @@ import NewsletterForm from "../../components/NewsletterForm.astro";
 
     <!-- Pricing -->
     <section class="py-16 border-t border-base-300">
-        <h2 class="text-2xl font-bold mb-8">Tarif</h2>
+        <h2 class="text-2xl font-bold mb-8">Tarifs</h2>
 
-        <div class="bg-base-200 p-8 rounded-lg max-w-md">
-            <p class="text-4xl font-bold mb-2">À partir de 497€</p>
-            <p class="text-base-content/70 mb-6">
-                Selon la taille du site (nombre de pages)
-            </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- Audit Flash -->
+            <div
+                class="bg-base-200 p-8 rounded-lg border border-base-300 flex flex-col"
+            >
+                <div class="mb-4">
+                    <span class="badge badge-ghost mb-2">Entrée de gamme</span>
+                    <h3 class="text-2xl font-bold">Audit Flash</h3>
+                </div>
+                <p class="text-4xl font-bold mb-4">
+                    497€ <span class="text-lg font-normal text-base-content/60"
+                        >HT</span>
+                </p>
+                <p class="text-base-content/70 mb-6 flex-grow">
+                    Pour vérifier la santé technique de votre site et corriger
+                    les erreurs bloquantes. Idéal pour les petits sites ou
+                    budgets serrés.
+                </p>
+                <ul class="space-y-3 mb-8 text-sm">
+                    <li class="flex gap-2">✅ Crawl technique complet</li>
+                    <li class="flex gap-2">✅ Check-up Core Web Vitals</li>
+                    <li class="flex gap-2">✅ Liste des erreurs bloquantes</li>
+                    <li class="flex gap-2">❌ Pas de stratégie de contenu</li>
+                    <li class="flex gap-2">❌ Pas d'analyse concurrentielle</li>
+                    <li class="flex gap-2">📹 Restitution vidéo (15 min)</li>
+                </ul>
+                <a
+                    href="/contact?subject=audit-flash"
+                    class="btn btn-outline w-full mt-auto"
+                >
+                    Commander un Audit Flash
+                </a>
+            </div>
 
-            <a href="/contact" class="btn btn-primary w-full">
-                Demander un devis
-            </a>
+            <!-- Audit Stratégique -->
+            <div
+                class="bg-primary text-primary-content p-8 rounded-lg shadow-xl transform scale-105 flex flex-col relative"
+            >
+                <div
+                    class="absolute top-0 right-0 bg-secondary text-secondary-content px-3 py-1 text-sm font-bold rounded-bl-lg rounded-tr-lg"
+                >
+                    RECOMMANDÉ
+                </div>
+                <div class="mb-4">
+                    <span class="badge badge-outline text-white mb-2"
+                        >Croissance</span
+                    >
+                    <h3 class="text-2xl font-bold">Audit Stratégique</h3>
+                </div>
+                <p class="text-4xl font-bold mb-4">
+                    2 500€ <span class="text-lg font-normal opacity-80"
+                        >HT</span>
+                </p>
+                <p class="opacity-90 mb-6 flex-grow">
+                    L'analyse approfondie "Lab". Technique, Sémantique,
+                    Netlinking et Concurrence. Une feuille de route complète
+                    pour doubler votre trafic.
+                </p>
+                <ul class="space-y-3 mb-8 text-sm">
+                    <li class="flex gap-2">✅ Tout l'Audit Flash inclus</li>
+                    <li class="flex gap-2">
+                        ✅ Analyse Sémantique & Mots-clés
+                    </li>
+                    <li class="flex gap-2">✅ Audit Netlinking & Toxicité</li>
+                    <li class="flex gap-2">✅ Analyse Concurrentielle (Gap)</li>
+                    <li class="flex gap-2">✅ Plan d'action priorisé (ICE)</li>
+                    <li class="flex gap-2">📞 Appel de stratégie (1h)</li>
+                </ul>
+                <a
+                    href="/contact?subject=audit-strategique"
+                    class="btn bg-white text-primary hover:bg-gray-100 w-full mt-auto border-none"
+                >
+                    Demander un Audit Stratégique
+                </a>
+            </div>
         </div>
     </section>
 

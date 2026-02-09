@@ -153,4 +153,29 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </form>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const subjectParam = urlParams.get("subject");
+
+            const subjectSelect = document.getElementById(
+                "subject",
+            ) as HTMLSelectElement | null;
+            const messageArea = document.getElementById(
+                "message",
+            ) as HTMLTextAreaElement | null;
+
+            if (subjectParam && subjectSelect && messageArea) {
+                if (subjectParam === "audit-flash") {
+                    subjectSelect.value = "Audit SEO";
+                    messageArea.value =
+                        "Bonjour,\n\nJe souhaite commander un Audit Flash (497€) pour mon site.\n\nMerci.";
+                } else if (subjectParam === "audit-strategique") {
+                    subjectSelect.value = "Audit SEO";
+                    messageArea.value =
+                        "Bonjour,\n\nJe suis intéressé par un Audit Stratégique complet (2 500€).\n\nPouvons-nous planifier un appel ?";
+                }
+            }
+        });
+    </script>
 </BaseLayout>

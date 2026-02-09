@@ -15,6 +15,7 @@ const {
   pubDate,
   updatedDate,
   heroImage,
+  heroImageAlt,
   badge,
   tags = [],
   pillar,
@@ -81,11 +82,11 @@ const articleSchema = {
       {
         heroImage && (
           <Image
-            width={600}
-            height={300}
-            format="webp"
             src={heroImage}
-            alt={title}
+            alt={heroImageAlt || title}
+            width={750}
+            height={422}
+            format="webp"
             class="w-full max-w-lg mx-auto mb-6 rounded-lg shadow-sm"
           />
         )
