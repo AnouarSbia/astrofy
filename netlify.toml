@@ -8,6 +8,10 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Disable Pretty URLs to prevent Netlify from serving /page and /page/ as the same content
+[build.processing.html]
+  pretty_urls = false
+
 # TinaCMS Admin - Static file serving
 [[redirects]]
   from = "/admin"
