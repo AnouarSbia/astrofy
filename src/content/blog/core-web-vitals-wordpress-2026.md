@@ -119,4 +119,4 @@ img {
 
 Les Core Web Vitals ne sont pas qu'un facteur SEO — c'est surtout une meilleure expérience utilisateur. Un site rapide convertit mieux, réduit le taux de rebond, et améliore votre image de marque.
 
-**Votre site WordPress est lent ?** [Discutons de votre projet](/about) pour un audit performance complet.
+**Votre site WordPress est lent ?** [Discutons de votre projet](/about/) pour un audit performance complet.

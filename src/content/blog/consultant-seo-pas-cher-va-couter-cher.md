@@ -5,7 +5,7 @@ pubDate: "Feb 17 2026"
 heroImage: "/consultant-seo-pas-cher.png"
 heroImageAlt: "Illustration montrant le coût caché d'un consultant SEO pas cher vs un expert premium"
 pillar: "seo"
-tags: ["tarif consultant seo", "tjm seo", "facturation seo", "prix prestation"]
+tags: ["tarif-consultant-seo", "tjm-seo", "facturation-seo", "prix-prestation"]
 ---
 
 **397€ par mois, tout compris.**
@@ -163,6 +163,6 @@ Payez pour l'expertise. Payez pour les résultats. Et surtout, posez les bonnes 
 
 Pas de discours commercial. On regarde ensemble où vous en êtes et si ça vaut le coup de travailler ensemble.
 
-👉 **[Réserver mon audit découverte offert](/contact)**
+👉 **[Réserver mon audit découverte offert](/contact/)**
 
 (15 minutes, gratuit, sans engagement — et si je ne suis pas le bon fit, je vous le dirai.)

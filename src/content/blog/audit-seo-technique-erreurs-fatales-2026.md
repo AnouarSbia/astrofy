@@ -5,7 +5,7 @@ pubDate: "Feb 17 2026"
 heroImage: "/audit-seo-technique-erreurs-2026.png"
 heroImageAlt: "Illustration technique d'un audit SEO avec des erreurs détectées et des corrections appliquées"
 pillar: "seo"
-tags: ["audit seo technique", "analyse technique", "crawl budget", "erreurs indexation"]
+tags: ["audit-seo-technique", "analyse-technique", "crawl-budget", "erreurs-indexation"]
 ---
 
 **Votre contenu est excellent. Votre netlinking est propre. Mais votre trafic stagne.**
@@ -281,6 +281,6 @@ Un audit SEO technique n'est pas une dépense. C'est l'assurance que votre inves
 
 **Vous voulez savoir combien de ces erreurs sabotent votre site en ce moment ?**
 
-👉 **[Réserver mon audit technique offert](/contact)**
+👉 **[Réserver mon audit technique offert](/contact/)**
 
 En 30 minutes, on identifie les 3 erreurs prioritaires qui brident votre croissance. Gratuit, sans engagement.

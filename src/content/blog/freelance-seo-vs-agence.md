@@ -5,7 +5,7 @@ pubDate: "Feb 14 2026"
 heroImage: "/freelance-vs-agence-seo.png"
 heroImageAlt: "Illustration d'un duel amical entre un consultant freelance SEO agile et une équipe d'agence structurée"
 pillar: "seo"
-tags: ["freelance seo", "agence seo", "stratégie", "business"]
+tags: ["freelance-seo", "agence-seo", "strategie", "business"]
 ---
 
 **Vous êtes à la croisée des chemins.**
@@ -112,6 +112,6 @@ Pour une PME qui cherche de la croissance, de la réactivité et un vrai retour 
 
 Arrêtez de chercher. Discutons de vos objectifs et voyons si nous sommes faits pour travailler ensemble.
 
-👉 **[Réserver mon audit découverte offert](/contact)**
+👉 **[Réserver mon audit découverte offert](/contact/)**
 
 (C'est gratuit, sans engagement, et je ne mords pas).

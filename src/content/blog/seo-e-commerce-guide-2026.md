@@ -241,4 +241,4 @@ Types de contenu qui fonctionnent :
 
 Le SEO e-commerce demande du travail, mais c'est un investissement rentable sur le long terme. Commencez par les fondamentaux (technique + pages produits), puis construisez progressivement votre contenu et votre autorité.
 
-**Besoin d'un audit personnalisé ?** [Contactez-moi](/services/audit-seo) pour analyser votre boutique.
+**Besoin d'un audit personnalisé ?** [Contactez-moi](/services/audit-seo/) pour analyser votre boutique.

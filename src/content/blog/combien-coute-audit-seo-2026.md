@@ -113,6 +113,6 @@ Ne laissez pas des erreurs techniques invisibles brider votre chiffre d'affaires
 
 **Vous voulez savoir exactement où vous en êtes ?**
 
-👉 **[Demander mon devis d'audit SEO personnalisé](/contact)**.
+👉 **[Demander mon devis d'audit SEO personnalisé](/contact/)**.
 
 On analyse votre site, on définit vos objectifs, et on construit le plan de bataille.

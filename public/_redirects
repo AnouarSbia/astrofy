@@ -1,0 +1,17 @@
+# Trailing slash enforcement — redirect non-trailing to trailing (301)
+/blog       /blog/      301
+/about      /about/     301
+/contact    /contact/   301
+/seo        /seo/       301
+/cro        /cro/       301
+/shopify    /shopify/   301
+/wordpress  /wordpress/ 301
+/merci      /merci/     301
+/services/audit-seo     /services/audit-seo/    301
+/services/seo-shopify   /services/seo-shopify/  301
+
+# Fix known 404s
+/cv         /about/     301
+
+# Deleted duplicate article — redirect to newer version
+/blog/le-roi-du-seo--combien-rapporte-vraiment-la-1re-place/   /blog/le-roi-du-seo--combien-rapporte-vraiment-la-1re-place--analyse-2026/   301

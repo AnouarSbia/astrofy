@@ -133,4 +133,4 @@ Ce qui marche pour Amazon ne marchera pas forcément pour vous.
 
 Les tests A/B ne sont pas compliqués, mais ils demandent de la rigueur. Commencez par un test simple sur votre page la plus visitée.
 
-**Besoin d'aide ?** [Contactez-moi](/about) pour un audit CRO de votre boutique.
+**Besoin d'aide ?** [Contactez-moi](/about/) pour un audit CRO de votre boutique.

@@ -5,7 +5,7 @@ pubDate: "Feb 15 2026"
 heroImage: "/roi-seo-1ere-place.png"
 heroImageAlt: "Graphique de croissance symbolisant l'augmentation exponentielle du trafic et du chiffre d'affaires grâce à une première position Google"
 pillar: "seo"
-tags: ["stratégie seo", "roi", "business", "rentabilité"]
+tags: ["strategie-seo", "roi", "business", "rentabilite"]
 ---
 
 **Faisons un petit jeu.**
@@ -116,4 +116,4 @@ La 1ère place rapporte gros. Très gros. Mais elle ne se donne pas. Elle se mé
 
 Je peux analyser pour vous le potentiel de trafic de votre secteur et estimer votre ROI futur.
 
-👉 **[Demander mon estimation de potentiel SEO](/contact)**
+👉 **[Demander mon estimation de potentiel SEO](/contact/)**

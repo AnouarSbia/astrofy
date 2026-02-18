@@ -7,6 +7,12 @@ Disallow: /blog/tag/
 # Block query parameter URLs (e.g. /blog?tag=xxx)
 Disallow: /blog?*
 
+# Block thank-you page (no SEO value)
+Disallow: /merci
+
+# Block contact page query params
+Disallow: /contact?*
+
 # Block CMS admin
 Disallow: /admin
 

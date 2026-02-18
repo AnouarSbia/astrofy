@@ -92,4 +92,4 @@ Un bon prestataire SEO est un **partenaire**, pas un magicien. Il doit être cap
 
 Chez AnouarLab, chaque prestation commence par une analyse de vos objectifs. Pas de forfait "boîte noire", mais une stratégie sur-mesure.
 
-👉 **[Demander un audit ou un devis SEO clair](/contact)**.
+👉 **[Demander un audit ou un devis SEO clair](/contact/)**.

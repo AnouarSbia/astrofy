@@ -97,6 +97,6 @@ Un audit pré-migration permet de :
 *   Préparer le plan de redirection.
 *   Optimiser le nouveau site *avant* qu'il soit codé (gain de temps énorme).
 
-👉 **[Sécuriser ma refonte avec AnouarLab](/contact)**.
+👉 **[Sécuriser ma refonte avec AnouarLab](/contact/)**.
 
 On vérifie tout, on valide, et on migre en toute sérénité.
