@@ -114,4 +114,14 @@ Arrêtez de chercher. Discutons de vos objectifs et voyons si nous sommes faits 
 
 👉 **[Réserver mon audit découverte offert](/contact/)**
 
+---
+
+### À lire aussi
+
+- [Pourquoi un Consultant SEO "pas cher" va vous coûter cher](/blog/pourquoi-un-consultant-seo-pas-cher-va-vous-coter-cher-analyse-2026/)
+- [Le ROI du SEO : Combien rapporte la 1ère place ?](/blog/le-roi-du-seo--combien-rapporte-vraiment-la-1re-place--analyse-2026/)
+- [Comment lire un Devis SEO sans se faire avoir ?](/blog/comment-lire-un-devis-seo-sans-se-faire-avoir--le-guide-anti-arnaque/)
+
+---
+
 (C'est gratuit, sans engagement, et je ne mords pas).

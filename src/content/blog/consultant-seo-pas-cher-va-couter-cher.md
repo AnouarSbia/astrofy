@@ -165,4 +165,14 @@ Pas de discours commercial. On regarde ensemble où vous en êtes et si ça vaut
 
 👉 **[Réserver mon audit découverte offert](/contact/)**
 
+---
+
+### À lire aussi
+
+- [Combien coûte un Audit SEO en 2026 ?](/blog/combien-cote-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/)
+- [Comment lire un Devis SEO sans se faire avoir ?](/blog/comment-lire-un-devis-seo-sans-se-faire-avoir--le-guide-anti-arnaque/)
+- [Freelance SEO vs Agence : Qui choisir ?](/blog/freelance-seo-vs-agence--qui-choisir-pour-votre-pme--guide-2026/)
+
+---
+
 (15 minutes, gratuit, sans engagement — et si je ne suis pas le bon fit, je vous le dirai.)

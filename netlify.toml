@@ -19,72 +19,17 @@
   status = 200
 
 
-
-# Trailing slash enforcement (force = true overrides file matching)
-[[redirects]]
-  from = "/blog"
-  to = "/blog/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/about"
-  to = "/about/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/contact"
-  to = "/contact/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/seo"
-  to = "/seo/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/cro"
-  to = "/cro/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/shopify"
-  to = "/shopify/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/wordpress"
-  to = "/wordpress/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/merci"
-  to = "/merci/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/services/audit-seo"
-  to = "/services/audit-seo/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/services/seo-shopify"
-  to = "/services/seo-shopify/"
-  status = 301
-  force = true
-
 # Fix known 404s
 [[redirects]]
   from = "/cv"
   to = "/about/"
+  status = 301
+  force = true
+
+# Deleted duplicate article — redirect to newer version
+[[redirects]]
+  from = "/blog/le-roi-du-seo--combien-rapporte-vraiment-la-1re-place/"
+  to = "/blog/le-roi-du-seo--combien-rapporte-vraiment-la-1re-place--analyse-2026/"
   status = 301
   force = true
 
