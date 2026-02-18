@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
 
+# Block thin/duplicate tag pages
+Disallow: /blog/tag/
+
+# Block query parameter URLs (e.g. /blog?tag=xxx)
+Disallow: /blog?*
+
+# Block CMS admin
+Disallow: /admin
+
 Sitemap: https://anouarlab.fr/sitemap-index.xml
