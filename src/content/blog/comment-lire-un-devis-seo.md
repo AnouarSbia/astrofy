@@ -96,8 +96,8 @@ Chez AnouarLab, chaque prestation commence par une analyse de vos objectifs. Pas
 
 ### À lire aussi
 
-- [Combien coûte un Audit SEO en 2026 ?](/blog/combien-cote-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/)
-- [Pourquoi un Consultant SEO "pas cher" va vous coûter cher](/blog/pourquoi-un-consultant-seo-pas-cher-va-vous-coter-cher-analyse-2026/)
+- [Combien coûte un Audit SEO en 2026 ?](/blog/combien-coute-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/)
+- [Pourquoi un Consultant SEO "pas cher" va vous coûter cher](/blog/pourquoi-un-consultant-seo-pas-cher-va-vous-couter-cher-analyse-2026/)
 - [Freelance SEO vs Agence : Qui choisir ?](/blog/freelance-seo-vs-agence--qui-choisir-pour-votre-pme--guide-2026/)
 
 ---

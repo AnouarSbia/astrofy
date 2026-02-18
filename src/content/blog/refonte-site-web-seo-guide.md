@@ -103,7 +103,7 @@ Un audit pré-migration permet de :
 
 ### À lire aussi
 
-- [Audit SEO Technique : Les 10 Erreurs Fatales en 2026](/blog/audit-seo-technique--les-10-erreurs-fatales-qui-ruinent-votre-visibilit-en-2026/)
+- [Audit SEO Technique : Les 10 Erreurs Fatales en 2026](/blog/audit-seo-technique--les-10-erreurs-fatales-qui-ruinent-votre-visibilite-en-2026/)
 - [Core Web Vitals : le guide complet pour WordPress](/blog/core-web-vitals--le-guide-complet-pour-wordpress-en-2026/)
 - [SEO E-commerce : le guide complet pour 2026](/blog/seo-e-commerce--le-guide-complet-pour-2026/)
 

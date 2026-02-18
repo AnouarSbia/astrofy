@@ -9,6 +9,9 @@ export default function (title: string, staticSlug: string) {
       .trim()
       // output lowercase
       .toLowerCase()
+      // normalize accented characters (é→e, è→e, ê→e, ç→c, etc.)
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
       // replace spaces
       .replace(/\s+/g, '-')
       // remove special characters

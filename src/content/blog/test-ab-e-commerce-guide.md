@@ -139,7 +139,7 @@ Les tests A/B ne sont pas compliqués, mais ils demandent de la rigueur. Commenc
 
 - [SEO E-commerce : le guide complet pour 2026](/blog/seo-e-commerce--le-guide-complet-pour-2026/)
 - [5 erreurs SEO Shopify (et comment les corriger)](/blog/5-erreurs-seo-qui-tuent-votre-trafic-shopify-et-comment-les-corriger/)
-- [Le ROI du SEO : Combien rapporte la 1ère place ?](/blog/le-roi-du-seo--combien-rapporte-vraiment-la-1re-place--analyse-2026/)
+- [Le ROI du SEO : Combien rapporte la 1ère place ?](/blog/le-roi-du-seo--combien-rapporte-vraiment-la-1ere-place--analyse-2026/)
 
 ---
 

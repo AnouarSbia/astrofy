@@ -77,8 +77,8 @@ Ces 5 erreurs sont corrigeables en quelques heures et peuvent avoir un impact si
 ### À lire aussi
 
 - [SEO E-commerce : le guide complet pour 2026](/blog/seo-e-commerce--le-guide-complet-pour-2026/)
-- [La Récession Silencieuse : 5 Dettes Techniques Shopify](/blog/la-rcession-silencieuse--5-dettes-techniques-qui-tuent-votre-rentabilit-shopify-en-2026/)
-- [Audit SEO Technique : Les 10 Erreurs Fatales en 2026](/blog/audit-seo-technique--les-10-erreurs-fatales-qui-ruinent-votre-visibilit-en-2026/)
+- [La Récession Silencieuse : 5 Dettes Techniques Shopify](/blog/la-recession-silencieuse--5-dettes-techniques-qui-tuent-votre-rentabilite-shopify-en-2026/)
+- [Audit SEO Technique : Les 10 Erreurs Fatales en 2026](/blog/audit-seo-technique--les-10-erreurs-fatales-qui-ruinent-votre-visibilite-en-2026/)
 
 ---
 

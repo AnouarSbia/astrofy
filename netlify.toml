@@ -18,7 +18,6 @@
   to = "/admin/index.html"
   status = 200
 
-
 # Fix known 404s
 [[redirects]]
   from = "/cv"
@@ -26,10 +25,47 @@
   status = 301
   force = true
 
-# Deleted duplicate article — redirect to newer version
+# Old slug → new slug redirects (accent normalization fix)
+[[redirects]]
+  from = "/blog/audit-seo-technique--les-10-erreurs-fatales-qui-ruinent-votre-visibilit-en-2026/"
+  to = "/blog/audit-seo-technique--les-10-erreurs-fatales-qui-ruinent-votre-visibilite-en-2026/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/combien-cote-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/"
+  to = "/blog/combien-coute-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/comment-russir-un-test-ab-e-commerce--guide-complet/"
+  to = "/blog/comment-reussir-un-test-ab-e-commerce--guide-complet/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/la-rcession-silencieuse--5-dettes-techniques-qui-tuent-votre-rentabilit-shopify-en-2026/"
+  to = "/blog/la-recession-silencieuse--5-dettes-techniques-qui-tuent-votre-rentabilite-shopify-en-2026/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/le-roi-du-seo--combien-rapporte-vraiment-la-1re-place--analyse-2026/"
+  to = "/blog/le-roi-du-seo--combien-rapporte-vraiment-la-1ere-place--analyse-2026/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/pourquoi-un-consultant-seo-pas-cher-va-vous-coter-cher-analyse-2026/"
+  to = "/blog/pourquoi-un-consultant-seo-pas-cher-va-vous-couter-cher-analyse-2026/"
+  status = 301
+  force = true
+
+# Even older slug version (no --analyse-2026 suffix)
 [[redirects]]
   from = "/blog/le-roi-du-seo--combien-rapporte-vraiment-la-1re-place/"
-  to = "/blog/le-roi-du-seo--combien-rapporte-vraiment-la-1re-place--analyse-2026/"
+  to = "/blog/le-roi-du-seo--combien-rapporte-vraiment-la-1ere-place--analyse-2026/"
   status = 301
   force = true
 

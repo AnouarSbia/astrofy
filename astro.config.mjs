@@ -11,6 +11,11 @@ export default defineConfig({
     filter: (page) =>
       !page.includes('/blog/tag/') &&
       !page.match(/\/blog\/\d+\//) &&
-      !page.includes('/merci/')
+      !page.includes('/merci/'),
+    serialize: (item) => {
+      // Add lastmod to all pages
+      item.lastmod = new Date().toISOString().split('T')[0];
+      return item;
+    }
   }), tailwind()]
 });

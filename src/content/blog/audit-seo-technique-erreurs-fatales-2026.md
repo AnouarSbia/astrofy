@@ -289,7 +289,7 @@ Un audit SEO technique n'est pas une dépense. C'est l'assurance que votre inves
 
 - [Refonte de Site Web : Le Guide de Survie SEO](/blog/refonte-de-site-web--le-guide-de-survie-seo-pour-2026/)
 - [Core Web Vitals : le guide complet pour WordPress](/blog/core-web-vitals--le-guide-complet-pour-wordpress-en-2026/)
-- [Combien coûte un Audit SEO en 2026 ?](/blog/combien-cote-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/)
+- [Combien coûte un Audit SEO en 2026 ?](/blog/combien-coute-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/)
 
 ---
 
