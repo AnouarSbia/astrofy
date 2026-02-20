@@ -15,6 +15,57 @@ const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
+  <!-- JSON-LD: WebSite + Person -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify([
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "AnouarLab",
+        url: "https://anouarlab.fr",
+        description:
+          "Consultant SEO & CRO — Expériences, études de cas et guides basés sur des données réelles.",
+        inLanguage: "fr",
+        publisher: {
+          "@type": "Person",
+          name: "Anouar Sbia",
+        },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Anouar Sbia",
+        alternateName: "AnouarLab",
+        jobTitle: "Consultant SEO",
+        url: "https://anouarlab.fr",
+        image: "https://anouarlab.fr/profile.webp",
+        description:
+          "Consultant SEO expert aidant les entreprises à améliorer leur visibilité en ligne et leur positionnement sur les moteurs de recherche.",
+        sameAs: [
+          "https://twitter.com/anouarlab",
+          "https://www.linkedin.com/in/anouarsbia",
+          "https://www.instagram.com/anouarlab",
+        ],
+        knowsAbout: [
+          "SEO",
+          "Référencement naturel",
+          "SEO technique",
+          "Stratégie de contenu",
+          "Netlinking",
+          "SEO local",
+          "Google Analytics",
+          "Search Console",
+        ],
+        offers: {
+          "@type": "Offer",
+          name: "Services SEO",
+          description:
+            "Audit SEO, Optimisation On-Page, Stratégie de contenu, Netlinking, SEO Local, Formation SEO",
+        },
+      },
+    ])}
+  />
   <!-- Hero Section - Minimal -->
   <div class="py-16">
     <p class="text-sm uppercase tracking-widest text-primary/60 mb-4">

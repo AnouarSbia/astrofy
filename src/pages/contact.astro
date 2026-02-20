@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const breadcrumbItems = [{ label: "Accueil", href: "/" }, { label: "Contact" }];
 ---
 
 <BaseLayout
@@ -8,6 +11,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     sideBarActiveItemID="contact"
 >
     <div class="pb-12 mt-5">
+        <!-- Breadcrumbs -->
+        <Breadcrumbs items={breadcrumbItems} />
+
         <!-- Hero Section -->
         <div class="text-center mb-12">
             <p

@@ -1,6 +1,45 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { Image } from "astro:assets";
+
+const breadcrumbItems = [
+    { label: "Accueil", href: "/" },
+    { label: "À propos" },
+];
+
+const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Anouar Sbia",
+    alternateName: "AnouarLab",
+    jobTitle: "Consultant SEO",
+    url: "https://anouarlab.fr",
+    image: "https://anouarlab.fr/profile.webp",
+    description:
+        "Consultant SEO expert aidant les entreprises à améliorer leur visibilité en ligne et leur positionnement sur les moteurs de recherche.",
+    sameAs: [
+        "https://twitter.com/anouarlab",
+        "https://www.linkedin.com/in/anouarsbia",
+        "https://www.instagram.com/anouarlab",
+    ],
+    knowsAbout: [
+        "SEO",
+        "Référencement naturel",
+        "SEO technique",
+        "Stratégie de contenu",
+        "Netlinking",
+        "SEO local",
+        "Google Analytics",
+        "Search Console",
+    ],
+    offers: {
+        "@type": "Offer",
+        name: "Services SEO",
+        description:
+            "Audit SEO, Optimisation On-Page, Stratégie de contenu, Netlinking, SEO Local, Formation SEO",
+    },
+};
 ---
 
 <BaseLayout
@@ -8,7 +47,16 @@ import { Image } from "astro:assets";
     description="Découvrez Anouar Sbia, consultant SEO & CRO spécialisé dans l'optimisation des sites Shopify et WordPress."
     sideBarActiveItemID="about"
 >
+    <!-- Person JSON-LD -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(personSchema)}
+    />
+
     <div class="pb-12 mt-5">
+        <!-- Breadcrumbs -->
+        <Breadcrumbs items={breadcrumbItems} />
+
         <!-- Hero Section -->
         <div class="flex flex-col md:flex-row gap-8 items-start mb-12">
             <!-- Photo -->

@@ -8,6 +8,7 @@ export interface Props {
 	description: string;
 	image?: string;
 	ogType?: string;
+	noindex?: boolean;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
 	description,
 	image = "/cover_og.jpg",
 	ogType = "website",
+	noindex = false,
 } = Astro.props;
 
 const siteName = "AnouarLab";
@@ -25,25 +27,49 @@ const locale = "fr_FR";
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/favicon-icon.png" />
 <meta name="generator" content={Astro.generator} />
 <meta name="author" content="Anouar Sbia" />
-<meta name="robots" content="index, follow" />
+{
+	noindex ? (
+		<meta name="robots" content="noindex, nofollow" />
+	) : (
+		<meta name="robots" content="index, follow" />
+	)
+}
 <meta name="theme-color" content="#556B2F" />
 
-<!-- Google Fonts - Inter -->
+<!-- Google Fonts - Inter (non-render-blocking) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
+	rel="preload"
+	as="style"
+	href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+/>
+<link
 	href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
 	rel="stylesheet"
+	media="print"
+	onload="this.media='all'"
 />
+<noscript>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+		rel="stylesheet"
+	/>
+</noscript>
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
-<meta name="title" content={title} />
 <meta name="description" content={description} />
 <link rel="canonical" href={Astro.url} />
+
+<!-- Hreflang -->
+<link rel="alternate" hreflang="fr" href={Astro.url} />
+<link rel="alternate" hreflang="x-default" href={Astro.url} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={ogType} />
@@ -66,37 +92,3 @@ const locale = "fr_FR";
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={new URL(image, Astro.url)} />
 <meta name="twitter:image:alt" content={title} />
-
-<!-- JSON-LD Structured Data -->
-<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "Person",
-		"name": "Anouar Sbia",
-		"alternateName": "AnouarLab",
-		"jobTitle": "Consultant SEO",
-		"url": "https://anouarlab.fr",
-		"image": "https://anouarlab.fr/profile.webp",
-		"description": "Consultant SEO expert aidant les entreprises à améliorer leur visibilité en ligne et leur positionnement sur les moteurs de recherche.",
-		"sameAs": [
-			"https://twitter.com/anouarlab",
-			"https://www.linkedin.com/in/anouarsbia",
-			"https://www.instagram.com/anouarlab"
-		],
-		"knowsAbout": [
-			"SEO",
-			"Référencement naturel",
-			"SEO technique",
-			"Stratégie de contenu",
-			"Netlinking",
-			"SEO local",
-			"Google Analytics",
-			"Search Console"
-		],
-		"offers": {
-			"@type": "Offer",
-			"name": "Services SEO",
-			"description": "Audit SEO, Optimisation On-Page, Stratégie de contenu, Netlinking, SEO Local, Formation SEO"
-		}
-	}
-</script>

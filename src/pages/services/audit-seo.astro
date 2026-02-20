@@ -1,6 +1,80 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import NewsletterForm from "../../components/NewsletterForm.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+    { label: "Accueil", href: "/" },
+    { label: "Services", href: "/services/audit-seo/" },
+    { label: "Audit SEO" },
+];
+
+const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Audit SEO Complet",
+    description:
+        "Audit SEO technique et stratégique complet pour identifier les opportunités de croissance et corriger les erreurs qui freinent votre référencement.",
+    provider: {
+        "@type": "Person",
+        name: "Anouar Sbia",
+        url: "https://anouarlab.fr",
+    },
+    areaServed: "FR",
+    hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Formules Audit SEO",
+        itemListElement: [
+            {
+                "@type": "Offer",
+                name: "Audit Flash",
+                price: "497",
+                priceCurrency: "EUR",
+                description:
+                    "Crawl technique complet, check-up Core Web Vitals, liste des erreurs bloquantes.",
+            },
+            {
+                "@type": "Offer",
+                name: "Audit Stratégique",
+                price: "2500",
+                priceCurrency: "EUR",
+                description:
+                    "Audit Flash + Analyse Sémantique, Audit Netlinking, Analyse Concurrentielle, Plan d'action priorisé.",
+            },
+        ],
+    },
+};
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+        {
+            "@type": "Question",
+            name: "Combien de temps prend un audit ?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Comptez 5 à 10 jours ouvrés selon la taille du site.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Est-ce que vous faites les corrections ?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "L'audit est livré avec un plan d'action. L'implémentation peut être réalisée par votre équipe ou par moi (devis séparé).",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Quels outils utilisez-vous ?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Screaming Frog, Ahrefs, Search Console, PageSpeed Insights, et des outils propriétaires.",
+            },
+        },
+    ],
+};
 ---
 
 <BaseLayout
@@ -8,6 +82,16 @@ import NewsletterForm from "../../components/NewsletterForm.astro";
     sideBarActiveItemID="services"
     description="Audit SEO technique et stratégique complet pour identifier les opportunités de croissance et corriger les erreurs qui freinent votre référencement."
 >
+    <!-- JSON-LD: Service + FAQPage -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(serviceSchema)}
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <!-- Breadcrumbs -->
+    <Breadcrumbs items={breadcrumbItems} />
+
     <!-- Hero -->
     <div class="py-16">
         <p class="text-sm uppercase tracking-widest text-primary/60 mb-4">

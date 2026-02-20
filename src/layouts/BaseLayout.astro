@@ -17,6 +17,7 @@ const {
   includeSidebar = true,
   sideBarActiveItemID,
   ogType,
+  noindex = false,
 } = Astro.props;
 ---
 
@@ -29,6 +30,7 @@ const {
       description={description}
       image={image}
       ogType={ogType}
+      noindex={noindex}
     />
     {TRANSITION_API && <ViewTransitions />}
   </head>

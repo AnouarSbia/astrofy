@@ -1,6 +1,57 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import NewsletterForm from "../../components/NewsletterForm.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+    { label: "Accueil", href: "/" },
+    { label: "Services", href: "/services/audit-seo/" },
+    { label: "SEO Shopify" },
+];
+
+const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "SEO Shopify",
+    description:
+        "Expert SEO Shopify : optimisez votre boutique pour Google, augmentez votre trafic organique et vos ventes sans publicité payante.",
+    provider: {
+        "@type": "Person",
+        name: "Anouar Sbia",
+        url: "https://anouarlab.fr",
+    },
+    areaServed: "FR",
+    hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Services SEO Shopify",
+        itemListElement: [
+            {
+                "@type": "Offer",
+                name: "Audit SEO Shopify",
+                price: "497",
+                priceCurrency: "EUR",
+            },
+            {
+                "@type": "Offer",
+                name: "Optimisation Technique",
+                price: "797",
+                priceCurrency: "EUR",
+            },
+            {
+                "@type": "Offer",
+                name: "Stratégie Contenu",
+                price: "997",
+                priceCurrency: "EUR",
+            },
+            {
+                "@type": "Offer",
+                name: "Accompagnement Mensuel",
+                price: "497",
+                priceCurrency: "EUR",
+            },
+        ],
+    },
+};
 ---
 
 <BaseLayout
@@ -8,6 +59,15 @@ import NewsletterForm from "../../components/NewsletterForm.astro";
     sideBarActiveItemID="services"
     description="Expert SEO Shopify : optimisez votre boutique pour Google, augmentez votre trafic organique et vos ventes sans publicité payante."
 >
+    <!-- JSON-LD: Service -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(serviceSchema)}
+    />
+
+    <!-- Breadcrumbs -->
+    <Breadcrumbs items={breadcrumbItems} />
+
     <!-- Hero -->
     <div class="py-16">
         <p class="text-sm uppercase tracking-widest text-primary/60 mb-4">
