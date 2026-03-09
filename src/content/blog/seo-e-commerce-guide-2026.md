@@ -241,6 +241,8 @@ Types de contenu qui fonctionnent :
 
 Le SEO e-commerce demande du travail, mais c'est un investissement rentable sur le long terme. Commencez par les fondamentaux (technique + pages produits), puis construisez progressivement votre contenu et votre autorité.
 
+Si malgré vos efforts SEO votre boutique [ne décolle pas](/blog/pourquoi-votre-boutique-e-commerce-ne-decolle-pas-et-comment-debloquer/), d'autres blocages stratégiques sont peut-être en jeu.
+
 ---
 
 ### À lire aussi

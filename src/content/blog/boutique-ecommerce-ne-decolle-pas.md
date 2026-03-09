@@ -67,7 +67,7 @@ Investir **uniquement** en publicité payante. Le jour où vous coupez le budget
 
 **Mois 1-3 :** Construisez votre base email (pop-up, lead magnet, séquence de bienvenue).
 
-**Mois 2-6 :** Lancez votre SEO (10 articles ciblés sur les questions que vos clients tapent dans Google).
+**Mois 2-6 :** Lancez votre SEO (10 articles ciblés sur les questions que vos clients tapent dans Google — consultez notre [guide SEO e-commerce](/blog/seo-e-commerce--le-guide-complet-pour-2026/) pour savoir par où commencer).
 
 **En continu :** Utilisez la pub pour **accélérer**, pas pour survivre. La pub devrait amplifier un système qui fonctionne déjà, pas le remplacer.
 
@@ -107,7 +107,7 @@ Acquérir un nouveau client coûte **5 à 7 fois plus cher** que de faire rachet
 
 - Un client qui achète une **2e fois** a 45% de chances d'acheter une 3e fois
 - Les clients récurrents dépensent en moyenne **67% de plus** que les nouveaux
-- Une augmentation de **5% du taux de rétention** peut augmenter les profits de 25-95%
+- Une augmentation de **5% du taux de rétention** peut augmenter les profits de 25-95% (les [dettes techniques cachées](/blog/la-recession-silencieuse--5-dettes-techniques-qui-tuent-votre-rentabilite-shopify-en-2026/) contribuent souvent à la perte de clients)
 
 ### La stratégie de rétention minimale (3 heures de mise en place)
 
@@ -148,7 +148,7 @@ Beaucoup de gérants de boutique regardent leurs stats chaque jour. Le problème
 |----------|-------------------|-------------------|
 | **Taux de conversion** | % de visiteurs qui achètent | UX, fiches produits, checkout |
 | **Panier moyen** | Combien dépense chaque client | Upsell, bundles, seuils de livraison gratuite |
-| **Coût d'acquisition client (CAC)** | Combien vous coûte chaque nouveau client | Optimisation des pubs, SEO, bouche-à-oreille |
+| **Coût d'acquisition client (CAC)** | Combien vous coûte chaque nouveau client | Optimisation des pubs, [SEO](/blog/le-roi-du-seo--combien-rapporte-vraiment-la-1ere-place--analyse-2026/), bouche-à-oreille |
 | **Valeur vie client (LTV)** | Combien un client vous rapporte au total | Rétention, email marketing, fidélité |
 | **Ratio LTV/CAC** | La rentabilité de votre acquisition | Si < 3, votre modèle n'est pas viable |
 
@@ -206,7 +206,7 @@ On fait le diagnostic ensemble en 15 minutes. Sans jargon, sans blabla — juste
 ### À lire aussi
 
 - [Ma boutique Shopify ne vend pas : les 7 vraies raisons](/blog/ma-boutique-shopify-ne-vend-pas--les-7-vraies-raisons-et-quoi-faire/)
-- [Shopify : du trafic mais pas de ventes ? Voici pourquoi](/blog/shopify-du-trafic-mais-pas-de-ventes-diagnostic-complet/)
+- [Shopify : du trafic mais pas de ventes ? Voici pourquoi](/blog/shopify--du-trafic-mais-pas-de-ventes--voici-pourquoi-diagnostic-complet/)
 - [Le ROI du SEO : Combien rapporte vraiment la 1ère place ?](/blog/le-roi-du-seo--combien-rapporte-vraiment-la-1ere-place--analyse-2026/)
 
 ---

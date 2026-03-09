@@ -51,7 +51,7 @@ C'est l'erreur n°1 que je vois. Des fiches produits avec :
 - Des photos fournisseur basse résolution
 - Aucun avis client
 
-Résultat ? Le visiteur ne **ressent rien**. Il ne se projette pas. Il ferme l'onglet.
+Résultat ? Le visiteur ne **ressent rien**. Il ne se projette pas. Il ferme l'onglet. (C'est d'ailleurs l'une des [5 erreurs SEO Shopify les plus courantes](/blog/5-erreurs-seo-qui-tuent-votre-trafic-shopify-et-comment-les-corriger/).)
 
 ### Ce qui convertit vraiment
 
@@ -153,7 +153,7 @@ Votre visiteur a ajouté un produit au panier. Bravo. Mais entre le panier et le
 ### Les 3 canaux d'acquisition prioritaires pour démarrer
 
 **1. Le SEO (référencement naturel)**
-- Optimisez vos fiches produits pour les mots-clés que vos clients tapent
+- Optimisez vos fiches produits pour les mots-clés que vos clients tapent (consultez notre [guide SEO e-commerce complet](/blog/seo-e-commerce--le-guide-complet-pour-2026/))
 - Créez un blog avec des guides d'achat utiles
 - Travaillez vos titres et descriptions pour Google
 
@@ -179,7 +179,7 @@ Mettre **tout le budget en publicité** dès le lancement, sans avoir optimisé 
 
 Si vous ne pouvez pas répondre à ces questions, vous naviguez à l'aveugle :
 
-- Quel est votre **taux de conversion** ? (moyenne Shopify : 1.4%)
+- Quel est votre **taux de conversion** ? (moyenne Shopify : 1.4% — [apprenez à l'optimiser avec des tests A/B](/blog/comment-reussir-un-test-ab-e-commerce--guide-complet/))
 - Quel est votre **taux de rebond** sur mobile ?
 - Quelle est votre **page de sortie** la plus fréquente ?
 - Combien de visiteurs ajoutent au panier vs. combien achètent ?
@@ -228,7 +228,7 @@ La bonne nouvelle ? Ce sont des problèmes **mesurables et corrigeables**. Pas b
 
 ### À lire aussi
 
-- [Shopify : du trafic mais pas de ventes ? Voici pourquoi](/blog/shopify-du-trafic-mais-pas-de-ventes-diagnostic-complet/)
+- [Shopify : du trafic mais pas de ventes ? Voici pourquoi](/blog/shopify--du-trafic-mais-pas-de-ventes--voici-pourquoi-diagnostic-complet/)
 - [5 erreurs SEO qui tuent votre trafic Shopify](/blog/5-erreurs-seo-qui-tuent-votre-trafic-shopify-et-comment-les-corriger/)
 - [Pourquoi un Consultant SEO "pas cher" va vous coûter cher](/blog/pourquoi-un-consultant-seo-pas-cher-va-vous-couter-cher-analyse-2026/)
 

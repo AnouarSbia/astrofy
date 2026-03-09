@@ -30,7 +30,7 @@ Tout le trafic ne se vaut pas. Un visiteur qui tape "acheter chaussures running 
 
 | Source de trafic | Intention d'achat | Taux de conversion moyen |
 |-----------------|-------------------|------------------------|
-| **SEO (recherche Google)** | 🟢 Forte | 2% - 5% |
+| **[SEO (recherche Google)](/blog/seo-e-commerce--le-guide-complet-pour-2026/)** | 🟢 Forte | 2% - 5% |
 | **Publicité ciblée (Meta, Google Ads)** | 🟡 Moyenne | 1% - 3% |
 | **Réseaux sociaux (organique)** | 🔴 Faible | 0.5% - 1% |
 | **Trafic direct / email** | 🟢 Forte | 3% - 8% |
@@ -96,7 +96,7 @@ Le visiteur compare toujours. Si votre prix est plus élevé que la concurrence 
 Un visiteur qui ne vous connaît pas ne vous fait pas confiance. Les **avis clients** sont le facteur de conversion le plus puissant en e-commerce.
 
 **Les chiffres :**
-- Un produit avec des avis convertit **270% de plus** qu'un produit sans avis
+- Un produit avec des avis convertit **270% de plus** qu'un produit sans avis (découvrez comment [optimiser vos conversions avec des tests A/B](/blog/comment-reussir-un-test-ab-e-commerce--guide-complet/))
 - 93% des consommateurs lisent les avis avant d'acheter
 
 **La correction :**
@@ -111,7 +111,7 @@ Un visiteur qui ne vous connaît pas ne vous fait pas confiance. Les **avis clie
 **Check rapide :**
 - Ouvrez votre boutique sur votre téléphone
 - Essayez d'acheter un produit du début à la fin
-- Notez chaque moment de friction : texte trop petit, bouton mal placé, scroll infini
+- Notez chaque moment de friction : texte trop petit, bouton mal placé, scroll infini (un [audit technique](/blog/audit-seo-technique--les-10-erreurs-fatales-qui-ruinent-votre-visibilite-en-2026/) peut révéler ces problèmes)
 
 ### Tueur #5 : Les frais cachés
 

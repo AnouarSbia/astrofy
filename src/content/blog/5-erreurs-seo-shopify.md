@@ -72,6 +72,8 @@ Le SEO sur Shopify n'est pas aussi simple qu'on le pense. Après avoir audité d
 
 Ces 5 erreurs sont corrigeables en quelques heures et peuvent avoir un impact significatif sur votre trafic organique. Commencez par un audit de vos pages les plus importantes, puis corrigez ces problèmes un par un.
 
+Mais le SEO n'est que la moitié de l'équation — si votre boutique a du trafic mais [ne génère toujours pas de ventes](/blog/ma-boutique-shopify-ne-vend-pas--les-7-vraies-raisons-et-quoi-faire/), d'autres facteurs sont en jeu.
+
 ---
 
 ### À lire aussi
@@ -82,4 +84,4 @@ Ces 5 erreurs sont corrigeables en quelques heures et peuvent avoir un impact si
 
 ---
 
-**Besoin d'un audit complet ?** [Contactez-moi](/about/) pour une analyse personnalisée de votre boutique Shopify.
+**Besoin d'un audit complet ?** [Contactez-moi](/contact/) pour une analyse personnalisée de votre boutique Shopify.

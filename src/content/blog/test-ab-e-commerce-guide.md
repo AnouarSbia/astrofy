@@ -32,6 +32,8 @@ Analysez vos données pour trouver les points de friction :
 - Abandon de panier à une étape spécifique ?
 - Faible taux de clic sur un CTA ?
 
+Si votre boutique a du trafic mais [ne génère pas de ventes](/blog/shopify--du-trafic-mais-pas-de-ventes--voici-pourquoi-diagnostic-complet/), commencez par identifier où se situe la fuite dans votre tunnel.
+
 **Outils utiles :**
 - Google Analytics 4
 - Hotjar (heatmaps, recordings)
@@ -143,4 +145,4 @@ Les tests A/B ne sont pas compliqués, mais ils demandent de la rigueur. Commenc
 
 ---
 
-**Besoin d'aide ?** [Contactez-moi](/about/) pour un audit CRO de votre boutique.
+**Besoin d'aide ?** [Contactez-moi](/contact/) pour un audit CRO de votre boutique.

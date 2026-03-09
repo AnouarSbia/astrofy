@@ -129,4 +129,4 @@ Les Core Web Vitals ne sont pas qu'un facteur SEO — c'est surtout une meilleur
 
 ---
 
-**Votre site WordPress est lent ?** [Discutons de votre projet](/about/) pour un audit performance complet.
+**Votre site WordPress est lent ?** [Discutons de votre projet](/contact/) pour un audit performance complet.
