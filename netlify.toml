@@ -12,6 +12,14 @@
 [build.processing.html]
   pretty_urls = false
 
+# Force trailing slash on all URLs (matches Astro trailingSlash: 'always')
+# Prevents duplicate content: /page → 301 → /page/
+[[redirects]]
+  from = "/*"
+  to = "/:splat/"
+  status = 301
+  force = false
+
 # TinaCMS Admin - Static file serving
 [[redirects]]
   from = "/admin"
