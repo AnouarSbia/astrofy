@@ -23,10 +23,8 @@ const {
 dayjs.extend(localizedFormat);
 dayjs.locale("fr");
 const displayDate = dayjs(pubDate).format("LL");
-const isoDate = dayjs(pubDate).format("YYYY-MM-DD");
-const isoUpdatedDate = updatedDate
-  ? dayjs(updatedDate).format("YYYY-MM-DD")
-  : null;
+const isoDate = dayjs(pubDate).toISOString();
+const isoUpdatedDate = updatedDate ? dayjs(updatedDate).toISOString() : null;
 import { Image } from "astro:assets";
 
 // Breadcrumb items
