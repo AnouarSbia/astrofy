@@ -132,7 +132,7 @@ Toute page importante devrait être accessible en **3 clics maximum** depuis la 
 
 ### La correction
 
-*   Créez une **architecture en silo** thématique
+*   Créez une **[architecture en silo](/blog/le-guide-du-maillage-interne--comment-booster-vos-pages-sans-un-seul-backlink/)** thématique
 *   Chaque catégorie mère relie à ses sous-catégories, qui relient à leurs pages finales
 *   Ajoutez un **fil d'Ariane** (breadcrumb) structuré en Schema.org
 *   Auditez la profondeur de crawl avec Screaming Frog (onglet "Crawl Depth")

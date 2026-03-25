@@ -43,7 +43,7 @@ Passer de 800€ à **5 000€ de CA mensuel via le SEO** en 6 mois, sans augmen
 
 ---
 
-## Phase 1 : L'Audit Technique (Mois 1)
+## Phase 1 : L'[Audit Technique](/blog/audit-seo-technique--les-10-erreurs-fatales-qui-ruinent-votre-visibilite-en-2026/) (Mois 1)
 
 Avant de créer du contenu ou de chercher des backlinks, on a ouvert le capot. Et ce qu'on a trouvé expliquait tout.
 
@@ -95,7 +95,7 @@ Bureau Ergonomique (Pilier)
 └── Bureau ergonomique pas cher : notre sélection
 ```
 
-Chaque article renvoie vers la page pilier (catégorie). Chaque page pilier renvoie vers les articles. Le **maillage interne** crée un cocon sémantique que Google comprend immédiatement.
+Chaque article renvoie vers la page pilier (catégorie). Chaque page pilier renvoie vers les articles. Le **[maillage interne](/blog/le-guide-du-maillage-interne--comment-booster-vos-pages-sans-un-seul-backlink/)** crée un cocon sémantique que Google comprend immédiatement.
 
 ### La production de contenu
 
@@ -177,7 +177,7 @@ Les 5 liens récupérés par la méthode des liens cassés continuent de pousser
 
 ### 5. Le SEO est un investissement, pas une dépense
 
-Le client a investi environ **12 000€** sur 6 mois d'accompagnement. Le SEO génère aujourd'hui **4 200€/mois de CA** — un retour sur investissement atteint en moins de 3 mois. Et ce trafic continue de croître **sans budget publicitaire supplémentaire**.
+Le client a investi environ **12 000€** sur 6 mois d'accompagnement (pour comprendre ce qui justifie ces tarifs, lisez notre article sur [le vrai prix d'un audit SEO](/blog/combien-coute-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/)). Le SEO génère aujourd'hui **4 200€/mois de CA** — un [retour sur investissement](/blog/le-roi-du-seo--combien-rapporte-vraiment-la-1ere-place--analyse-2026/) atteint en moins de 3 mois. Et ce trafic continue de croître **sans budget publicitaire supplémentaire**.
 
 > **La vraie question n'est pas "Combien ça coûte ?" mais "Combien ça rapporte ?"**
 

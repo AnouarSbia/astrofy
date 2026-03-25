@@ -107,7 +107,7 @@ Mais si votre objectif est de **dépasser vos concurrents**, l'Audit Stratégiqu
 
 ## Conclusion : Sécurisez Votre Croissance
 
-Le SEO n'est pas une dépense, c'est un actif. Un audit de qualité est la fondation de votre visibilité future.
+Le SEO n'est pas une dépense, c'est un actif. Un audit de qualité est la fondation de votre visibilité future. D'ailleurs, [voici une étude de cas concrète](/blog/cas-client--300-de-trafic-organique-en-6-mois-preuve-et-methode/) qui montre ce qu'un bon audit peut produire.
 
 Ne laissez pas des erreurs techniques invisibles brider votre chiffre d'affaires.
 

@@ -106,7 +106,7 @@ Que vous choisissiez une agence ou un freelance, n'oubliez jamais ceci : **le SE
 
 Ce n'est pas l'agence qui positionne votre site, c'est le consultant qui travaille dessus.
 
-Pour une PME qui cherche de la croissance, de la réactivité et un vrai retour sur investissement, le **freelance SEO** offre souvent le meilleur rapport qualité/prix/engagement. C'est l'assurance d'avoir un pilote dans l'avion, pas juste un passager.
+Pour une PME qui cherche de la croissance, de la réactivité et un vrai retour sur investissement, le **freelance SEO** offre souvent le meilleur rapport qualité/prix/engagement. C'est l'assurance d'avoir un pilote dans l'avion, pas juste un passager. (La preuve ? [+300% de trafic en 6 mois, voici comment](/blog/cas-client--300-de-trafic-organique-en-6-mois-preuve-et-methode/).)
 
 **Vous voulez un expert dédié qui prend votre croissance aussi au sérieux que vous ?**
 

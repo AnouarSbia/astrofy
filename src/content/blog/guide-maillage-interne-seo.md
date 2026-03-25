@@ -50,7 +50,7 @@ Votre page d'accueil est celle qui reçoit le plus de liens externes (backlinks)
 Une **page orpheline** est une page qui n'est liée depuis aucune autre page du site. Elle est indexée (elle est dans le sitemap), mais Google n'a aucun chemin pour l'atteindre en crawlant.
 
 **Comment les détecter ?**
-Lancez un crawl avec Screaming Frog. Comparez les pages du sitemap avec les pages trouvées par le crawl. Celles qui sont dans le sitemap mais pas dans le crawl sont vos orphelines.
+Lancez un crawl avec Screaming Frog (c'est l'un des points clés d'un [audit SEO technique](/blog/audit-seo-technique--les-10-erreurs-fatales-qui-ruinent-votre-visibilite-en-2026/)). Comparez les pages du sitemap avec les pages trouvées par le crawl. Celles qui sont dans le sitemap mais pas dans le crawl sont vos orphelines.
 
 **Résultat typique :** 20% à 40% des pages d'un blog sont orphelines. C'est énorme.
 
@@ -180,7 +180,7 @@ Pour illustrer, voici ce que le maillage interne a produit sur un site client (m
 | **Pages dans le Top 100** | 34 | 58 |
 | **Trafic organique** | 2 100/mois | 3 400/mois |
 
-**+62% de trafic.** Sans un seul backlink. Sans un seul nouvel article. Juste en connectant intelligemment les pages existantes.
+**+62% de trafic.** Sans un seul backlink. Sans un seul nouvel article. Juste en connectant intelligemment les pages existantes. (Vous voulez voir un exemple complet ? Lisez notre [étude de cas : +300% de trafic en 6 mois](/blog/cas-client--300-de-trafic-organique-en-6-mois-preuve-et-methode/).)
 
 > C'est la magie du maillage interne : il fait **travailler le contenu que vous avez déjà**.
 
@@ -199,7 +199,7 @@ Pas besoin de s'équiper massivement. Voici le minimum pour un maillage interne 
 
 ## Conclusion : Reliez Avant de Publier
 
-Le maillage interne est le levier SEO le plus rentable qui existe. Il est **gratuit**, **immédiat** et **sous votre contrôle total**. Pas besoin d'attendre qu'un blogueur vous fasse un backlink.
+Le maillage interne est le levier SEO le plus rentable qui existe. Il est **gratuit**, **immédiat** et **sous votre contrôle total**. Pas besoin d'attendre qu'un blogueur vous fasse un backlink. C'est aussi un point essentiel à vérifier lors d'une [refonte de site web](/blog/refonte-de-site-web--le-guide-de-survie-seo-pour-2026/) — ne perdez jamais votre maillage existant.
 
 Avant de publier votre prochain article, posez-vous ces 3 questions :
 1.  Dans quel silo se place-t-il ?
