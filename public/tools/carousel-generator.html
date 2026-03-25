@@ -87,10 +87,17 @@
   }
   .slide-actions button:hover { background: #555; }
 
-  /* ===== SLIDE TEMPLATE ===== */
+  /* ===== SLIDE TEMPLATE =====
+     Best practices applied:
+     - 4:5 portrait (540×675 at 2x = 1080×1350)
+     - Min 24pt body text, 48pt+ headings
+     - 80px safe zone from edges (40px at 540 scale)
+     - One idea per slide
+     - 4.5:1+ contrast ratio
+  */
   .slide {
     width: 540px;
-    height: 540px;
+    height: 675px; /* 4:5 portrait ratio */
     position: relative;
     overflow: hidden;
     flex-shrink: 0;
@@ -106,115 +113,132 @@
   }
 
   .slide-content {
-    padding: 60px 50px 80px 50px;
+    padding: 70px 48px 90px 48px; /* safe zone: ~80px at 2x */
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  /* Footer — ALWAYS identical */
+  /* ===== FOOTER — professional, readable ===== */
   .slide-footer {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 20px 50px;
+    padding: 20px 48px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
   }
-  .slide.theme-dark .slide-footer { color: #F5F0E8; opacity: 0.7; }
-  .slide.theme-light .slide-footer { color: #3D4F2F; opacity: 0.5; }
+  .slide-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 48px;
+    right: 48px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.15;
+  }
+  .slide.theme-dark .slide-footer { color: #F5F0E8; }
+  .slide.theme-light .slide-footer { color: #3D4F2F; }
 
-  .slide-footer .logo {
+  .slide-footer .brand {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     font-weight: 700;
-    font-size: 14px;
-    opacity: 1;
+    font-size: 15px;
+    opacity: 0.55;
   }
-  .slide-footer .logo svg { width: 16px; height: 16px; }
-
-  .slide-label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 24px;
-    opacity: 0.6;
+  .slide-footer .brand svg { width: 18px; height: 18px; }
+  .slide-footer .url {
+    opacity: 0.4;
+    font-size: 13px;
     font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  /* ===== TYPOGRAPHY — mobile-optimized ===== */
+  .slide-label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 28px;
+    opacity: 0.5;
+    font-weight: 700;
   }
 
   .slide-phase {
-    font-size: 72px;
+    font-size: 80px;
     font-weight: 900;
-    opacity: 0.15;
+    opacity: 0.12;
     line-height: 1;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
 
   .slide-h1 {
-    font-size: 42px;
+    font-size: 48px;   /* 96pt at 2x — large hero */
     font-weight: 900;
+    line-height: 1.12;
+    margin-bottom: 24px;
+  }
+  .slide-h2 {
+    font-size: 38px;   /* 76pt at 2x — section heading */
+    font-weight: 800;
     line-height: 1.15;
     margin-bottom: 20px;
   }
-  .slide-h2 {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 16px;
-  }
 
   .slide-body {
-    font-size: 18px;
-    line-height: 1.6;
-    opacity: 0.8;
+    font-size: 22px;   /* 44pt at 2x — well above 24pt min */
+    line-height: 1.5;
+    opacity: 0.75;
+    font-weight: 500;
   }
 
   .slide-list {
     list-style: none;
-    font-size: 20px;
-    line-height: 1.8;
+    font-size: 22px;   /* 44pt at 2x */
+    line-height: 2;
+    font-weight: 500;
   }
   .slide-list li::before {
-    content: "✓ ";
+    content: "✓  ";
     font-weight: 700;
     color: #7a9a5a;
   }
   .slide.theme-dark .slide-list li::before { color: #a8c88a; }
 
   .slide-stat {
-    font-size: 80px;
+    font-size: 96px;
     font-weight: 900;
     line-height: 1;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
   .slide-stat-label {
-    font-size: 24px;
-    font-weight: 600;
-    opacity: 0.8;
-    margin-bottom: 24px;
+    font-size: 28px;
+    font-weight: 700;
+    opacity: 0.75;
+    margin-bottom: 28px;
   }
   .slide-stat-details {
-    font-size: 18px;
-    opacity: 0.6;
-    line-height: 1.8;
+    font-size: 20px;
+    opacity: 0.55;
+    line-height: 1.9;
+    font-weight: 500;
   }
 
   .slide-cta-btn {
     display: inline-block;
     background: #3D4F2F;
     color: #F5F0E8;
-    padding: 14px 32px;
-    border-radius: 40px;
-    font-size: 18px;
-    font-weight: 600;
-    margin-top: 16px;
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
   }
   .slide.theme-dark .slide-cta-btn {
     background: #F5F0E8;
@@ -222,7 +246,7 @@
   }
 
   .slide-list.problems li::before {
-    content: "✗ ";
+    content: "✗  ";
     color: #c44;
   }
 
@@ -233,11 +257,20 @@
 
   .slide-number {
     position: absolute;
-    top: 24px;
-    right: 30px;
-    font-size: 12px;
-    opacity: 0.35;
+    top: 28px;
+    right: 32px;
+    font-size: 13px;
+    opacity: 0.3;
     font-weight: 600;
+  }
+
+  /* Swipe indicator for cover slide */
+  .swipe-hint {
+    font-size: 14px;
+    opacity: 0.45;
+    margin-top: 32px;
+    font-weight: 600;
+    letter-spacing: 1px;
   }
 
   .instructions {
@@ -253,16 +286,12 @@
   }
   .instructions h3 { color: #fff; margin-bottom: 8px; }
 
-  /* =============================================
-     PRINT STYLES — vectorized PDF via browser
-     ============================================= */
+  /* ===== PRINT STYLES — vectorized PDF ===== */
   @media print {
     @page {
-      size: 1080px 1080px;
+      size: 1080px 1350px;
       margin: 0;
     }
-
-    /* Hide everything except slides */
     body {
       background: none !important;
       padding: 0 !important;
@@ -272,14 +301,12 @@
     .slide-actions, .slide-wrapper > .slide-actions {
       display: none !important;
     }
-
     .slides-grid {
       display: block !important;
       gap: 0 !important;
       margin: 0 !important;
       padding: 0 !important;
     }
-
     .slide-wrapper {
       page-break-after: always;
       page-break-inside: avoid;
@@ -292,17 +319,13 @@
       page-break-after: auto;
       break-after: auto;
     }
-
     .slide {
       width: 1080px !important;
-      height: 1080px !important;
+      height: 1350px !important;
       border-radius: 0 !important;
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
-      color-adjust: exact !important;
     }
-
-    /* Force background colors to print */
     .slide.theme-dark {
       background: #3D4F2F !important;
       color: #F5F0E8 !important;
@@ -311,99 +334,38 @@
       background: #F5F0E8 !important;
       color: #3D4F2F !important;
     }
-
-    /* Scale all spacing/fonts by 2x for 1080px */
-    .slide-content {
-      padding: 120px 100px 160px 100px !important;
-    }
-    .slide-footer {
-      padding: 40px 100px !important;
-      font-size: 26px !important;
-    }
-    .slide-footer .logo {
-      font-size: 28px !important;
-      gap: 12px !important;
-    }
-    .slide-footer .logo svg {
-      width: 32px !important;
-      height: 32px !important;
-    }
-    .slide-number {
-      font-size: 24px !important;
-      top: 48px !important;
-      right: 60px !important;
-    }
-    .slide-label {
-      font-size: 22px !important;
-      letter-spacing: 6px !important;
-      margin-bottom: 48px !important;
-    }
-    .slide-phase {
-      font-size: 144px !important;
-      margin-bottom: 8px !important;
-    }
-    .slide-h1 {
-      font-size: 84px !important;
-      margin-bottom: 40px !important;
-    }
-    .slide-h2 {
-      font-size: 64px !important;
-      margin-bottom: 32px !important;
-    }
-    .slide-body {
-      font-size: 36px !important;
-      line-height: 1.6 !important;
-    }
-    .slide-list {
-      font-size: 40px !important;
-      line-height: 1.8 !important;
-    }
-    .slide-stat {
-      font-size: 160px !important;
-      margin-bottom: 16px !important;
-    }
-    .slide-stat-label {
-      font-size: 48px !important;
-      margin-bottom: 48px !important;
-    }
-    .slide-stat-details {
-      font-size: 36px !important;
-      line-height: 1.8 !important;
-    }
-    .slide-cta-btn {
-      padding: 28px 64px !important;
-      font-size: 36px !important;
-      border-radius: 80px !important;
-      margin-top: 32px !important;
-    }
-    .slide-list.problems li::before {
-      color: #c44 !important;
-    }
-    .slide-list li::before {
-      color: #7a9a5a !important;
-    }
-    .slide.theme-dark .slide-list li::before {
-      color: #a8c88a !important;
-    }
-    .slide.theme-dark .slide-footer {
-      color: #F5F0E8 !important;
-      opacity: 0.7 !important;
-    }
-    .slide.theme-light .slide-footer {
-      color: #3D4F2F !important;
-      opacity: 0.5 !important;
-    }
-    .slide.theme-dark .slide-cta-btn {
-      background: #F5F0E8 !important;
-      color: #3D4F2F !important;
-    }
+    /* Scale all sizing by 2x for 1080px print */
+    .slide-content { padding: 140px 96px 180px 96px !important; }
+    .slide-footer { padding: 40px 96px 48px !important; }
+    .slide-footer::before { left: 96px !important; right: 96px !important; }
+    .slide-footer .brand { font-size: 30px !important; gap: 16px !important; }
+    .slide-footer .brand svg { width: 36px !important; height: 36px !important; }
+    .slide-footer .url { font-size: 26px !important; }
+    .slide-number { font-size: 26px !important; top: 56px !important; right: 64px !important; }
+    .slide-label { font-size: 26px !important; letter-spacing: 8px !important; margin-bottom: 56px !important; }
+    .slide-phase { font-size: 160px !important; margin-bottom: 12px !important; }
+    .slide-h1 { font-size: 96px !important; margin-bottom: 48px !important; }
+    .slide-h2 { font-size: 76px !important; margin-bottom: 40px !important; }
+    .slide-body { font-size: 44px !important; }
+    .slide-list { font-size: 44px !important; }
+    .slide-stat { font-size: 192px !important; margin-bottom: 24px !important; }
+    .slide-stat-label { font-size: 56px !important; margin-bottom: 56px !important; }
+    .slide-stat-details { font-size: 40px !important; }
+    .slide-cta-btn { padding: 32px 72px !important; font-size: 40px !important; border-radius: 100px !important; margin-top: 40px !important; }
+    .swipe-hint { font-size: 28px !important; margin-top: 64px !important; }
+    .slide-list.problems li::before { color: #c44 !important; }
+    .slide-list li::before { color: #7a9a5a !important; }
+    .slide.theme-dark .slide-list li::before { color: #a8c88a !important; }
+    .slide.theme-dark .slide-footer { color: #F5F0E8 !important; }
+    .slide.theme-light .slide-footer { color: #3D4F2F !important; }
+    .slide.theme-dark .slide-cta-btn { background: #F5F0E8 !important; color: #3D4F2F !important; }
   }
 </style>
 </head>
 <body>
 
 <h1>📊 AnouarLab — LinkedIn Carousel Generator</h1>
-<p class="subtitle">Modifie le texte directement dans les slides, puis exporte en un clic.</p>
+<p class="subtitle">Format 4:5 portrait (1080×1350) · Optimisé mobile · Texte 24pt+ · Exporte en un clic.</p>
 
 <div class="export-bar">
   <button class="btn-export-all" onclick="exportAllPNG()">📥 Exporter toutes les slides (PNG)</button>
@@ -419,15 +381,16 @@
     <div class="slide theme-dark">
       <div class="slide-number">1/7</div>
       <div class="slide-content centered">
-        <div class="slide-h1" contenteditable="true">+300% de Trafic<br>Organique en 6 Mois</div>
+        <div class="slide-h1" contenteditable="true">+300% de Trafic<br>Organique<br>en 6 Mois</div>
         <div class="slide-body" contenteditable="true">Sans publicité. Sans magie.<br>Juste une méthode.</div>
+        <div class="swipe-hint">Swipez →</div>
       </div>
       <div class="slide-footer">
-        <div class="logo">
+        <div class="brand">
           <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>
-          AnouarLab
+          @AnouarLab
         </div>
-        <span>anouarlab.fr</span>
+        <span class="url">anouarlab.fr</span>
       </div>
     </div>
   </div>
@@ -447,11 +410,11 @@
         </ul>
       </div>
       <div class="slide-footer">
-        <div class="logo">
+        <div class="brand">
           <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>
-          AnouarLab
+          @AnouarLab
         </div>
-        <span>anouarlab.fr</span>
+        <span class="url">anouarlab.fr</span>
       </div>
     </div>
   </div>
@@ -471,11 +434,11 @@
         </ul>
       </div>
       <div class="slide-footer">
-        <div class="logo">
+        <div class="brand">
           <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>
-          AnouarLab
+          @AnouarLab
         </div>
-        <span>anouarlab.fr</span>
+        <span class="url">anouarlab.fr</span>
       </div>
     </div>
   </div>
@@ -495,11 +458,11 @@
         </ul>
       </div>
       <div class="slide-footer">
-        <div class="logo">
+        <div class="brand">
           <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>
-          AnouarLab
+          @AnouarLab
         </div>
-        <span>anouarlab.fr</span>
+        <span class="url">anouarlab.fr</span>
       </div>
     </div>
   </div>
@@ -519,11 +482,11 @@
         </ul>
       </div>
       <div class="slide-footer">
-        <div class="logo">
+        <div class="brand">
           <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>
-          AnouarLab
+          @AnouarLab
         </div>
-        <span>anouarlab.fr</span>
+        <span class="url">anouarlab.fr</span>
       </div>
     </div>
   </div>
@@ -543,11 +506,11 @@
         </div>
       </div>
       <div class="slide-footer">
-        <div class="logo">
+        <div class="brand">
           <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>
-          AnouarLab
+          @AnouarLab
         </div>
-        <span>anouarlab.fr</span>
+        <span class="url">anouarlab.fr</span>
       </div>
     </div>
   </div>
@@ -559,15 +522,15 @@
       <div class="slide-number">7/7</div>
       <div class="slide-content centered">
         <div class="slide-h2" contenteditable="true">Envie des mêmes<br>résultats ?</div>
-        <div class="slide-body" contenteditable="true">Audit gratuit · 30 min · Sans engagement</div>
+        <div class="slide-body" contenteditable="true">Audit gratuit · 30 min<br>Sans engagement</div>
         <div class="slide-cta-btn" contenteditable="true">anouarlab.fr/contact</div>
       </div>
       <div class="slide-footer">
-        <div class="logo">
+        <div class="brand">
           <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>
-          AnouarLab
+          @AnouarLab
         </div>
-        <span>anouarlab.fr</span>
+        <span class="url">anouarlab.fr</span>
       </div>
     </div>
   </div>
@@ -578,15 +541,17 @@
   <h3>📋 Comment utiliser</h3>
   <p>
     1. <strong>Modifie le texte</strong> directement dans les slides (tout est cliquable et éditable)<br>
-    2. <strong>📥 PNG</strong> → télécharge chaque slide en 1080×1080px (hover pour voir le bouton)<br>
+    2. <strong>📥 PNG</strong> → télécharge chaque slide en 1080×1350px (hover pour voir le bouton)<br>
     3. <strong>📄 PDF vectorisé</strong> → ouvre l'impression, choisis "Enregistrer en PDF"<br>
     4. Sur LinkedIn → Nouveau post → icône 📎 Document → Upload le PDF<br><br>
-    💡 Le PDF utilise le moteur du navigateur : <strong>même police Inter, même layout, 100% vectoriel</strong>.
+    ✅ <strong>Format 4:5 portrait</strong> — occupe plus d'espace sur mobile LinkedIn<br>
+    ✅ <strong>Texte 24pt+</strong> — lisible sur mobile sans zoomer<br>
+    ✅ <strong>Safe zone 80px</strong> — rien n'est coupé par l'UI LinkedIn
   </p>
 </div>
 
 <script>
-  const EXPORT_SCALE = 2;
+  const EXPORT_SCALE = 2; // 540×675 * 2 = 1080×1350
   const progress = document.getElementById('progress');
 
   function getSlides() {
@@ -599,7 +564,7 @@
       useCORS: true,
       backgroundColor: null,
       width: 540,
-      height: 540,
+      height: 675,
     });
     return canvas;
   }
@@ -611,14 +576,12 @@
     link.click();
   }
 
-  // Export single slide as PNG
   async function exportSlide(index) {
     const slides = getSlides();
     const canvas = await captureSlide(slides[index]);
     downloadCanvas(canvas, `anouarlab-slide-${index + 1}.png`);
   }
 
-  // Export all as PNG
   async function exportAllPNG() {
     const slides = getSlides();
     progress.style.display = 'inline';
@@ -634,8 +597,6 @@
     setTimeout(() => { progress.style.display = 'none'; }, 3000);
   }
 
-  // Export as PDF — uses browser's native print engine
-  // This is 100% vectorized: real Inter font, exact CSS, crisp at any zoom
   function exportPDF() {
     window.print();
   }
