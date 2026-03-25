@@ -88,7 +88,8 @@
 
 ## 15. SEO friendly universel
 - Mot-clé principal naturel dans titre, sous-titres, intro, conclusion.
-- Contenu écrit **pour le lecteur humain d’abord**.
+- **Richesse sémantique** : utiliser les entités et concepts liés au sujet, pas seulement le mot-clé exact (Google comprend le contexte).
+- Contenu écrit **pour le lecteur humain d'abord**.
 - Structurer pour **lecture rapide et action**.
 - Meta description engageante et orientée bénéfice.
 
@@ -146,3 +147,90 @@
 ---
 
 ✅ Astuce pratique : **garder cette liste ouverte à côté** chaque fois que tu rédiges n’importe quelle page. Elle fonctionne comme **checklist universelle**.
+
+---
+
+## 21. Ton par canal (Channel-Specific)
+
+Chaque canal a son propre rythme. Le fond reste le même, la forme s'adapte.
+
+### Blog / Site web
+- Vouvoiement ("vous")
+- Ton expert mais accessible
+- Phrases complètes, paragraphes structurés
+- Données, tableaux, sources
+- CTA doux : "Réserver mon diagnostic gratuit"
+
+### LinkedIn (posts + commentaires)
+- **Tutoiement** ("tu") — plus direct, plus humain
+- Phrases ultra-courtes. Une idée = une ligne.
+- Sauts de ligne fréquents (aérer le texte)
+- Emojis stratégiques (→ ✅ 🔴 📈) mais pas excessifs
+- Hook dans les 2 premières lignes (avant le "voir plus")
+- **Lien dans le post = OK** si le post a assez de valeur standalone (le "lien en 1er commentaire" est désormais détecté comme engagement bait et pénalisé). Astuce : écrire un post complet que les gens lisent AVANT de cliquer.
+- Finir par une question ou un CTA d'engagement ("Commente AUDIT", "Enregistre ce post")
+
+### Carousel LinkedIn / Instagram
+- Texte **gros et punchy** — lisible sur mobile sans zoomer
+- Max 3 bullets par slide
+- Une seule idée par slide
+- Emojis comme marqueurs visuels (✓ ✗ 🔴 🟡 🟢)
+- Dernière slide = CTA clair
+
+### Newsletter (futur)
+- Tutoiement
+- Ton personnel, comme un email à un ami expert
+- 1 idée principale par email
+- CTA unique en fin d'email
+- Objet du mail = curiosité ("Ce que Google ne te dit pas")
+
+---
+
+## 22. Positionnement ROI-First
+
+> Ne jamais décrire ce qu'on FAIT. Toujours décrire ce que le client OBTIENT.
+
+### ❌ Interdit
+- "Nous proposons des services de référencement naturel"
+- "Notre expertise en SEO technique"
+- "Accompagnement personnalisé"
+- "Solutions sur mesure"
+
+### ✅ Obligatoire
+- "Vos concurrents vous volent des clients sur Google. On corrige ça."
+- "+300% de trafic organique en 6 mois. Sans pub."
+- "Chaque jour sans SEO, c'est du chiffre d'affaires perdu."
+- "15 minutes. On regarde ensemble. Vous décidez."
+
+### La règle des 3 R
+Chaque page, chaque post, chaque slide doit contenir au moins un :
+1. **Résultat** chiffré ("+300%", "4 800 visiteurs", "0€ de pub")
+2. **Risque** de ne pas agir ("invisible sur Google", "vos concurrents prennent vos clients")
+3. **Rapidité** de la solution ("en 6 mois", "15 min", "30 min de diagnostic")
+
+---
+
+## 23. Voix de marque personnelle
+
+### L'identité AnouarLab
+- **Expert accessible** — pas un gourou, pas un vendeur
+- **Direct et honnête** — dire ce qui ne marche pas, même si ça dérange
+- **Data-driven** — toujours des chiffres, jamais des promesses vides
+- **Orienté PME** — parler leur langage, pas celui des marketeux
+
+### Les 5 principes de voix
+
+| Principe | Exemple |
+|----------|---------|
+| **Honnêteté radicale** | "Si votre site a 5 pages et 0 backlinks, aucun plugin ne vous sauvera." |
+| **Vulgarisation sans condescendance** | "Google fonctionne comme un système de votes. Chaque lien = un vote." |
+| **Preuves, pas promesses** | "Voici les chiffres Search Console, avant/après." |
+| **Empathie business** | "Je sais que le SEO c'est pas votre métier. C'est le mien." |
+| **Appel à l'action sans pression** | "On en parle 15 min ? Gratuit, sans engagement." |
+
+### Ce qu'on ne fait JAMAIS
+- ❌ Jargon non expliqué ("crawl budget", "canonicalization")
+- ❌ Critiquer les concurrents nommément
+- ❌ Promettre des résultats garantis ("page 1 en 30 jours")
+- ❌ Ton corporate froid ("Notre société a le plaisir de…")
+- ❌ Phrases creuses ("excellence", "innovation", "leader du marché")
