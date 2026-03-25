@@ -54,7 +54,7 @@ Le consultant lance un crawl Screaming Frog ou SEMrush, exporte le PDF brut et v
 
 ### 2. Le Netlinking Toxique (Le dangereux)
 
-Pour montrer des "résultats rapides", le prestataire achète des liens sur des annuaires douteux, des PBN (Private Blog Networks) ou des fermes de contenu.
+Pour montrer des "résultats rapides", le prestataire achète des liens sur des annuaires douteux, des PBN (Private Blog Networks) ou des fermes de contenu. (Vous ne savez pas si votre prestataire fait ça ? Voici [10 signaux pour vérifier s'il fait du bon travail](/blog/comment-verifier-si-votre-prestataire-seo-fait-du-bon-travail-les-10-signaux/).)
 
 **Ce que vous perdez :** Votre réputation aux yeux de Google. Une action manuelle de pénalité peut vous **effacer des résultats** pendant des mois.
 
@@ -172,6 +172,7 @@ Pas de discours commercial. On regarde ensemble où vous en êtes et si ça vaut
 - [Combien coûte un Audit SEO en 2026 ?](/blog/combien-coute-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/)
 - [Comment lire un Devis SEO sans se faire avoir ?](/blog/comment-lire-un-devis-seo-sans-se-faire-avoir--le-guide-anti-arnaque/)
 - [Freelance SEO vs Agence : Qui choisir ?](/blog/freelance-seo-vs-agence--qui-choisir-pour-votre-pme--guide-2026/)
+- [Comment être cité par ChatGPT et l'IA de Google (LLMO)](/blog/comment-etre-cite-par-chatgpt-et-lia-de-google-guide-llmo-2026/)
 
 ---
 

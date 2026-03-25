@@ -22,7 +22,7 @@ Voici les **5 causes profondes** que je retrouve dans 9 sites sur 10 que j'audit
 
 C'est la cause n°1, et pourtant c'est celle qu'on vous explique le moins.
 
-Google fonctionne comme un système de **votes de confiance**. Chaque lien qu'un autre site fait vers le vôtre est un vote qui dit : "Ce site est fiable, allez-y."
+Google fonctionne comme un système de **votes de confiance**. Chaque lien qu'un autre site fait vers le vôtre est un vote qui dit : "Ce site est fiable, allez-y." C'est l'un des piliers de l'[E-E-A-T — le framework que Google utilise pour évaluer votre crédibilité](/blog/e-e-a-t--le-guide-pratique-pour-prouver-votre-expertise-a-google-et-a-vos-clients/).
 
 ### Le problème
 
