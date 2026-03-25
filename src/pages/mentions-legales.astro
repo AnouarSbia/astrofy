@@ -1,0 +1,206 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+    { label: "Accueil", href: "/" },
+    { label: "Mentions Légales & Politique de Confidentialité" },
+];
+---
+
+<BaseLayout
+    title="Mentions Légales & Politique de Confidentialité | AnouarLab"
+    description="Mentions légales, politique de confidentialité et politique des cookies du site anouarlab.fr. Conformité RGPD."
+    sideBarActiveItemID=""
+    noindex={true}
+>
+    <div class="pb-12 mt-5">
+        <Breadcrumbs items={breadcrumbItems} />
+
+        <div class="py-12">
+            <h1 class="text-4xl font-bold mb-8">Mentions Légales & Politique de Confidentialité</h1>
+            <p class="text-base-content/60 text-sm">Dernière mise à jour : 25 mars 2026</p>
+        </div>
+
+        <div class="prose prose-lg max-w-none">
+
+            <!-- 1. Mentions Légales -->
+            <h2>1. Mentions légales</h2>
+
+            <h3>Éditeur du site</h3>
+            <ul>
+                <li><strong>Nom :</strong> Anouar Sbia</li>
+                <li><strong>Activité :</strong> Consultant SEO & CRO</li>
+                <li><strong>Site web :</strong> <a href="https://anouarlab.fr">anouarlab.fr</a></li>
+                <li><strong>Email :</strong> <a href="mailto:contact@anouarlab.fr">contact@anouarlab.fr</a></li>
+            </ul>
+
+            <h3>Hébergement</h3>
+            <ul>
+                <li><strong>Hébergeur :</strong> Hostinger International Ltd.</li>
+                <li><strong>Adresse :</strong> 61 Lordou Vironos Street, 6023 Larnaca, Chypre</li>
+                <li><strong>Site web :</strong> <a href="https://www.hostinger.fr" rel="nofollow noopener" target="_blank">hostinger.fr</a></li>
+            </ul>
+
+            <!-- 2. Propriété Intellectuelle -->
+            <h2>2. Propriété intellectuelle</h2>
+            <p>
+                L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes, code source) est la propriété exclusive d'AnouarLab / Anouar Sbia, sauf mention contraire.
+            </p>
+            <p>
+                Toute reproduction, représentation, modification ou exploitation non autorisée de tout ou partie du site est interdite et constitue une contrefaçon sanctionnée par le Code de la propriété intellectuelle.
+            </p>
+
+            <!-- 3. Politique de Confidentialité -->
+            <h2>3. Politique de confidentialité (RGPD)</h2>
+            <p>
+                Conformément au <strong>Règlement Général sur la Protection des Données (RGPD)</strong> et à la loi Informatique et Libertés, cette politique décrit comment nous collectons, utilisons et protégeons vos données personnelles.
+            </p>
+
+            <h3>3.1 Responsable du traitement</h3>
+            <p>
+                Le responsable du traitement des données est Anouar Sbia, joignable à l'adresse <a href="mailto:contact@anouarlab.fr">contact@anouarlab.fr</a>.
+            </p>
+
+            <h3>3.2 Données collectées</h3>
+            <p>Nous collectons les données suivantes :</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type de données</th>
+                        <th>Finalité</th>
+                        <th>Base légale</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Email, nom (formulaire de contact)</td>
+                        <td>Répondre à votre demande</td>
+                        <td>Consentement</td>
+                    </tr>
+                    <tr>
+                        <td>Données de navigation (cookies analytics)</td>
+                        <td>Analyser le trafic, améliorer le site</td>
+                        <td>Consentement (cookie banner)</td>
+                    </tr>
+                    <tr>
+                        <td>Adresse IP (logs serveur)</td>
+                        <td>Sécurité, prévention des abus</td>
+                        <td>Intérêt légitime</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>3.3 Durée de conservation</h3>
+            <ul>
+                <li><strong>Données de contact :</strong> 3 ans après le dernier échange</li>
+                <li><strong>Cookies analytics :</strong> 13 mois maximum</li>
+                <li><strong>Logs serveur :</strong> 12 mois</li>
+            </ul>
+
+            <h3>3.4 Partage des données</h3>
+            <p>
+                Vos données ne sont <strong>jamais vendues</strong>. Elles peuvent être partagées avec les sous-traitants suivants, uniquement dans le cadre des finalités décrites ci-dessus :
+            </p>
+            <ul>
+                <li><strong>Google Analytics / Google Tag Manager</strong> — Mesure d'audience (soumis à votre consentement via le cookie banner)</li>
+                <li><strong>Hostinger</strong> — Hébergement du site</li>
+            </ul>
+
+            <h3>3.5 Vos droits</h3>
+            <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+            <ul>
+                <li>✅ <strong>Droit d'accès</strong> — Obtenir une copie de vos données personnelles</li>
+                <li>✅ <strong>Droit de rectification</strong> — Corriger vos données inexactes</li>
+                <li>✅ <strong>Droit à l'effacement</strong> — Demander la suppression de vos données</li>
+                <li>✅ <strong>Droit à la portabilité</strong> — Recevoir vos données dans un format structuré</li>
+                <li>✅ <strong>Droit d'opposition</strong> — Vous opposer au traitement de vos données</li>
+                <li>✅ <strong>Droit de retirer votre consentement</strong> — À tout moment, sans affecter la licéité du traitement antérieur</li>
+            </ul>
+            <p>
+                Pour exercer ces droits, envoyez un email à <a href="mailto:contact@anouarlab.fr">contact@anouarlab.fr</a>. Nous répondons sous 30 jours.
+            </p>
+            <p>
+                Vous pouvez également déposer une plainte auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) : <a href="https://www.cnil.fr" rel="noopener" target="_blank">cnil.fr</a>.
+            </p>
+
+            <!-- 4. Politique des Cookies -->
+            <h2>4. Politique des cookies</h2>
+
+            <h3>4.1 Qu'est-ce qu'un cookie ?</h3>
+            <p>
+                Un cookie est un petit fichier texte stocké sur votre appareil lorsque vous visitez un site web. Il permet de mémoriser vos préférences et d'analyser votre navigation.
+            </p>
+
+            <h3>4.2 Cookies utilisés sur ce site</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cookie</th>
+                        <th>Type</th>
+                        <th>Finalité</th>
+                        <th>Durée</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>cookie-consent</code></td>
+                        <td>Fonctionnel</td>
+                        <td>Mémoriser votre choix de consentement cookies</td>
+                        <td>Indéfinie (localStorage)</td>
+                    </tr>
+                    <tr>
+                        <td><code>_ga</code></td>
+                        <td>Analytique</td>
+                        <td>Google Analytics — distinction des utilisateurs</td>
+                        <td>2 ans</td>
+                    </tr>
+                    <tr>
+                        <td><code>_gid</code></td>
+                        <td>Analytique</td>
+                        <td>Google Analytics — distinction des utilisateurs</td>
+                        <td>24 heures</td>
+                    </tr>
+                    <tr>
+                        <td><code>_gat</code></td>
+                        <td>Analytique</td>
+                        <td>Google Analytics — limitation du taux de requêtes</td>
+                        <td>1 minute</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>4.3 Gestion de vos cookies</h3>
+            <p>
+                Lors de votre première visite, un bandeau de consentement vous permet d'<strong>accepter ou de refuser</strong> les cookies analytiques. Les cookies fonctionnels (nécessaires au bon fonctionnement du site) ne nécessitent pas de consentement.
+            </p>
+            <p>
+                Vous pouvez modifier votre choix à tout moment en supprimant vos cookies dans les paramètres de votre navigateur, puis en rechargeant la page.
+            </p>
+
+            <!-- 5. Limitation de Responsabilité -->
+            <h2>5. Limitation de responsabilité</h2>
+            <p>
+                Les informations fournies sur ce site sont à titre informatif. AnouarLab s'efforce de maintenir des informations exactes et à jour, mais ne peut garantir l'exhaustivité ou l'exactitude des contenus.
+            </p>
+            <p>
+                AnouarLab ne pourra être tenu responsable des dommages directs ou indirects résultant de l'utilisation de ce site ou de l'impossibilité d'y accéder.
+            </p>
+
+            <!-- 6. Liens Externes -->
+            <h2>6. Liens externes</h2>
+            <p>
+                Ce site peut contenir des liens vers des sites tiers. AnouarLab ne contrôle pas ces sites et décline toute responsabilité quant à leur contenu ou leurs pratiques en matière de protection des données.
+            </p>
+
+            <!-- 7. Contact -->
+            <h2>7. Contact</h2>
+            <p>
+                Pour toute question relative à ces mentions légales, à la politique de confidentialité ou à l'utilisation de vos données personnelles :
+            </p>
+            <p>
+                📧 <a href="mailto:contact@anouarlab.fr">contact@anouarlab.fr</a>
+            </p>
+        </div>
+    </div>
+</BaseLayout>

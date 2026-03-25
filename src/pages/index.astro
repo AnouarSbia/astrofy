@@ -1,9 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
-import LeadMagnetCTA from "../components/LeadMagnetCTA.astro";
 import NewsletterForm from "../components/NewsletterForm.astro";
-import GoogleReviews from "../components/GoogleReviews.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug";
 
@@ -66,85 +63,170 @@ const last_posts = posts.slice(0, 3);
       },
     ])}
   />
-  <!-- Hero Section - Minimal -->
+
+  <!-- Hero Section — PAS Framework -->
   <div class="py-16">
     <p class="text-sm uppercase tracking-widest text-primary/60 mb-4">
-      Laboratoire Digital
+      Consultant SEO & CRO
     </p>
 
     <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-      SEO & CRO Testés.<br />
-      Résultats Prouvés.
+      Votre site mérite des clients.<br />
+      <span class="text-primary">Pas juste des visiteurs.</span>
     </h1>
 
-    <p class="text-lg text-base-content/70 max-w-xl mb-10">
-      Expériences, études de cas et guides basés sur des données réelles — pas
-      des opinions.
+    <p class="text-lg text-base-content/70 max-w-xl mb-4">
+      Je transforme les sites qui stagnent en
+      <strong>machines à trafic qualifié</strong>. Audit technique, contenu
+      stratégique, optimisation des conversions.
+    </p>
+    <p class="text-base text-base-content/50 max-w-xl mb-10">
+      Méthode data-driven. Résultats mesurables en euros, pas en likes.
     </p>
 
-    <div class="flex gap-4">
-      <a class="btn btn-primary" href="#labs">Explorer</a>
-      <a href="#newsletter" class="btn btn-ghost">Newsletter</a>
+    <div class="flex gap-4 flex-wrap">
+      <a class="btn btn-primary btn-lg" href="/contact/">
+        Réserver mon audit gratuit →
+      </a>
+      <span
+        class="btn btn-ghost btn-lg no-animation cursor-default text-base-content/50"
+      >
+        30 min · Sans engagement
+      </span>
     </div>
   </div>
 
-  <!-- Labs Section - Minimal Grid -->
-  <section id="labs" class="py-16 border-t border-base-300">
-    <h2 class="text-2xl font-bold mb-10">Labs</h2>
+  <!-- Social Proof Strip -->
+  <section class="py-10 border-t border-base-300">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div>
+        <p class="text-3xl font-bold text-primary">+300%</p>
+        <p class="text-sm text-base-content/50 mt-1">Trafic organique</p>
+      </div>
+      <div>
+        <p class="text-3xl font-bold text-primary">6 mois</p>
+        <p class="text-sm text-base-content/50 mt-1">Pour des résultats</p>
+      </div>
+      <div>
+        <p class="text-3xl font-bold text-primary">120+</p>
+        <p class="text-sm text-base-content/50 mt-1">Pages optimisées</p>
+      </div>
+      <div>
+        <p class="text-3xl font-bold text-primary">0€</p>
+        <p class="text-sm text-base-content/50 mt-1">De publicité</p>
+      </div>
+    </div>
+    <p class="text-center mt-6">
+      <a
+        href="/blog/cas-client--300-de-trafic-organique-en-6-mois-preuve-et-methode/"
+        class="text-sm text-primary hover:underline"
+      >
+        Voir l'étude de cas complète →
+      </a>
+    </p>
+  </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <a href="/seo/" class="group block">
-        <p class="text-sm text-primary/60 mb-1">01</p>
-        <h3
-          class="text-xl font-semibold group-hover:text-primary transition-colors"
-        >
-          SEO
+  <!-- Services — What I Do -->
+  <section class="py-16 border-t border-base-300">
+    <h2 class="text-2xl font-bold mb-3">Ce que je fais pour vous</h2>
+    <p class="text-base-content/60 mb-10 max-w-xl">
+      Chaque intervention a un objectif clair : plus de trafic qualifié, plus
+      de conversions, plus de chiffre d'affaires.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a href="/seo/" class="card bg-base-200 p-6 group hover:bg-base-300 transition-colors">
+        <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+          🔍 Audit & SEO Technique
         </h3>
-        <p class="text-base-content/60 mt-2">
-          Référencement naturel, technique, contenu.
+        <p class="text-sm text-base-content/60">
+          Votre site a des fuites invisibles qui bloquent votre trafic.
+          Je les trouve, je les corrige.
+          <strong>+45% de pages indexées</strong> en moyenne.
         </p>
       </a>
 
-      <a href="/cro/" class="group block">
-        <p class="text-sm text-primary/60 mb-1">02</p>
-        <h3
-          class="text-xl font-semibold group-hover:text-primary transition-colors"
-        >
-          CRO
+      <a href="/shopify/" class="card bg-base-200 p-6 group hover:bg-base-300 transition-colors">
+        <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+          🛒 SEO E-commerce
         </h3>
-        <p class="text-base-content/60 mt-2">
-          Optimisation conversions, tests A/B, tunnels.
+        <p class="text-sm text-base-content/60">
+          Shopify ou WordPress — fiches produits optimisées, catégories
+          structurées, tunnel de conversion fluide.
+          <strong>Du trafic qui achète.</strong>
         </p>
       </a>
 
-      <a href="/shopify/" class="group block">
-        <p class="text-sm text-primary/60 mb-1">03</p>
-        <h3
-          class="text-xl font-semibold group-hover:text-primary transition-colors"
-        >
-          Shopify
+      <a href="/cro/" class="card bg-base-200 p-6 group hover:bg-base-300 transition-colors">
+        <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+          📈 CRO & Conversions
         </h3>
-        <p class="text-base-content/60 mt-2">
-          Vitesse, SEO, conversions e-commerce.
+        <p class="text-sm text-base-content/60">
+          Tests A/B, optimisation UX, tunnels de vente.
+          Plus de trafic ne sert à rien si votre site ne
+          <strong>convertit pas</strong>.
         </p>
-      </a>
-
-      <a href="/wordpress/" class="group block">
-        <p class="text-sm text-primary/60 mb-1">04</p>
-        <h3
-          class="text-xl font-semibold group-hover:text-primary transition-colors"
-        >
-          WordPress
-        </h3>
-        <p class="text-base-content/60 mt-2">Performance, plugins, headless.</p>
       </a>
     </div>
   </section>
 
-  <!-- Google Reviews Section -->
-  <!-- <GoogleReviews /> -->
+  <!-- Method -->
+  <section class="py-16 border-t border-base-300">
+    <h2 class="text-2xl font-bold mb-3">Une méthode, pas de la magie</h2>
+    <p class="text-base-content/60 mb-10 max-w-xl">
+      3 phases. Chaque étape se mesure. Chaque euro investi est traçable.
+    </p>
 
-  <!-- Articles Section - Minimal -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <p class="text-4xl font-bold text-primary/20 mb-2">01</p>
+        <h3 class="text-lg font-bold mb-2">Corriger</h3>
+        <p class="text-sm text-base-content/60">
+          Audit technique. On assainit les fondations. Erreurs d'indexation,
+          vitesse, architecture — sans base solide, rien ne tient.
+        </p>
+      </div>
+      <div>
+        <p class="text-4xl font-bold text-primary/20 mb-2">02</p>
+        <h3 class="text-lg font-bold mb-2">Construire</h3>
+        <p class="text-sm text-base-content/60">
+          Contenu ciblé sur vos mots-clés rentables. Architecture en silos,
+          maillage interne. On bâtit votre autorité thématique.
+        </p>
+      </div>
+      <div>
+        <p class="text-4xl font-bold text-primary/20 mb-2">03</p>
+        <h3 class="text-lg font-bold mb-2">Amplifier</h3>
+        <p class="text-sm text-base-content/60">
+          Netlinking propre, SEO local, optimisation continue.
+          On accélère ce qui fonctionne déjà. Croissance durable.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- City Pages -->
+  <section class="py-12 border-t border-base-300">
+    <h2 class="text-2xl font-bold mb-3">Consultant SEO partout en France</h2>
+    <p class="text-base-content/60 mb-8 max-w-xl">
+      J'accompagne les PME dans toute la France. Chaque marché local a
+      ses spécificités — je les connais.
+    </p>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+      <a href="/consultant-seo-angers/" class="btn btn-ghost btn-sm justify-start">📍 Angers</a>
+      <a href="/consultant-seo-valence/" class="btn btn-ghost btn-sm justify-start">📍 Valence</a>
+      <a href="/consultant-seo-clermont-ferrand/" class="btn btn-ghost btn-sm justify-start">📍 Clermont-Ferrand</a>
+      <a href="/consultant-seo-caen/" class="btn btn-ghost btn-sm justify-start">📍 Caen</a>
+      <a href="/consultant-seo-dijon/" class="btn btn-ghost btn-sm justify-start">📍 Dijon</a>
+      <a href="/consultant-seo-perpignan/" class="btn btn-ghost btn-sm justify-start">📍 Perpignan</a>
+      <a href="/consultant-seo-vannes/" class="btn btn-ghost btn-sm justify-start">📍 Vannes</a>
+      <a href="/consultant-seo-limoges/" class="btn btn-ghost btn-sm justify-start">📍 Limoges</a>
+      <a href="/consultant-seo-saint-etienne/" class="btn btn-ghost btn-sm justify-start">📍 Saint-Étienne</a>
+      <a href="/consultant-seo-brest/" class="btn btn-ghost btn-sm justify-start">📍 Brest</a>
+    </div>
+  </section>
+
+  <!-- Articles Section -->
   <section class="py-16 border-t border-base-300">
     <div class="flex justify-between items-center mb-10">
       <h2 class="text-2xl font-bold">Articles récents</h2>
@@ -171,6 +253,25 @@ const last_posts = posts.slice(0, 3);
           </a>
         ))
       }
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-16 border-t border-base-300">
+    <div class="card bg-primary/10 border border-primary/20 p-8 md:p-12 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">
+        Envie de savoir ce que Google pense de votre site ?
+      </h2>
+      <p class="text-base-content/70 mb-8 max-w-lg mx-auto">
+        30 minutes. Votre site, vos données, vos concurrents. Je vous montre
+        exactement où vous perdez du trafic — et comment le récupérer.
+      </p>
+      <a href="/contact/" class="btn btn-primary btn-lg">
+        Réserver mon audit gratuit →
+      </a>
+      <p class="text-xs text-base-content/40 mt-3">
+        Gratuit · Sans engagement · Résultats en 48h
+      </p>
     </div>
   </section>
 
