@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>AnouarLab — LinkedIn Carousel Generator</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 40px;
+  }
+
+  h1 { font-size: 24px; margin-bottom: 8px; }
+  .subtitle { color: #888; margin-bottom: 30px; font-size: 14px; }
+
+  /* Export controls */
+  .export-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .export-bar button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .btn-export-all {
+    background: #3D4F2F;
+    color: #F5F0E8;
+  }
+  .btn-export-all:hover { background: #4a6038; }
+  .btn-export-pdf {
+    background: #F5F0E8;
+    color: #3D4F2F;
+  }
+  .btn-export-pdf:hover { background: #ebe5d9; }
+
+  #progress {
+    display: none;
+    color: #888;
+    font-size: 13px;
+    margin-left: 12px;
+  }
+
+  .slides-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .slide-wrapper {
+    position: relative;
+  }
+  .slide-actions {
+    position: absolute;
+    top: -36px;
+    right: 0;
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .slide-wrapper:hover .slide-actions { opacity: 1; }
+  .slide-actions button {
+    padding: 6px 14px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .slide-actions button:hover { background: #555; }
+
+  /* ===== SLIDE TEMPLATE ===== */
+  .slide {
+    width: 540px;
+    height: 540px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .slide.theme-dark {
+    background: #3D4F2F;
+    color: #F5F0E8;
+  }
+  .slide.theme-light {
+    background: #F5F0E8;
+    color: #3D4F2F;
+  }
+
+  .slide-content {
+    padding: 60px 50px 80px 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Footer — ALWAYS identical */
+  .slide-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .slide.theme-dark .slide-footer { color: #F5F0E8; opacity: 0.7; }
+  .slide.theme-light .slide-footer { color: #3D4F2F; opacity: 0.5; }
+
+  .slide-footer .logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    opacity: 1;
+  }
+  .slide-footer .logo svg { width: 16px; height: 16px; }
+
+  .slide-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+    opacity: 0.6;
+    font-weight: 600;
+  }
+
+  .slide-phase {
+    font-size: 72px;
+    font-weight: 900;
+    opacity: 0.15;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .slide-h1 {
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .slide-h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .slide-body {
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.8;
+  }
+
+  .slide-list {
+    list-style: none;
+    font-size: 20px;
+    line-height: 1.8;
+  }
+  .slide-list li::before {
+    content: "✓ ";
+    font-weight: 700;
+    color: #7a9a5a;
+  }
+  .slide.theme-dark .slide-list li::before { color: #a8c88a; }
+
+  .slide-stat {
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .slide-stat-label {
+    font-size: 24px;
+    font-weight: 600;
+    opacity: 0.8;
+    margin-bottom: 24px;
+  }
+  .slide-stat-details {
+    font-size: 18px;
+    opacity: 0.6;
+    line-height: 1.8;
+  }
+
+  .slide-cta-btn {
+    display: inline-block;
+    background: #3D4F2F;
+    color: #F5F0E8;
+    padding: 14px 32px;
+    border-radius: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 16px;
+  }
+  .slide.theme-dark .slide-cta-btn {
+    background: #F5F0E8;
+    color: #3D4F2F;
+  }
+
+  .slide-list.problems li::before {
+    content: "✗ ";
+    color: #c44;
+  }
+
+  .slide-content.centered {
+    text-align: center;
+    align-items: center;
+  }
+
+  .slide-number {
+    position: absolute;
+    top: 24px;
+    right: 30px;
+    font-size: 12px;
+    opacity: 0.35;
+    font-weight: 600;
+  }
+
+  .instructions {
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 700px;
+    margin-top: 40px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #aaa;
+  }
+  .instructions h3 { color: #fff; margin-bottom: 8px; }
+
+  /* =============================================
+     PRINT STYLES — vectorized PDF via browser
+     ============================================= */
+  @media print {
+    @page {
+      size: 1080px 1080px;
+      margin: 0;
+    }
+
+    /* Hide everything except slides */
+    body {
+      background: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    h1, .subtitle, .export-bar, .instructions,
+    .slide-actions, .slide-wrapper > .slide-actions {
+      display: none !important;
+    }
+
+    .slides-grid {
+      display: block !important;
+      gap: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .slide-wrapper {
+      page-break-after: always;
+      page-break-inside: avoid;
+      break-after: page;
+      break-inside: avoid;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .slide-wrapper:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+
+    .slide {
+      width: 1080px !important;
+      height: 1080px !important;
+      border-radius: 0 !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+
+    /* Force background colors to print */
+    .slide.theme-dark {
+      background: #3D4F2F !important;
+      color: #F5F0E8 !important;
+    }
+    .slide.theme-light {
+      background: #F5F0E8 !important;
+      color: #3D4F2F !important;
+    }
+
+    /* Scale all spacing/fonts by 2x for 1080px */
+    .slide-content {
+      padding: 120px 100px 160px 100px !important;
+    }
+    .slide-footer {
+      padding: 40px 100px !important;
+      font-size: 26px !important;
+    }
+    .slide-footer .logo {
+      font-size: 28px !important;
+      gap: 12px !important;
+    }
+    .slide-footer .logo svg {
+      width: 32px !important;
+      height: 32px !important;
+    }
+    .slide-number {
+      font-size: 24px !important;
+      top: 48px !important;
+      right: 60px !important;
+    }
+    .slide-label {
+      font-size: 22px !important;
+      letter-spacing: 6px !important;
+      margin-bottom: 48px !important;
+    }
+    .slide-phase {
+      font-size: 144px !important;
+      margin-bottom: 8px !important;
+    }
+    .slide-h1 {
+      font-size: 84px !important;
+      margin-bottom: 40px !important;
+    }
+    .slide-h2 {
+      font-size: 64px !important;
+      margin-bottom: 32px !important;
+    }
+    .slide-body {
+      font-size: 36px !important;
+      line-height: 1.6 !important;
+    }
+    .slide-list {
+      font-size: 40px !important;
+      line-height: 1.8 !important;
+    }
+    .slide-stat {
+      font-size: 160px !important;
+      margin-bottom: 16px !important;
+    }
+    .slide-stat-label {
+      font-size: 48px !important;
+      margin-bottom: 48px !important;
+    }
+    .slide-stat-details {
+      font-size: 36px !important;
+      line-height: 1.8 !important;
+    }
+    .slide-cta-btn {
+      padding: 28px 64px !important;
+      font-size: 36px !important;
+      border-radius: 80px !important;
+      margin-top: 32px !important;
+    }
+    .slide-list.problems li::before {
+      color: #c44 !important;
+    }
+    .slide-list li::before {
+      color: #7a9a5a !important;
+    }
+    .slide.theme-dark .slide-list li::before {
+      color: #a8c88a !important;
+    }
+    .slide.theme-dark .slide-footer {
+      color: #F5F0E8 !important;
+      opacity: 0.7 !important;
+    }
+    .slide.theme-light .slide-footer {
+      color: #3D4F2F !important;
+      opacity: 0.5 !important;
+    }
+    .slide.theme-dark .slide-cta-btn {
+      background: #F5F0E8 !important;
+      color: #3D4F2F !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>📊 AnouarLab — LinkedIn Carousel Generator</h1>
+<p class="subtitle">Modifie le texte directement dans les slides, puis exporte en un clic.</p>
+
+<div class="export-bar">
+  <button class="btn-export-all" onclick="exportAllPNG()">📥 Exporter toutes les slides (PNG)</button>
+  <button class="btn-export-pdf" onclick="exportPDF()">📄 Exporter en PDF vectorisé</button>
+  <span id="progress"></span>
+</div>
+
+<div class="slides-grid">
+
+  <!-- SLIDE 1: COVER -->
+  <div class="slide-wrapper">
+    <div class="slide-actions"><button onclick="exportSlide(0)">📥 PNG</button></div>
+    <div class="slide theme-dark">
+      <div class="slide-number">1/7</div>
+      <div class="slide-content centered">
+        <div class="slide-h1" contenteditable="true">+300% de Trafic<br>Organique en 6 Mois</div>
+        <div class="slide-body" contenteditable="true">Sans publicité. Sans magie.<br>Juste une méthode.</div>
+      </div>
+      <div class="slide-footer">
+        <div class="logo">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>
+          AnouarLab
+        </div>
+        <span>anouarlab.fr</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: PROBLEM -->
+  <div class="slide-wrapper">
+    <div class="slide-actions"><button onclick="exportSlide(1)">📥 PNG</button></div>
+    <div class="slide theme-light">
+      <div class="slide-number">2/7</div>
+      <div class="slide-content">
+        <div class="slide-label" contenteditable="true">Le Problème</div>
+        <div class="slide-h2" contenteditable="true">1 200 visiteurs/mois</div>
+        <ul class="slide-list problems" contenteditable="true">
+          <li>47 erreurs techniques</li>
+          <li>Architecture cassée</li>
+          <li>Aucune stratégie de contenu</li>
+        </ul>
+      </div>
+      <div class="slide-footer">
+        <div class="logo">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>
+          AnouarLab
+        </div>
+        <span>anouarlab.fr</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: PHASE 01 -->
+  <div class="slide-wrapper">
+    <div class="slide-actions"><button onclick="exportSlide(2)">📥 PNG</button></div>
+    <div class="slide theme-light">
+      <div class="slide-number">3/7</div>
+      <div class="slide-content">
+        <div class="slide-phase">01</div>
+        <div class="slide-h2" contenteditable="true">Corriger</div>
+        <ul class="slide-list" contenteditable="true">
+          <li>Audit technique complet</li>
+          <li>47 erreurs critiques corrigées</li>
+          <li>Vitesse du site optimisée</li>
+        </ul>
+      </div>
+      <div class="slide-footer">
+        <div class="logo">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>
+          AnouarLab
+        </div>
+        <span>anouarlab.fr</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: PHASE 02 -->
+  <div class="slide-wrapper">
+    <div class="slide-actions"><button onclick="exportSlide(3)">📥 PNG</button></div>
+    <div class="slide theme-light">
+      <div class="slide-number">4/7</div>
+      <div class="slide-content">
+        <div class="slide-phase">02</div>
+        <div class="slide-h2" contenteditable="true">Construire</div>
+        <ul class="slide-list" contenteditable="true">
+          <li>Architecture en silos</li>
+          <li>12 pages stratégiques créées</li>
+          <li>Maillage interne intelligent</li>
+        </ul>
+      </div>
+      <div class="slide-footer">
+        <div class="logo">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>
+          AnouarLab
+        </div>
+        <span>anouarlab.fr</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: PHASE 03 -->
+  <div class="slide-wrapper">
+    <div class="slide-actions"><button onclick="exportSlide(4)">📥 PNG</button></div>
+    <div class="slide theme-light">
+      <div class="slide-number">5/7</div>
+      <div class="slide-content">
+        <div class="slide-phase">03</div>
+        <div class="slide-h2" contenteditable="true">Amplifier</div>
+        <ul class="slide-list" contenteditable="true">
+          <li>Netlinking propre et ciblé</li>
+          <li>SEO local activé</li>
+          <li>Optimisation continue mensuelle</li>
+        </ul>
+      </div>
+      <div class="slide-footer">
+        <div class="logo">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>
+          AnouarLab
+        </div>
+        <span>anouarlab.fr</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: RESULTS -->
+  <div class="slide-wrapper">
+    <div class="slide-actions"><button onclick="exportSlide(5)">📥 PNG</button></div>
+    <div class="slide theme-dark">
+      <div class="slide-number">6/7</div>
+      <div class="slide-content centered">
+        <div class="slide-stat" contenteditable="true">+300%</div>
+        <div class="slide-stat-label" contenteditable="true">de trafic organique</div>
+        <div class="slide-stat-details" contenteditable="true">
+          1 200 → 4 800 visiteurs/mois<br>
+          En 6 mois<br>
+          0€ de publicité
+        </div>
+      </div>
+      <div class="slide-footer">
+        <div class="logo">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>
+          AnouarLab
+        </div>
+        <span>anouarlab.fr</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 7: CTA -->
+  <div class="slide-wrapper">
+    <div class="slide-actions"><button onclick="exportSlide(6)">📥 PNG</button></div>
+    <div class="slide theme-light">
+      <div class="slide-number">7/7</div>
+      <div class="slide-content centered">
+        <div class="slide-h2" contenteditable="true">Envie des mêmes<br>résultats ?</div>
+        <div class="slide-body" contenteditable="true">Audit gratuit · 30 min · Sans engagement</div>
+        <div class="slide-cta-btn" contenteditable="true">anouarlab.fr/contact</div>
+      </div>
+      <div class="slide-footer">
+        <div class="logo">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>
+          AnouarLab
+        </div>
+        <span>anouarlab.fr</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="instructions">
+  <h3>📋 Comment utiliser</h3>
+  <p>
+    1. <strong>Modifie le texte</strong> directement dans les slides (tout est cliquable et éditable)<br>
+    2. <strong>📥 PNG</strong> → télécharge chaque slide en 1080×1080px (hover pour voir le bouton)<br>
+    3. <strong>📄 PDF vectorisé</strong> → ouvre l'impression, choisis "Enregistrer en PDF"<br>
+    4. Sur LinkedIn → Nouveau post → icône 📎 Document → Upload le PDF<br><br>
+    💡 Le PDF utilise le moteur du navigateur : <strong>même police Inter, même layout, 100% vectoriel</strong>.
+  </p>
+</div>
+
+<script>
+  const EXPORT_SCALE = 2;
+  const progress = document.getElementById('progress');
+
+  function getSlides() {
+    return document.querySelectorAll('.slide');
+  }
+
+  async function captureSlide(slideEl) {
+    const canvas = await html2canvas(slideEl, {
+      scale: EXPORT_SCALE,
+      useCORS: true,
+      backgroundColor: null,
+      width: 540,
+      height: 540,
+    });
+    return canvas;
+  }
+
+  function downloadCanvas(canvas, filename) {
+    const link = document.createElement('a');
+    link.download = filename;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  }
+
+  // Export single slide as PNG
+  async function exportSlide(index) {
+    const slides = getSlides();
+    const canvas = await captureSlide(slides[index]);
+    downloadCanvas(canvas, `anouarlab-slide-${index + 1}.png`);
+  }
+
+  // Export all as PNG
+  async function exportAllPNG() {
+    const slides = getSlides();
+    progress.style.display = 'inline';
+
+    for (let i = 0; i < slides.length; i++) {
+      progress.textContent = `Export slide ${i + 1}/${slides.length}...`;
+      const canvas = await captureSlide(slides[i]);
+      downloadCanvas(canvas, `anouarlab-slide-${i + 1}.png`);
+      await new Promise(r => setTimeout(r, 300));
+    }
+
+    progress.textContent = '✅ Toutes les slides exportées !';
+    setTimeout(() => { progress.style.display = 'none'; }, 3000);
+  }
+
+  // Export as PDF — uses browser's native print engine
+  // This is 100% vectorized: real Inter font, exact CSS, crisp at any zoom
+  function exportPDF() {
+    window.print();
+  }
+</script>
+
+</body>
+</html>
