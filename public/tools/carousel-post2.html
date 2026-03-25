@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>AnouarLab — Post 2 : 5 Raisons Site Invisible</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 40px;
+  }
+
+  h1 { font-size: 24px; margin-bottom: 8px; }
+  .subtitle { color: #888; margin-bottom: 30px; font-size: 14px; }
+
+  .export-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .export-bar button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .btn-export-all { background: #3D4F2F; color: #F5F0E8; }
+  .btn-export-all:hover { background: #4a6038; }
+  .btn-export-pdf { background: #F5F0E8; color: #3D4F2F; }
+  .btn-export-pdf:hover { background: #ebe5d9; }
+
+  #progress {
+    display: none;
+    color: #888;
+    font-size: 13px;
+    margin-left: 12px;
+  }
+
+  .slides-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .slide-wrapper { position: relative; }
+  .slide-actions {
+    position: absolute;
+    top: -36px;
+    right: 0;
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .slide-wrapper:hover .slide-actions { opacity: 1; }
+  .slide-actions button {
+    padding: 6px 14px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .slide-actions button:hover { background: #555; }
+
+  /* SLIDE — 4:5 portrait */
+  .slide {
+    width: 540px;
+    height: 675px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .slide.theme-dark { background: #3D4F2F; color: #F5F0E8; }
+  .slide.theme-light { background: #F5F0E8; color: #3D4F2F; }
+  .slide.theme-accent { background: #2C3A20; color: #F5F0E8; }
+
+  .slide-content {
+    padding: 70px 48px 90px 48px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Footer */
+  .slide-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 48px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .slide-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 48px;
+    right: 48px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.15;
+  }
+  .slide.theme-dark .slide-footer,
+  .slide.theme-accent .slide-footer { color: #F5F0E8; }
+  .slide.theme-light .slide-footer { color: #3D4F2F; }
+
+  .slide-footer .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    opacity: 0.55;
+  }
+  .slide-footer .brand svg { width: 18px; height: 18px; }
+  .slide-footer .url {
+    opacity: 0.4;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  /* Typography */
+  .slide-label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 28px;
+    opacity: 0.5;
+    font-weight: 700;
+  }
+
+  .slide-cause-num {
+    font-size: 80px;
+    font-weight: 900;
+    opacity: 0.12;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .slide-h1 {
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.12;
+    margin-bottom: 24px;
+  }
+  .slide-h2 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .slide-h3 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .slide-body {
+    font-size: 22px;
+    line-height: 1.5;
+    opacity: 0.75;
+    font-weight: 500;
+  }
+
+  .slide-list {
+    list-style: none;
+    font-size: 21px;
+    line-height: 2;
+    font-weight: 500;
+  }
+  .slide-list li::before {
+    content: "→  ";
+    font-weight: 700;
+    opacity: 0.5;
+  }
+
+  .slide-emoji-list {
+    list-style: none;
+    font-size: 21px;
+    line-height: 2.2;
+    font-weight: 500;
+  }
+
+  .slide-quote {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+    font-style: italic;
+    border-left: 4px solid currentColor;
+    padding-left: 20px;
+    opacity: 0.9;
+    margin-top: 16px;
+  }
+
+  .slide-stat-big {
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .slide-cta-btn {
+    display: inline-block;
+    background: #3D4F2F;
+    color: #F5F0E8;
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
+  }
+  .slide.theme-dark .slide-cta-btn,
+  .slide.theme-accent .slide-cta-btn {
+    background: #F5F0E8;
+    color: #3D4F2F;
+  }
+
+  .slide-content.centered {
+    text-align: center;
+    align-items: center;
+  }
+
+  .slide-number {
+    position: absolute;
+    top: 28px;
+    right: 32px;
+    font-size: 13px;
+    opacity: 0.3;
+    font-weight: 600;
+  }
+
+  .swipe-hint {
+    font-size: 14px;
+    opacity: 0.45;
+    margin-top: 32px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .instructions {
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 700px;
+    margin-top: 40px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #aaa;
+  }
+  .instructions h3 { color: #fff; margin-bottom: 8px; }
+
+  /* Print */
+  @media print {
+    @page { size: 1080px 1350px; margin: 0; }
+    body { background: none !important; padding: 0 !important; margin: 0 !important; }
+    h1, .subtitle, .export-bar, .instructions, .slide-actions { display: none !important; }
+    .slides-grid { display: block !important; gap: 0 !important; margin: 0 !important; padding: 0 !important; }
+    .slide-wrapper {
+      page-break-after: always; page-break-inside: avoid;
+      break-after: page; break-inside: avoid;
+      margin: 0 !important; padding: 0 !important;
+    }
+    .slide-wrapper:last-child { page-break-after: auto; break-after: auto; }
+    .slide {
+      width: 1080px !important; height: 1350px !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    .slide.theme-dark { background: #3D4F2F !important; color: #F5F0E8 !important; }
+    .slide.theme-light { background: #F5F0E8 !important; color: #3D4F2F !important; }
+    .slide.theme-accent { background: #2C3A20 !important; color: #F5F0E8 !important; }
+    .slide-content { padding: 140px 96px 180px 96px !important; }
+    .slide-footer { padding: 40px 96px 48px !important; }
+    .slide-footer::before { left: 96px !important; right: 96px !important; }
+    .slide-footer .brand { font-size: 30px !important; gap: 16px !important; }
+    .slide-footer .brand svg { width: 36px !important; height: 36px !important; }
+    .slide-footer .url { font-size: 26px !important; }
+    .slide-number { font-size: 26px !important; top: 56px !important; right: 64px !important; }
+    .slide-label { font-size: 26px !important; letter-spacing: 8px !important; }
+    .slide-cause-num { font-size: 160px !important; }
+    .slide-h1 { font-size: 88px !important; margin-bottom: 48px !important; }
+    .slide-h2 { font-size: 72px !important; margin-bottom: 40px !important; }
+    .slide-h3 { font-size: 56px !important; }
+    .slide-body { font-size: 44px !important; }
+    .slide-list { font-size: 42px !important; }
+    .slide-emoji-list { font-size: 42px !important; }
+    .slide-quote { font-size: 48px !important; padding-left: 40px !important; border-left-width: 8px !important; }
+    .slide-stat-big { font-size: 144px !important; }
+    .slide-cta-btn { padding: 32px 72px !important; font-size: 40px !important; border-radius: 100px !important; }
+    .swipe-hint { font-size: 28px !important; }
+    .slide.theme-dark .slide-footer, .slide.theme-accent .slide-footer { color: #F5F0E8 !important; }
+    .slide.theme-light .slide-footer { color: #3D4F2F !important; }
+    .slide.theme-dark .slide-cta-btn, .slide.theme-accent .slide-cta-btn { background: #F5F0E8 !important; color: #3D4F2F !important; }
+  }
+</style>
+</head>
+<body>
+
+<h1>📊 Post 2 — Votre site est invisible sur Google ?</h1>
+<p class="subtitle">8 slides · Format 4:5 portrait · Lié à l'article : pourquoi-site-mal-reference-causes</p>
+
+<div class="export-bar">
+  <button class="btn-export-all" onclick="exportAllPNG()">📥 Exporter toutes les slides (PNG)</button>
+  <button class="btn-export-pdf" onclick="exportPDF()">📄 Exporter en PDF vectorisé</button>
+  <span id="progress"></span>
+</div>
+
+<div class="slides-grid">
+
+  <!-- SLIDE 1: COVER HOOK -->
+  <div class="slide-wrapper">
+    <div class="slide-actions"><button onclick="exportSlide(0)">📥 PNG</button></div>
+    <div class="slide theme-dark">
+      <div class="slide-number">1/8</div>
+      <div class="slide-content centered">
+        <div class="slide-h1" contenteditable="true">Votre site est<br>invisible sur<br>Google ?</div>
+        <div class="slide-body" contenteditable="true">Voici les 5 vraies raisons.<br>(Pas celles qu'on vous répète partout)</div>
+        <div class="swipe-hint">Swipez →</div>
+      </div>
+      <div class="slide-footer">
+        <div class="brand"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>@AnouarLab</div>
+        <span class="url">anouarlab.fr</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: CAUSE #1 -->
+  <div class="slide-wrapper">
+    <div class="slide-actions"><button onclick="exportSlide(1)">📥 PNG</button></div>
+    <div class="slide theme-light">
+      <div class="slide-number">2/8</div>
+      <div class="slide-content">
+        <div class="slide-cause-num">#1</div>
+        <div class="slide-h2" contenteditable="true">Aucune autorité<br>aux yeux de Google</div>
+        <ul class="slide-list" contenteditable="true">
+          <li>0 backlink = 0 confiance</li>
+          <li>Google fonctionne par "votes"</li>
+          <li>Meilleur contenu ≠ meilleur classement</li>
+        </ul>
+      </div>
+      <div class="slide-footer">
+        <div class="brand"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>@AnouarLab</div>
+        <span class="url">anouarlab.fr</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: CAUSE #2 -->
+  <div class="slide-wrapper">
+    <div class="slide-actions"><button onclick="exportSlide(2)">📥 PNG</button></div>
+    <div class="slide theme-light">
+      <div class="slide-number">3/8</div>
+      <div class="slide-content">
+        <div class="slide-cause-num">#2</div>
+        <div class="slide-h2" contenteditable="true">Google ne comprend<br>pas votre site</div>
+        <ul class="slide-list" contenteditable="true">
+          <li>Site vitrine = trop vague</li>
+          <li>5 pages qui parlent de tout</li>
+          <li>Dilution thématique = page 5</li>
+        </ul>
+      </div>
+      <div class="slide-footer">
+        <div class="brand"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>@AnouarLab</div>
+        <span class="url">anouarlab.fr</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: CAUSE #3 -->
+  <div class="slide-wrapper">
+    <div class="slide-actions"><button onclick="exportSlide(3)">📥 PNG</button></div>
+    <div class="slide theme-light">
+      <div class="slide-number">4/8</div>
+      <div class="slide-content">
+        <div class="slide-cause-num">#3</div>
+        <div class="slide-h2" contenteditable="true">Contenu qui parle<br>de vous, pas de vos<br>clients</div>
+        <ul class="slide-list" contenteditable="true">
+          <li>Vous écrivez "nos valeurs"</li>
+          <li>Ils tapent "combien ça coûte"</li>
+          <li>Répondez aux questions, pas à votre ego</li>
+        </ul>
+      </div>
+      <div class="slide-footer">
+        <div class="brand"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>@AnouarLab</div>
+        <span class="url">anouarlab.fr</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: CAUSE #4 -->
+  <div class="slide-wrapper">
+    <div class="slide-actions"><button onclick="exportSlide(4)">📥 PNG</button></div>
+    <div class="slide theme-light">
+      <div class="slide-number">5/8</div>
+      <div class="slide-content">
+        <div class="slide-cause-num">#4</div>
+        <div class="slide-h2" contenteditable="true">Blocages techniques<br>invisibles</div>
+        <ul class="slide-emoji-list" contenteditable="true">
+          <li>🐌 Site trop lent (>3s) → 60% des sites</li>
+          <li>🔓 Pas de HTTPS → Google dit "non sécurisé"</li>
+          <li>🚫 Pages non indexées → Google ne les voit pas</li>
+          <li>📱 Non responsive → mobile-first ignoré</li>
+        </ul>
+      </div>
+      <div class="slide-footer">
+        <div class="brand"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>@AnouarLab</div>
+        <span class="url">anouarlab.fr</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: CAUSE #5 -->
+  <div class="slide-wrapper">
+    <div class="slide-actions"><button onclick="exportSlide(5)">📥 PNG</button></div>
+    <div class="slide theme-light">
+      <div class="slide-number">6/8</div>
+      <div class="slide-content">
+        <div class="slide-cause-num">#5</div>
+        <div class="slide-h2" contenteditable="true">Pas de SEO local</div>
+        <div class="slide-stat-big" contenteditable="true">46%</div>
+        <div class="slide-body" contenteditable="true">des recherches Google<br>ont une intention locale.<br><br>Pas de fiche Google Business<br>= invisible pour la moitié<br>des recherches.</div>
+      </div>
+      <div class="slide-footer">
+        <div class="brand"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>@AnouarLab</div>
+        <span class="url">anouarlab.fr</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 7: PRIORITY ORDER -->
+  <div class="slide-wrapper">
+    <div class="slide-actions"><button onclick="exportSlide(6)">📥 PNG</button></div>
+    <div class="slide theme-accent">
+      <div class="slide-number">7/8</div>
+      <div class="slide-content">
+        <div class="slide-label" contenteditable="true">Par où commencer ?</div>
+        <div class="slide-h3" contenteditable="true">Ordre de priorité :</div>
+        <ul class="slide-emoji-list" contenteditable="true">
+          <li>🔴 Corriger la technique (1-2 jours)</li>
+          <li>🔴 Créer la fiche Google (30 min)</li>
+          <li>🟡 Choisir votre thème principal</li>
+          <li>🟡 Réécrire le contenu</li>
+          <li>🟢 Construire des backlinks</li>
+        </ul>
+      </div>
+      <div class="slide-footer">
+        <div class="brand"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>@AnouarLab</div>
+        <span class="url">anouarlab.fr</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 8: CTA -->
+  <div class="slide-wrapper">
+    <div class="slide-actions"><button onclick="exportSlide(7)">📥 PNG</button></div>
+    <div class="slide theme-dark">
+      <div class="slide-number">8/8</div>
+      <div class="slide-content centered">
+        <div class="slide-h2" contenteditable="true">Vous ne savez pas<br>par où commencer ?</div>
+        <div class="slide-body" contenteditable="true">Diagnostic SEO gratuit<br>15 min · On regarde ensemble</div>
+        <div class="slide-cta-btn" contenteditable="true">anouarlab.fr/contact</div>
+      </div>
+      <div class="slide-footer">
+        <div class="brand"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="14" width="4" height="8"/><rect x="8" y="10" width="4" height="12"/><rect x="14" y="6" width="4" height="16"/><rect x="20" y="2" width="4" height="20"/></svg>@AnouarLab</div>
+        <span class="url">anouarlab.fr</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="instructions">
+  <h3>📋 Post 2 — LinkedIn Caption</h3>
+  <p style="color:#F5F0E8; white-space: pre-line; font-size: 15px; line-height: 1.8; background: #2a2a2a; padding: 20px; border-radius: 8px; margin-bottom: 16px;">
+"J'ai un site web, mais personne ne me trouve sur Google."
+
+C'est la phrase que j'entends le plus souvent.
+
+Et la plupart du temps, le gérant a déjà essayé de corriger le problème :
+→ Installé un plugin SEO
+→ Écrit quelques textes "optimisés"
+→ Payé un freelance pas cher
+
+Résultat ? Rien n'a bougé.
+
+Parce que les vrais blocages ne sont JAMAIS ceux qu'on vous explique dans les guides grand public.
+
+Dans ce carousel, je vous montre les 5 vraies causes que je retrouve dans 9 sites sur 10.
+
+Swipez 👉
+
+---
+
+💬 Quelle cause vous concerne le plus ? Dites-le en commentaire.
+🔖 Enregistrez ce post pour y revenir.
+
+#SEO #RéférencementNaturel #PME #StratégieDigitale #Google #MarketingDigital
+  </p>
+  <p>
+    <strong>Document title :</strong> Votre site est invisible sur Google — Les 5 vraies raisons<br>
+    <strong>Jour de publication :</strong> Jeudi (2ème post de la semaine)
+  </p>
+</div>
+
+<script>
+  const EXPORT_SCALE = 2;
+  const progress = document.getElementById('progress');
+
+  function getSlides() { return document.querySelectorAll('.slide'); }
+
+  async function captureSlide(slideEl) {
+    return await html2canvas(slideEl, {
+      scale: EXPORT_SCALE, useCORS: true, backgroundColor: null,
+      width: 540, height: 675,
+    });
+  }
+
+  function downloadCanvas(canvas, filename) {
+    const link = document.createElement('a');
+    link.download = filename;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  }
+
+  async function exportSlide(index) {
+    const slides = getSlides();
+    const canvas = await captureSlide(slides[index]);
+    downloadCanvas(canvas, `anouarlab-post2-slide-${index + 1}.png`);
+  }
+
+  async function exportAllPNG() {
+    const slides = getSlides();
+    progress.style.display = 'inline';
+    for (let i = 0; i < slides.length; i++) {
+      progress.textContent = `Export slide ${i + 1}/${slides.length}...`;
+      const canvas = await captureSlide(slides[i]);
+      downloadCanvas(canvas, `anouarlab-post2-slide-${i + 1}.png`);
+      await new Promise(r => setTimeout(r, 300));
+    }
+    progress.textContent = '✅ Toutes les slides exportées !';
+    setTimeout(() => { progress.style.display = 'none'; }, 3000);
+  }
+
+  function exportPDF() { window.print(); }
+</script>
+
+</body>
+</html>
