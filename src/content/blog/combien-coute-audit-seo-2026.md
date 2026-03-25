@@ -117,7 +117,30 @@ Ne laissez pas des erreurs techniques invisibles brider votre chiffre d'affaires
 
 ---
 
-### À lire aussi
+## Questions Fréquentes sur le Prix d'un Audit SEO
+
+### Combien coûte un audit SEO en 2026 ?
+
+Un audit SEO professionnel coûte entre **800€ et 5 000€** en France, selon la taille du site et la profondeur de l'analyse. Un audit express (20-50 pages) se situe entre 800€ et 1 500€. Un audit complet pour un site e-commerce de 500+ pages coûte entre 2 500€ et 5 000€. Méfiez-vous des offres à moins de 500€ — elles couvrent rarement l'essentiel.
+
+### Quelle est la différence entre un audit SEO gratuit et un audit payant ?
+
+Un audit gratuit (type SEOptimer ou Woorank) scanne votre site automatiquement et détecte des erreurs basiques (balises manquantes, vitesse). Un audit payant inclut une **analyse humaine** de votre architecture, votre contenu, vos concurrents, et un plan d'action priorisé. C'est la différence entre un diagnostic automatique et un médecin spécialiste.
+
+### Combien de temps dure un audit SEO ?
+
+Un audit technique complet prend entre **3 et 10 jours ouvrés**. Cela inclut le crawl du site, l'analyse des données Search Console, l'étude concurrentielle et la rédaction du rapport avec recommandations. Un audit express peut être livré en 48-72h mais sera moins approfondi.
+
+### Un audit SEO est-il rentable pour une PME ?
+
+Oui. Un audit SEO coûte en moyenne 2 000€ et permet d'identifier les erreurs qui bloquent votre visibilité. Si ces corrections vous apportent ne serait-ce que 10 visiteurs qualifiés de plus par mois avec un taux de conversion de 2%, **l'audit est rentabilisé en quelques mois**. C'est un investissement, pas une dépense.
+
+### Faut-il refaire un audit SEO chaque année ?
+
+Idéalement, un **audit technique** annuel est recommandé pour détecter les nouvelles erreurs (liens cassés, problèmes d'indexation, dégradation des performances). En revanche, un audit stratégique complet (contenu + concurrence + netlinking) peut être espacé de 18 à 24 mois si votre marché n'évolue pas trop vite.
+
+---
+
 
 - [Pourquoi un Consultant SEO "pas cher" va vous coûter cher](/blog/pourquoi-un-consultant-seo-pas-cher-va-vous-couter-cher-analyse-2026/)
 - [Comment lire un Devis SEO sans se faire avoir ?](/blog/comment-lire-un-devis-seo-sans-se-faire-avoir--le-guide-anti-arnaque/)

@@ -174,6 +174,30 @@ Si le travail est insuffisant, vous avez deux options :
 
 ---
 
+## Questions Fréquentes sur l'Évaluation d'un Prestataire SEO
+
+### Comment savoir si mon prestataire SEO travaille vraiment ?
+
+Vérifiez 3 choses dans **Google Search Console** : l'évolution de vos impressions (doivent augmenter), le nombre de pages indexées (doit progresser), et les mots-clés positionnés. Si après 6 mois aucun de ces indicateurs n'a bougé, votre prestataire ne produit pas de résultats. Demandez-lui un rapport détaillé des actions concrètes réalisées chaque mois.
+
+### Quels résultats attendre d'un prestataire SEO après 3 mois ?
+
+Après 3 mois, vous devriez voir : une augmentation des **impressions** dans Search Console (+20-50%), des corrections techniques visibles (sitemap propre, erreurs 404 corrigées), et les premiers mots-clés qui entrent dans le Top 50. Les clics et le trafic significatif arrivent généralement entre le 4ème et le 6ème mois.
+
+### Mon prestataire SEO garantit la position 1, c'est normal ?
+
+**Non.** Google l'a dit officiellement : personne ne peut garantir un positionnement spécifique. Un prestataire qui promet la position 1 est soit incompétent, soit malhonnête. Un bon prestataire dit : "Voici ma méthode, voici les résultats que j'ai obtenus pour des clients similaires, et voici les objectifs réalistes pour votre situation."
+
+### Combien devrait coûter un prestataire SEO ?
+
+Un prestataire SEO compétent facture entre **500€ et 3 000€/mois** selon la taille de votre site et l'étendue de la mission. En dessous de 500€/mois, il est très difficile de produire un travail de qualité. Au-delà de 3 000€/mois pour une PME, vérifiez que vous ne payez pas les frais de structure d'une grande agence.
+
+### Que faire si je veux changer de prestataire SEO ?
+
+Avant de rompre, **récupérez tous vos accès** : Google Search Console, Google Analytics, accès CMS (WordPress/Shopify), nom de domaine, hébergement. Trop de PME découvrent que leur prestataire est propriétaire de ces accès. Ensuite, faites un audit indépendant pour évaluer l'état réel de votre site avant de confier le relais à quelqu'un d'autre.
+
+---
+
 ## Conclusion : Votre Budget Mérite de la Transparence
 
 Payer un prestataire SEO sans savoir s'il fait du bon travail, c'est comme payer un plombier sans vérifier s'il y a encore une fuite.

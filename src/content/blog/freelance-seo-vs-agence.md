@@ -116,6 +116,30 @@ Arrêtez de chercher. Discutons de vos objectifs et voyons si nous sommes faits 
 
 ---
 
+## Questions Fréquentes : Freelance SEO vs Agence
+
+### Quel est le prix d'un freelance SEO vs une agence ?
+
+Un freelance SEO facture en moyenne entre **500€ et 2 500€/mois** selon l'étendue de la mission. Une agence SEO facture généralement entre **1 500€ et 10 000€/mois**. L'écart s'explique par les frais de structure de l'agence (locaux, management, commerciaux) que vous payez indirectement. Pour le même budget, un freelance consacre plus de temps opérationnel à votre projet.
+
+### Un freelance SEO peut-il gérer un gros site e-commerce ?
+
+Oui, à condition qu'il ait l'expertise technique nécessaire. Un freelance spécialisé en e-commerce (Shopify, WordPress/WooCommerce) peut gérer des sites de plusieurs milliers de pages. La différence : il ne pourra pas mobiliser 5 personnes en même temps. Mais pour 90% des PME, **un expert dédié vaut mieux qu'une équipe dispersée**.
+
+### Comment vérifier la compétence d'un freelance SEO ?
+
+Demandez **des résultats concrets** : études de cas avec chiffres (trafic avant/après), accès à des dashboards clients anonymisés, références vérifiables. Vérifiez aussi son propre site : s'il est bien référencé, c'est bon signe. Un freelance qui ne peut pas montrer ses résultats cache probablement quelque chose.
+
+### Peut-on combiner freelance et agence ?
+
+Absolument. Certaines PME utilisent un freelance SEO pour la stratégie et la supervision, et une agence pour l'exécution (rédaction de contenu, création de backlinks). C'est un modèle efficace si votre budget le permet. L'essentiel est d'avoir **un seul interlocuteur stratégique** qui coordonne l'ensemble.
+
+### Quelle est la durée d'engagement typique ?
+
+Un freelance propose généralement des engagements de **3 à 6 mois**, le temps de voir les premiers résultats. Les agences demandent souvent 12 mois minimum. En SEO, les résultats significatifs apparaissent entre 3 et 6 mois. Méfiez-vous des prestataires qui exigent 12+ mois d'engagement dès le départ sans aucune clause de sortie.
+
+---
+
 ### À lire aussi
 
 - [Pourquoi un Consultant SEO "pas cher" va vous coûter cher](/blog/pourquoi-un-consultant-seo-pas-cher-va-vous-couter-cher-analyse-2026/)

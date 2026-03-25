@@ -13,11 +13,11 @@ const personSchema = {
     "@type": "Person",
     name: "Anouar Sbia",
     alternateName: "AnouarLab",
-    jobTitle: "Consultant SEO",
+    jobTitle: "Consultant SEO & CRO",
     url: "https://anouarlab.fr",
     image: "https://anouarlab.fr/profile.webp",
     description:
-        "Consultant SEO expert aidant les entreprises à améliorer leur visibilité en ligne et leur positionnement sur les moteurs de recherche.",
+        "Anouar Sbia est le fondateur d'AnouarLab, agence de conseil en SEO et CRO spécialisée dans l'optimisation des sites e-commerce Shopify et WordPress. Plus de 5 ans d'expérience et 20+ sites optimisés.",
     sameAs: [
         "https://twitter.com/anouarlab",
         "https://www.linkedin.com/in/anouarsbia",
@@ -30,27 +30,72 @@ const personSchema = {
         "Stratégie de contenu",
         "Netlinking",
         "SEO local",
+        "CRO",
+        "Optimisation de conversion",
+        "Shopify SEO",
+        "WordPress SEO",
         "Google Analytics",
         "Search Console",
+        "Core Web Vitals",
+        "LLMO",
+        "E-E-A-T",
+        "Audit SEO",
     ],
     offers: {
         "@type": "Offer",
-        name: "Services SEO",
+        name: "Services SEO & CRO",
         description:
-            "Audit SEO, Optimisation On-Page, Stratégie de contenu, Netlinking, SEO Local, Formation SEO",
+            "Audit SEO technique, Optimisation On-Page, Stratégie de contenu, Netlinking, SEO E-commerce Shopify et WordPress, CRO, Tests A/B",
     },
+};
+
+const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "AnouarLab",
+    alternateName: "Anouar Lab",
+    url: "https://anouarlab.fr",
+    logo: "https://anouarlab.fr/profile.webp",
+    description:
+        "AnouarLab est une agence de conseil en SEO et CRO fondée par Anouar Sbia, spécialisée dans l'optimisation des sites e-commerce Shopify et WordPress pour les PME françaises.",
+    founder: {
+        "@type": "Person",
+        name: "Anouar Sbia",
+    },
+    areaServed: {
+        "@type": "Country",
+        name: "France",
+    },
+    serviceType: [
+        "Audit SEO",
+        "SEO technique",
+        "SEO e-commerce",
+        "Optimisation Shopify",
+        "Optimisation WordPress",
+        "CRO",
+        "Tests A/B",
+    ],
+    sameAs: [
+        "https://twitter.com/anouarlab",
+        "https://www.linkedin.com/in/anouarsbia",
+        "https://www.instagram.com/anouarlab",
+    ],
 };
 ---
 
 <BaseLayout
-    title="À propos | AnouarLab"
-    description="Découvrez Anouar Sbia, consultant SEO & CRO spécialisé dans l'optimisation des sites Shopify et WordPress."
+    title="À propos d'Anouar Sbia | AnouarLab — Consultant SEO & CRO"
+    description="Développeur depuis l'âge de 14 ans, Anouar Sbia a fondé AnouarLab pour aider les PME françaises à dominer Google. 5 ans d'expérience, 20+ sites optimisés, méthode data-driven."
     sideBarActiveItemID="about"
 >
-    <!-- Person JSON-LD -->
+    <!-- Person + Organization JSON-LD -->
     <script
         type="application/ld+json"
         set:html={JSON.stringify(personSchema)}
+    />
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(organizationSchema)}
     />
 
     <div class="pb-12 mt-5">
@@ -70,7 +115,7 @@ const personSchema = {
                             width={300}
                             height={300}
                             src="/profile.webp"
-                            alt="Anouar Sbia"
+                            alt="Anouar Sbia — Fondateur d'AnouarLab, consultant SEO & CRO"
                             class="rounded-2xl"
                         />
                     </div>
@@ -82,62 +127,240 @@ const personSchema = {
                 <p
                     class="text-sm font-medium tracking-widest uppercase text-primary/70 mb-2"
                 >
-                    À propos
+                    Fondateur d'AnouarLab
                 </p>
                 <h1 class="text-4xl font-bold mb-4">Anouar Sbia</h1>
                 <p class="text-xl text-base-content/70 mb-6">
-                    Consultant SEO & CRO spécialisé dans l'optimisation des
-                    sites e-commerce Shopify et WordPress.
+                    Consultant SEO & CRO — J'aide les PME françaises à
+                    transformer leur site en machine à clients grâce au
+                    référencement naturel et à l'optimisation des conversions.
                 </p>
-                <div class="flex gap-3">
+                <div class="flex gap-3 flex-wrap">
                     <a href="/contact/" class="btn btn-primary">
                         Me contacter
                     </a>
+                    <a
+                        href="https://www.linkedin.com/in/anouarsbia"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-outline"
+                    >
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chiffres clés -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            <div class="card bg-base-200 text-center p-6">
+                <div class="text-3xl font-bold text-primary">5+</div>
+                <div class="text-sm text-base-content/70 mt-1">
+                    Années d'expérience SEO
+                </div>
+            </div>
+            <div class="card bg-base-200 text-center p-6">
+                <div class="text-3xl font-bold text-primary">20+</div>
+                <div class="text-sm text-base-content/70 mt-1">
+                    Sites optimisés
+                </div>
+            </div>
+            <div class="card bg-base-200 text-center p-6">
+                <div class="text-3xl font-bold text-primary">+300%</div>
+                <div class="text-sm text-base-content/70 mt-1">
+                    Croissance organique (meilleur cas)
+                </div>
+            </div>
+            <div class="card bg-base-200 text-center p-6">
+                <div class="text-3xl font-bold text-primary">10+</div>
+                <div class="text-sm text-base-content/70 mt-1">
+                    Ans de développement web
                 </div>
             </div>
         </div>
 
         <!-- Story Section -->
         <div class="prose prose-lg max-w-none">
-            <h2>Mon parcours</h2>
+            <h2>Mon histoire : du code au SEO</h2>
             <p>
-                Passionné par le digital et l'optimisation, j'accompagne les
-                entreprises e-commerce dans leur croissance en ligne depuis
-                plusieurs années.
+                J'ai écrit mes premières lignes de code <strong
+                    >à 14 ans</strong
+                >. À une époque où mes amis jouaient aux jeux vidéo, moi je
+                démontais des sites web pour comprendre comment ils
+                fonctionnaient. HTML, CSS, JavaScript, PHP — j'ai tout appris en
+                autodidacte, poussé par une seule question :
+                <strong
+                    >comment un site peut-il apparaître en premier sur
+                    Google ?</strong
+                >
             </p>
             <p>
-                Ma méthodologie repose sur une approche <strong
-                    >data-driven</strong
-                > : chaque recommandation est basée sur des données réelles, des tests
-                A/B, et des résultats mesurables.
+                Cette obsession m'a naturellement mené vers le
+                <strong>SEO</strong>. J'ai réalisé que la plupart des
+                développeurs créent des sites beaux mais invisibles. Ils
+                maîtrisent le code mais ignorent les règles du jeu de Google. Et
+                à l'inverse, beaucoup de "consultants SEO" connaissent les
+                théories mais ne savent pas toucher une ligne de code.
+            </p>
+            <p>
+                <strong>AnouarLab</strong> est né de cette double compétence : la
+                rigueur technique du développeur et la vision stratégique du
+                marketeur. Je comprends <strong>comment</strong> Google fonctionne
+                parce que je parle le même langage que ses robots — le code. Et je
+                comprends <strong>pourquoi</strong> certains sites dominent parce
+                que j'étudie les algorithmes depuis plus de 5 ans.
             </p>
 
-            <h2>Ce que je fais</h2>
+            <h2>Ce qu'est AnouarLab</h2>
+            <p>
+                <strong>AnouarLab est une agence de conseil en SEO et CRO</strong
+                > spécialisée dans l'e-commerce. J'accompagne les
+                <strong>PME françaises</strong> qui vendent sur
+                <strong>Shopify</strong> et <strong>WordPress</strong> pour qu'elles
+                arrêtent de dépendre de la publicité et construisent un trafic organique
+                durable et rentable.
+            </p>
+            <p>
+                Mon approche est <strong>100% data-driven</strong>. Pas de
+                promesses vagues, pas de rapports remplis de jargon. Je mesure
+                les résultats en euros, pas en "Domain Authority". Chaque action
+                est testée, chaque recommandation est fondée sur des données
+                réelles.
+            </p>
+
+            <h2>Mes expertises</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose mb-8">
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🔍 SEO Technique</h3>
+                    <p class="text-sm text-base-content/70">
+                        Audit d'indexation, Core Web Vitals, architecture de
+                        site, correction de canonicals, optimisation du crawl
+                        budget.
+                    </p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">
+                        📝 Stratégie de Contenu
+                    </h3>
+                    <p class="text-sm text-base-content/70">
+                        Cocons sémantiques, recherche de mots-clés, rédaction
+                        SEO orientée conversion, maillage interne.
+                    </p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">
+                        🛒 SEO E-commerce (Shopify & WordPress)
+                    </h3>
+                    <p class="text-sm text-base-content/70">
+                        Optimisation des fiches produits, correction des
+                        problèmes Shopify natifs (URLs, canonicals, contenu
+                        dupliqué), migration SEO.
+                    </p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">
+                        📊 CRO & Expérimentation
+                    </h3>
+                    <p class="text-sm text-base-content/70">
+                        Tests A/B, optimisation du taux de conversion, analyse
+                        de parcours utilisateur, UX orientée performance.
+                    </p>
+                </div>
+            </div>
+
+            <h2>Mes outils au quotidien</h2>
+            <p>
+                Je travaille avec les mêmes outils que les équipes SEO des
+                grandes entreprises :
+            </p>
             <ul>
                 <li>
-                    <strong>SEO technique & contenu</strong> – Optimisation On-Page,
-                    architecture, Core Web Vitals
+                    <strong>Screaming Frog</strong> — Crawl technique et audit de
+                    site
                 </li>
                 <li>
-                    <strong>CRO & expérimentation</strong> – Tests A/B, optimisation
-                    des conversions
+                    <strong>Google Search Console & GA4</strong> — Suivi des
+                    performances et de l'indexation
                 </li>
                 <li>
-                    <strong>Shopify & WordPress</strong> – Expertise plateforme e-commerce
+                    <strong>Ahrefs / Semrush</strong> — Recherche de mots-clés, analyse
+                    concurrentielle, suivi de positions
                 </li>
                 <li>
-                    <strong>Analytics & Data</strong> – GA4, Search Console, analyse
-                    de données
+                    <strong>PageSpeed Insights & Lighthouse</strong> — Performance
+                    et Core Web Vitals
+                </li>
+                <li>
+                    <strong>Shopify Admin & WP-CLI</strong> — Intervention directe
+                    sur les plateformes
                 </li>
             </ul>
 
-            <h2>Ma philosophie</h2>
-            <blockquote>"Les résultats parlent. Pas les opinions."</blockquote>
+            <h2>Ma méthode en 3 phases</h2>
             <p>
-                Je crois en l'expérimentation continue et la transparence des
-                résultats. Chaque stratégie est testée, mesurée et optimisée
-                pour maximiser le ROI.
+                Chaque projet suit la même structure éprouvée, adaptée à votre
+                situation :
             </p>
+            <ol>
+                <li>
+                    <strong>Corriger</strong> — Audit technique complet,
+                    correction des erreurs d'indexation, optimisation de la
+                    vitesse. On assainit la base avant tout.
+                </li>
+                <li>
+                    <strong>Construire</strong> — Stratégie de contenu ciblée,
+                    architecture en silos, maillage interne intelligent. On bâtit
+                    l'autorité thématique.
+                </li>
+                <li>
+                    <strong>Amplifier</strong> — Netlinking propre et ciblé,
+                    Digital PR, optimisation continue. On accélère la croissance.
+                </li>
+            </ol>
+            <p>
+                Cette méthode a permis à un client e-commerce de passer de 1 200
+                à 4 800 visiteurs organiques mensuels en 6 mois — soit
+                <a
+                    href="/blog/cas-client--300-de-trafic-organique-en-6-mois-preuve-et-methode/"
+                    >+300% de trafic organique</a
+                >.
+            </p>
+
+            <h2>Ma philosophie</h2>
+            <blockquote>
+                "Je ne vends pas du SEO. Je vends de la croissance mesurable."
+            </blockquote>
+            <p>
+                Le SEO n'est pas un service magique. C'est un
+                <strong>investissement</strong> qui doit produire un
+                <strong>retour mesurable</strong>. Si je ne peux pas vous montrer
+                l'impact en euros de mon travail, alors je n'ai pas fait mon travail.
+            </p>
+            <p>
+                C'est pour ça que je refuse les contrats où je ne peux pas avoir
+                accès aux données. Pas de Search Console ? Pas de Analytics ? Pas
+                de collaboration possible.
+                <strong>La transparence n'est pas négociable.</strong>
+            </p>
+
+            <!-- CTA Section -->
+            <div class="not-prose mt-8">
+                <div
+                    class="card bg-primary/10 border border-primary/20 p-8 text-center"
+                >
+                    <h3 class="text-2xl font-bold mb-3">
+                        Envie de travailler ensemble ?
+                    </h3>
+                    <p class="text-base-content/70 mb-6 max-w-lg mx-auto">
+                        Réservez un audit découverte gratuit de 30 minutes. On
+                        regarde ensemble votre site, vos données et votre
+                        potentiel de croissance. Sans engagement.
+                    </p>
+                    <a href="/contact/" class="btn btn-primary btn-lg">
+                        Réserver mon audit gratuit →
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </BaseLayout>

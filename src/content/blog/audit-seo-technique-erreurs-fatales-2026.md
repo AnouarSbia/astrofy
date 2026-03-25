@@ -285,6 +285,30 @@ Un audit SEO technique n'est pas une dépense. C'est l'assurance que votre inves
 
 ---
 
+## Questions Fréquentes sur l'Audit SEO Technique
+
+### Qu'est-ce qu'un audit SEO technique ?
+
+Un audit SEO technique est une **analyse complète de l'infrastructure de votre site web** : indexation, crawl, vitesse, structure des URLs, redirections, données structurées, et compatibilité mobile. Il identifie les problèmes invisibles qui empêchent Google de crawler et d'indexer correctement vos pages. C'est la fondation sur laquelle repose toute votre stratégie SEO.
+
+### Combien de temps prend un audit SEO technique ?
+
+Un audit technique complet prend entre **3 et 5 jours ouvrés** pour un site de taille moyenne (100-500 pages). Pour un site e-commerce de 5 000+ pages, comptez 7 à 10 jours. La livraison inclut un rapport détaillé avec les erreurs priorisées par impact et un plan de correction étape par étape.
+
+### Peut-on faire un audit SEO technique soi-même ?
+
+Partiellement. La checklist en fin d'article vous permet un auto-diagnostic rapide en 5 minutes. Mais un audit professionnel va plus loin : analyse des logs serveur, crawl complet avec Screaming Frog, étude du rendering JavaScript, et corrélation avec les données Search Console. **Les erreurs les plus coûteuses sont celles que vous ne savez pas chercher.**
+
+### Quels outils utilise-t-on pour un audit SEO technique ?
+
+Les outils principaux sont **Screaming Frog** (crawl technique), **Google Search Console** (indexation et performances), **PageSpeed Insights** (Core Web Vitals), **Rich Results Test** (données structurées) et l'analyse des **fichiers logs serveur** (comportement réel de Googlebot). Un audit professionnel combine ces outils pour une vue complète.
+
+### À quelle fréquence faut-il faire un audit technique ?
+
+Un audit technique complet est recommandé **au minimum une fois par an**, ou après chaque changement majeur : refonte de site, migration de CMS, changement d'hébergeur, grosse mise à jour de contenu. Un monitoring continu via Search Console permet de détecter les problèmes entre deux audits.
+
+---
+
 ### À lire aussi
 
 - [Refonte de Site Web : Le Guide de Survie SEO](/blog/refonte-de-site-web--le-guide-de-survie-seo-pour-2026/)
