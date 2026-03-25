@@ -1,0 +1,125 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+    { label: "Accueil", href: "/" },
+    { label: "Consultant SEO Clermont-Ferrand" },
+];
+
+const localSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "AnouarLab — Consultant SEO Clermont-Ferrand",
+    description: "Consultant SEO pour les entreprises de Clermont-Ferrand et du Puy-de-Dôme. Spécialiste e-commerce Shopify et WordPress. Audit technique et stratégie de contenu data-driven.",
+    url: "https://anouarlab.fr/consultant-seo-clermont-ferrand/",
+    areaServed: { "@type": "City", name: "Clermont-Ferrand" },
+    provider: { "@type": "Person", name: "Anouar Sbia", jobTitle: "Consultant SEO & CRO" },
+    serviceType: ["Audit SEO", "SEO E-commerce", "SEO Shopify", "SEO WordPress", "CRO"],
+};
+---
+
+<BaseLayout
+    title="Consultant SEO Clermont-Ferrand — Visibilité Garantie pour les PME | AnouarLab"
+    description="Entreprise clermontoise invisible sur Google ? Consultant SEO e-commerce, audit gratuit 30 min. Méthode éprouvée : +300% de trafic organique en 6 mois."
+    sideBarActiveItemID="seo"
+>
+    <script type="application/ld+json" set:html={JSON.stringify(localSchema)} />
+
+    <div class="pb-12 mt-5">
+        <Breadcrumbs items={breadcrumbItems} />
+
+        <div class="py-12">
+            <p class="text-sm uppercase tracking-widest text-primary/60 mb-4">Consultant SEO · Clermont-Ferrand</p>
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                Clermont-Ferrand innove. <span class="text-primary">Votre SEO devrait aussi.</span>
+            </h1>
+            <p class="text-xl text-base-content/70 max-w-2xl mb-4">
+                Vous avez un excellent produit ou service. Mais quand un Clermontois tape votre métier sur Google, c'est votre concurrent qui apparaît.
+            </p>
+            <p class="text-lg text-base-content/70 max-w-2xl mb-8">
+                <strong>Frustrant, non ? On change ça.</strong>
+            </p>
+            <div class="flex gap-3 flex-wrap">
+                <a href="/contact/" class="btn btn-primary btn-lg">Réserver mon audit gratuit →</a>
+                <span class="btn btn-ghost btn-lg no-animation cursor-default text-base-content/50">30 min · Sans engagement</span>
+            </div>
+        </div>
+
+        <div class="prose prose-lg max-w-none">
+            <h2>Le SEO à Clermont : une opportunité que peu exploitent</h2>
+            <p>
+                Clermont-Ferrand est un <strong>hub industriel et tech sous-estimé</strong>. Michelin, le Bivouac (accélérateur de start-ups), le pôle de compétitivité Céréales Vallée, l'université — la ville bouillonne d'énergie économique.
+            </p>
+            <p>
+                Pourtant, la plupart des PME clermontoises <strong>négligent leur visibilité organique</strong>. Elles investissent dans des salons, du bouche-à-oreille, parfois Google Ads. Mais le canal le plus rentable à long terme — le SEO — reste inexploité.
+            </p>
+            <p>
+                <strong>C'est une opportunité massive pour vous.</strong> Pendant que vos concurrents dorment sur le SEO, vous pouvez prendre l'avance.
+            </p>
+
+            <h2>Ce que je fais pour les entreprises clermontoises</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose mb-8">
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🔍 Audit Technique Complet</h3>
+                    <p class="text-sm text-base-content/70">Votre site a des freins invisibles. Indexation, vitesse, erreurs de crawl — je diagnostique et je corrige. <strong>Comme un médecin pour votre site.</strong></p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">📝 Contenu qui Attire et Convertit</h3>
+                    <p class="text-sm text-base-content/70">Recherche de mots-clés locaux, articles qui répondent aux questions de vos clients auvergnats. Chaque contenu a un objectif : générer du business.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🛒 SEO E-commerce</h3>
+                    <p class="text-sm text-base-content/70">Shopify ou WordPress — fiches produits optimisées, catégories structurées, conversion maximisée. Vos produits auvergnats méritent d'être trouvés.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">📍 SEO Local Puy-de-Dôme</h3>
+                    <p class="text-sm text-base-content/70">Google Business, Pack Local, avis clients. Quand quelqu'un cherche votre métier à Clermont, <strong>c'est votre fiche qui s'affiche</strong>.</p>
+                </div>
+            </div>
+
+            <h2>La preuve par les chiffres</h2>
+            <p>Un client e-commerce : <strong>+300% de trafic organique en 6 mois</strong>. De 1 200 à 4 800 visiteurs mensuels. Sans pub. Sans magie. Juste de la méthode.</p>
+            <p><a href="/blog/cas-client--300-de-trafic-organique-en-6-mois-preuve-et-methode/">Lire l'étude de cas →</a></p>
+
+            <h2>Clermont-Ferrand : le moment d'agir, c'est maintenant</h2>
+            <p>
+                L'écosystème clermontois accélère. Le Bivouac incube des dizaines de start-ups chaque année. Les commerces de la place de Jaude se digitalisent. Les industriels du Puy-de-Dôme cherchent de nouveaux canaux de croissance.
+            </p>
+            <p><strong>La question n'est pas "faut-il faire du SEO ?", mais "combien de temps pouvez-vous encore vous en passer ?"</strong></p>
+
+            <h2>Méthode en 3 phases : Corriger → Construire → Amplifier</h2>
+            <ol>
+                <li><strong>Corriger</strong> — Audit technique. Fondations solides. Zéro erreur d'indexation.</li>
+                <li><strong>Construire</strong> — Contenu ciblé, architecture en silos, maillage intelligent. Autorité thématique.</li>
+                <li><strong>Amplifier</strong> — Netlinking, SEO local, optimisation continue. Croissance accélérée.</li>
+            </ol>
+
+            <h2>Vos questions — SEO à Clermont-Ferrand</h2>
+            <h3>Le SEO fonctionne-t-il pour les PME industrielles ?</h3>
+            <p>Absolument. Le B2B industriel est l'un des secteurs où le SEO est le <strong>plus rentable</strong>. Vos prospects tapent des requêtes ultra-précises. Si vous y répondez, vous captez des leads qualifiés sans payer de pub.</p>
+
+            <h3>Combien ça coûte ?</h3>
+            <p>Entre <strong>500€ et 2 500€/mois</strong>. <a href="/blog/combien-coute-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/">Voir les tarifs détaillés →</a></p>
+
+            <h3>Comment se déroule un accompagnement SEO ?</h3>
+            <p>Point mensuel en visio, accès partagé à Search Console, rapports détaillés avec les actions réalisées. <strong>Vous voyez exactement ce qui est fait et ce que ça produit.</strong> Transparence totale.</p>
+
+            <div class="not-prose mt-10">
+                <div class="card bg-primary/10 border border-primary/20 p-8 text-center">
+                    <h3 class="text-2xl font-bold mb-3">Prêt à prendre l'avance sur vos concurrents ?</h3>
+                    <p class="text-base-content/70 mb-6 max-w-lg mx-auto">30 minutes pour analyser votre site, vos concurrents clermontois et votre potentiel SEO. Gratuit, sans engagement.</p>
+                    <a href="/contact/" class="btn btn-primary btn-lg">Réserver mon audit gratuit →</a>
+                    <p class="text-xs text-base-content/40 mt-3">Gratuit · Sans engagement · Résultats en 48h</p>
+                </div>
+            </div>
+
+            <h3 class="mt-8">À lire aussi</h3>
+            <ul>
+                <li><a href="/blog/audit-seo-technique--les-10-erreurs-fatales-qui-ruinent-votre-visibilite-en-2026/">Les 10 erreurs techniques fatales</a></li>
+                <li><a href="/blog/le-roi-du-seo--combien-rapporte-vraiment-la-1ere-place--analyse-2026/">Le ROI du SEO : combien rapporte la 1ère place ?</a></li>
+                <li><a href="/blog/comment-etre-cite-par-chatgpt-et-lia-de-google-llmo-2026/">Comment être cité par ChatGPT (LLMO)</a></li>
+            </ul>
+        </div>
+    </div>
+</BaseLayout>

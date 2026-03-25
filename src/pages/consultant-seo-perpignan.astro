@@ -1,0 +1,124 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+    { label: "Accueil", href: "/" },
+    { label: "Consultant SEO Perpignan" },
+];
+
+const localSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "AnouarLab — Consultant SEO Perpignan",
+    description: "Consultant SEO pour les entreprises de Perpignan et des Pyrénées-Orientales. Expert e-commerce Shopify et WordPress. Audit gratuit, stratégie de contenu locale.",
+    url: "https://anouarlab.fr/consultant-seo-perpignan/",
+    areaServed: { "@type": "City", name: "Perpignan" },
+    provider: { "@type": "Person", name: "Anouar Sbia", jobTitle: "Consultant SEO & CRO" },
+    serviceType: ["Audit SEO", "SEO E-commerce", "SEO Shopify", "SEO WordPress", "CRO"],
+};
+---
+
+<BaseLayout
+    title="Consultant SEO Perpignan — Visibilité Google pour les PME Catalanes | AnouarLab"
+    description="Entreprise à Perpignan invisible sur Google ? Consultant SEO spécialisé e-commerce. Audit gratuit 30 min, méthode prouvée (+300% trafic), zéro jargon."
+    sideBarActiveItemID="seo"
+>
+    <script type="application/ld+json" set:html={JSON.stringify(localSchema)} />
+
+    <div class="pb-12 mt-5">
+        <Breadcrumbs items={breadcrumbItems} />
+
+        <div class="py-12">
+            <p class="text-sm uppercase tracking-widest text-primary/60 mb-4">Consultant SEO · Perpignan</p>
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                Le soleil catalan. <span class="text-primary">La visibilité Google en plus.</span>
+            </h1>
+            <p class="text-xl text-base-content/70 max-w-2xl mb-4">
+                Perpignan est un carrefour unique entre France et Espagne. Mais sur Google, vos clients potentiels ne passent pas la frontière pour vous chercher — ils tapent et cliquent sur le premier résultat.
+            </p>
+            <p class="text-lg text-base-content/70 max-w-2xl mb-8">
+                <strong>Ce premier résultat, c'est vous — ou c'est votre concurrent ?</strong>
+            </p>
+            <div class="flex gap-3 flex-wrap">
+                <a href="/contact/" class="btn btn-primary btn-lg">Réserver mon audit gratuit →</a>
+                <span class="btn btn-ghost btn-lg no-animation cursor-default text-base-content/50">30 min · Sans engagement</span>
+            </div>
+        </div>
+
+        <div class="prose prose-lg max-w-none">
+            <h2>Perpignan : un marché SEO quasiment vierge</h2>
+            <p>
+                Soyons honnêtes : <strong>très peu d'entreprises à Perpignan investissent sérieusement dans le SEO</strong>. C'est une aubaine pour vous.
+            </p>
+            <p>
+                Le tourisme (côte Vermeille, Collioure, Font-Romeu), l'agroalimentaire (fruits, vins du Roussillon), le commerce transfrontalier — ces secteurs génèrent des milliers de recherches Google chaque mois. Et la plupart des résultats sont occupés par des acteurs nationaux, pas locaux.
+            </p>
+            <p>
+                <strong>Traduction :</strong> une PME perpignanaise avec une stratégie SEO solide peut dominer les résultats locaux en quelques mois. L'opportunité est là, maintenant.
+            </p>
+
+            <h2>Comment je propulse les entreprises catalanes sur Google</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose mb-8">
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🔍 Audit Technique</h3>
+                    <p class="text-sm text-base-content/70">Votre site a des fuites que vous ne soupçonnez pas. Je les trouve, je les bouche. <strong>+45% de pages indexées</strong> en moyenne après correction.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🏖️ SEO Tourisme & Hôtellerie</h3>
+                    <p class="text-sm text-base-content/70">Hôtels, gîtes, restaurants, activités — les touristes planifient sur Google. Si vous n'y êtes pas, Booking et TripAdvisor récupèrent vos clients.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🛒 SEO E-commerce</h3>
+                    <p class="text-sm text-base-content/70">Vins du Roussillon, produits catalans, artisanat — vendez en ligne avec un site optimisé Shopify ou WordPress. Fiches produits qui convertissent.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">📍 SEO Local Pyrénées-Orientales</h3>
+                    <p class="text-sm text-base-content/70">Google Maps, fiche Google Business, avis clients. Dominez le Pack Local quand un habitant ou un touriste cherche votre métier.</p>
+                </div>
+            </div>
+
+            <h2>Résultats prouvés : +300% de trafic en 6 mois</h2>
+            <p>Un client e-commerce. Aucune pub. Méthode rigoureuse. De 1 200 à 4 800 visiteurs organiques mensuels.</p>
+            <p><a href="/blog/cas-client--300-de-trafic-organique-en-6-mois-preuve-et-methode/">Voir l'étude de cas →</a></p>
+
+            <h2>L'avantage transfrontalier : SEO France + Espagne</h2>
+            <p>
+                Perpignan a un atout unique : sa <strong>position transfrontalière</strong>. Si votre activité touche aussi la Catalogne espagnole, une stratégie SEO bilingue (français + espagnol) peut doubler votre marché adressable. Peu de consultants maîtrisent ce positionnement — c'est mon avantage pour vous.
+            </p>
+
+            <h2>Méthode en 3 phases</h2>
+            <ol>
+                <li><strong>Corriger</strong> — Audit technique. Fondations nettoyées. Indexation optimisée.</li>
+                <li><strong>Construire</strong> — Contenu local ciblé, architecture SEO, maillage interne.</li>
+                <li><strong>Amplifier</strong> — Netlinking, SEO local, croissance continue.</li>
+            </ol>
+
+            <h2>Questions fréquentes — SEO à Perpignan</h2>
+            <h3>Y a-t-il assez de volume de recherche à Perpignan ?</h3>
+            <p><strong>Oui.</strong> La communauté urbaine de Perpignan compte 270 000+ habitants. Ajoutez les touristes (millions par an) et le trafic transfrontalier. Les recherches locales sont bien présentes — et la concurrence SEO est faible.</p>
+
+            <h3>Combien ça coûte ?</h3>
+            <p>Entre <strong>500€ et 2 500€/mois</strong>. <a href="/blog/combien-coute-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/">Tarifs détaillés →</a></p>
+
+            <h3>Comment se déroule l'accompagnement ?</h3>
+            <p>Point mensuel, rapports détaillés, accès partagé à vos données. <strong>Tout est transparent.</strong> Vous voyez les actions, les résultats, et l'impact sur votre chiffre d'affaires.</p>
+
+            <div class="not-prose mt-10">
+                <div class="card bg-primary/10 border border-primary/20 p-8 text-center">
+                    <h3 class="text-2xl font-bold mb-3">Prêt à surfer sur la vague SEO catalane ?</h3>
+                    <p class="text-base-content/70 mb-6 max-w-lg mx-auto">30 minutes. Votre site, vos concurrents perpignanais, votre potentiel. On regarde ensemble — gratuitement.</p>
+                    <a href="/contact/" class="btn btn-primary btn-lg">Réserver mon audit gratuit →</a>
+                    <p class="text-xs text-base-content/40 mt-3">Gratuit · Sans engagement · Résultats en 48h</p>
+                </div>
+            </div>
+
+            <h3 class="mt-8">À lire aussi</h3>
+            <ul>
+                <li><a href="/blog/pourquoi-votre-site-est-mal-reference-sur-google--les-7-causes-cachees/">Pourquoi votre site est mal référencé</a></li>
+                <li><a href="/blog/e-e-a-t--le-guide-pratique-pour-prouver-votre-expertise-a-google/">E-E-A-T : Prouver votre expertise à Google</a></li>
+                <li><a href="/blog/comment-etre-cite-par-chatgpt-et-lia-de-google-llmo-2026/">Comment être cité par ChatGPT</a></li>
+            </ul>
+        </div>
+    </div>
+</BaseLayout>

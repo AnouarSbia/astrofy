@@ -6,6 +6,7 @@ import SideBar from "../components/SideBar.astro";
 import GoogleTagManager from "../components/GoogleTagManager.astro";
 import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
 import AnalyticsTracker from "../components/AnalyticsTracker.astro";
+import CookieConsent from "../components/CookieConsent.astro";
 import { ViewTransitions } from "astro:transitions";
 
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
@@ -49,6 +50,7 @@ const {
       </div>
       {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
     </div>
+    <CookieConsent />
     <AnalyticsTracker />
   </body>
 </html>

@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+    { label: "Accueil", href: "/" },
+    { label: "Consultant SEO Caen" },
+];
+
+const localSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "AnouarLab — Consultant SEO Caen",
+    description: "Consultant SEO pour les entreprises de Caen et du Calvados. Spécialiste e-commerce Shopify et WordPress. Audit gratuit, résultats mesurables.",
+    url: "https://anouarlab.fr/consultant-seo-caen/",
+    areaServed: { "@type": "City", name: "Caen" },
+    provider: { "@type": "Person", name: "Anouar Sbia", jobTitle: "Consultant SEO & CRO" },
+    serviceType: ["Audit SEO", "SEO E-commerce", "SEO Shopify", "SEO WordPress", "CRO"],
+};
+---
+
+<BaseLayout
+    title="Consultant SEO Caen — Dominez Google en Normandie | AnouarLab"
+    description="Votre entreprise caennaise mérite d'être trouvée sur Google. Consultant SEO spécialisé e-commerce. Audit gratuit 30 min, résultats prouvés (+300% de trafic)."
+    sideBarActiveItemID="seo"
+>
+    <script type="application/ld+json" set:html={JSON.stringify(localSchema)} />
+
+    <div class="pb-12 mt-5">
+        <Breadcrumbs items={breadcrumbItems} />
+
+        <div class="py-12">
+            <p class="text-sm uppercase tracking-widest text-primary/60 mb-4">Consultant SEO · Caen</p>
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                Les Normands vous cherchent. <span class="text-primary">Vous trouvent-ils ?</span>
+            </h1>
+            <p class="text-xl text-base-content/70 max-w-2xl mb-4">
+                Chaque jour, des centaines de Caennais tapent sur Google le service exact que vous proposez. Et chaque jour, c'est votre concurrent qui récupère ces clients.
+            </p>
+            <p class="text-lg text-base-content/70 max-w-2xl mb-8">
+                <strong>On inverse la tendance ?</strong>
+            </p>
+            <div class="flex gap-3 flex-wrap">
+                <a href="/contact/" class="btn btn-primary btn-lg">Réserver mon audit gratuit →</a>
+                <span class="btn btn-ghost btn-lg no-animation cursor-default text-base-content/50">30 min · Sans engagement</span>
+            </div>
+        </div>
+
+        <div class="prose prose-lg max-w-none">
+            <h2>Caen : une économie qui se digitalise (enfin)</h2>
+            <p>
+                Caen n'est pas qu'une ville historique. C'est un <strong>pôle universitaire de 30 000 étudiants</strong>, un nœud logistique vers l'Angleterre, et un territoire en pleine mutation digitale.
+            </p>
+            <p>
+                Le CITIS (Caen Innovation, Technologies, Industries et Services), le pôle TES (Transactions Électroniques Sécurisées), les commerces du centre-ville, les artisans du Calvados — tous ont besoin d'être visibles en ligne. Mais peu investissent intelligemment.
+            </p>
+            <p>
+                <strong>Résultat : le marché SEO caennais est grand ouvert.</strong> Les entreprises qui bougent maintenant domineront Google local demain.
+            </p>
+
+            <h2>Comment je booste la visibilité des entreprises normandes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose mb-8">
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🔍 Audit Technique Sans Pitié</h3>
+                    <p class="text-sm text-base-content/70">Votre site cache des erreurs que vous ne voyez pas. Indexation cassée, vitesse lente, architecture à plat — <strong>je trouve, je corrige, vous montez</strong>.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">📝 Contenu Local qui Convertit</h3>
+                    <p class="text-sm text-base-content/70">Articles, pages services, FAQ — du contenu qui répond aux questions des Caennais et les transforme en clients. Pas du texte pour remplir : du texte pour vendre.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🛒 SEO E-commerce</h3>
+                    <p class="text-sm text-base-content/70">Produits normands, artisanat, gastronomie — votre boutique Shopify ou WordPress mérite des visiteurs qualifiés. J'optimise de A à Z.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">📍 SEO Local Calvados</h3>
+                    <p class="text-sm text-base-content/70">Google Maps, fiche Google Business, avis clients. Quand un habitant de Caen, Bayeux ou Lisieux cherche votre métier, <strong>c'est vous qu'il trouve</strong>.</p>
+                </div>
+            </div>
+
+            <h2>La preuve : +300% de trafic en 6 mois</h2>
+            <p>Un client e-commerce. Zéro pub. Juste une méthode data-driven appliquée avec rigueur. De 1 200 à 4 800 visiteurs organiques mensuels.</p>
+            <p><a href="/blog/cas-client--300-de-trafic-organique-en-6-mois-preuve-et-methode/">Voir les résultats complets →</a></p>
+
+            <h2>3 phases. Des résultats. Pas de blabla.</h2>
+            <ol>
+                <li><strong>Corriger</strong> — On nettoie les erreurs techniques. Fondations propres.</li>
+                <li><strong>Construire</strong> — Stratégie de contenu, architecture, maillage. Autorité thématique.</li>
+                <li><strong>Amplifier</strong> — Netlinking, SEO local, optimisation. Croissance accélérée.</li>
+            </ol>
+
+            <h2>Questions fréquentes — SEO à Caen</h2>
+            <h3>Le SEO fonctionne-t-il pour le tourisme normand ?</h3>
+            <p>C'est l'un des <strong>meilleurs secteurs pour le SEO</strong>. Les touristes cherchent "hôtel Caen", "restaurant fruits de mer Normandie", "visite plages du débarquement" — si vous êtes bien positionné, c'est du trafic ultra-qualifié et gratuit.</p>
+
+            <h3>Combien coûte un consultant SEO à Caen ?</h3>
+            <p>Entre <strong>500€ et 2 500€/mois</strong>. <a href="/blog/combien-coute-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/">Voir les tarifs →</a></p>
+
+            <h3>Comment se passe la collaboration ?</h3>
+            <p>Point mensuel en visio, rapports détaillés, accès partagé à Search Console. <strong>Vous savez exactement ce qui est fait, et ce que ça produit.</strong> Transparence totale, zéro réunion inutile.</p>
+
+            <div class="not-prose mt-10">
+                <div class="card bg-primary/10 border border-primary/20 p-8 text-center">
+                    <h3 class="text-2xl font-bold mb-3">30 minutes pour changer votre visibilité</h3>
+                    <p class="text-base-content/70 mb-6 max-w-lg mx-auto">On analyse votre site, vos concurrents caennais et votre potentiel de croissance. Pas de jargon. Des réponses concrètes.</p>
+                    <a href="/contact/" class="btn btn-primary btn-lg">Réserver mon audit gratuit →</a>
+                    <p class="text-xs text-base-content/40 mt-3">Gratuit · Sans engagement · Résultats en 48h</p>
+                </div>
+            </div>
+
+            <h3 class="mt-8">À lire aussi</h3>
+            <ul>
+                <li><a href="/blog/pourquoi-votre-site-est-mal-reference-sur-google--les-7-causes-cachees/">Pourquoi votre site est mal référencé</a></li>
+                <li><a href="/blog/freelance-seo-vs-agence-seo--le-guide-pour-choisir-sans-se-tromper/">Freelance SEO vs Agence : lequel choisir ?</a></li>
+                <li><a href="/blog/comment-verifier-si-votre-prestataire-seo-fait-du-bon-travail-les-10-signaux/">Votre prestataire SEO fait-il du bon travail ?</a></li>
+            </ul>
+        </div>
+    </div>
+</BaseLayout>

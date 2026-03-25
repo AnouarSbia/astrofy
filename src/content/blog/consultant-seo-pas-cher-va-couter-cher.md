@@ -167,6 +167,13 @@ Pas de discours commercial. On regarde ensemble où vous en êtes et si ça vaut
 
 ---
 
+### Consultant SEO dans votre ville
+
+Je travaille à distance avec des PME partout en France :
+[Angers](/consultant-seo-angers/) · [Valence](/consultant-seo-valence/) · [Clermont-Ferrand](/consultant-seo-clermont-ferrand/) · [Caen](/consultant-seo-caen/) · [Dijon](/consultant-seo-dijon/) · [Perpignan](/consultant-seo-perpignan/) · [Vannes](/consultant-seo-vannes/) · [Limoges](/consultant-seo-limoges/) · [Saint-Étienne](/consultant-seo-saint-etienne/) · [Brest](/consultant-seo-brest/)
+
+---
+
 ### À lire aussi
 
 - [Combien coûte un Audit SEO en 2026 ?](/blog/combien-coute-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/)

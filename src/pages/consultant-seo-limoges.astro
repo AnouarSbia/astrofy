@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+    { label: "Accueil", href: "/" },
+    { label: "Consultant SEO Limoges" },
+];
+
+const localSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "AnouarLab — Consultant SEO Limoges",
+    description: "Consultant SEO pour les entreprises de Limoges et de la Haute-Vienne. Spécialiste e-commerce Shopify et WordPress. Audit technique, stratégie de contenu, résultats mesurables.",
+    url: "https://anouarlab.fr/consultant-seo-limoges/",
+    areaServed: { "@type": "City", name: "Limoges" },
+    provider: { "@type": "Person", name: "Anouar Sbia", jobTitle: "Consultant SEO & CRO" },
+    serviceType: ["Audit SEO", "SEO E-commerce", "SEO Shopify", "SEO WordPress", "CRO"],
+};
+---
+
+<BaseLayout
+    title="Consultant SEO Limoges — Visibilité Google pour les PME de Haute-Vienne | AnouarLab"
+    description="Entreprise limougeaude invisible sur Google ? Consultant SEO e-commerce. Audit gratuit 30 min. Méthode éprouvée : +300% de trafic organique. Zéro blabla."
+    sideBarActiveItemID="seo"
+>
+    <script type="application/ld+json" set:html={JSON.stringify(localSchema)} />
+
+    <div class="pb-12 mt-5">
+        <Breadcrumbs items={breadcrumbItems} />
+
+        <div class="py-12">
+            <p class="text-sm uppercase tracking-widest text-primary/60 mb-4">Consultant SEO · Limoges</p>
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                Limoges brille par sa porcelaine. <span class="text-primary">Votre site devrait briller sur Google.</span>
+            </h1>
+            <p class="text-xl text-base-content/70 max-w-2xl mb-4">
+                Vos clients limougeauds tapent Google avant de taper à votre porte. Si votre site n'est pas en première page, c'est comme si votre boutique n'avait pas d'enseigne.
+            </p>
+            <p class="text-lg text-base-content/70 max-w-2xl mb-8">
+                <strong>Combien de clients perdez-vous chaque mois sans le savoir ?</strong>
+            </p>
+            <div class="flex gap-3 flex-wrap">
+                <a href="/contact/" class="btn btn-primary btn-lg">Réserver mon audit gratuit →</a>
+                <span class="btn btn-ghost btn-lg no-animation cursor-default text-base-content/50">30 min · Sans engagement</span>
+            </div>
+        </div>
+
+        <div class="prose prose-lg max-w-none">
+            <h2>Le SEO à Limoges : un terrain de jeu presque vide</h2>
+            <p>
+                Voici la réalité : <strong>Limoges est l'une des grandes villes françaises les moins concurrentielles en SEO</strong>. La majorité des entreprises locales n'ont aucune stratégie de référencement naturel.
+            </p>
+            <p>
+                C'est une opportunité en or. La porcelaine, l'émail, le cuir, l'industrie, les services — chaque secteur a des mots-clés à prendre. Et personne ne les prend.
+            </p>
+            <p>
+                <strong>Vous pouvez être premier sur Google à Limoges en quelques mois.</strong> Pas en quelques années. En quelques mois. Parce que la concurrence dort.
+            </p>
+
+            <h2>Ce que ça change concrètement pour vous</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose mb-8">
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🔍 Audit Technique</h3>
+                    <p class="text-sm text-base-content/70">Votre site a des problèmes que les visiteurs ne voient pas, mais que Google voit. Je les identifie et les corrige. <strong>Résultat immédiat sur l'indexation.</strong></p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🏺 SEO pour l'Artisanat & le Commerce</h3>
+                    <p class="text-sm text-base-content/70">Porcelaine, émail, gastronomie limousine — vos savoir-faire méritent d'être trouvés. Pas juste dans votre boutique, mais partout en France.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🛒 SEO E-commerce</h3>
+                    <p class="text-sm text-base-content/70">Vendez vos produits en ligne avec un site Shopify ou WordPress optimisé. Fiches produits, catégories, tunnel d'achat — tout est pensé pour convertir.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">📍 SEO Local Haute-Vienne</h3>
+                    <p class="text-sm text-base-content/70">Google Maps, avis, citations. Quand un habitant cherche "plombier Limoges" ou "restaurant gastronomique Haute-Vienne", <strong>c'est vous qui sortez</strong>.</p>
+                </div>
+            </div>
+
+            <h2>La preuve par les chiffres</h2>
+            <p>Un client e-commerce : <strong>+300% de trafic organique en 6 mois</strong>. De 1 200 à 4 800 visiteurs mensuels. Méthode documentée.</p>
+            <p><a href="/blog/cas-client--300-de-trafic-organique-en-6-mois-preuve-et-methode/">Voir l'étude de cas →</a></p>
+
+            <h2>Méthode : Corriger → Construire → Amplifier</h2>
+            <ol>
+                <li><strong>Corriger</strong> — Audit technique, erreurs d'indexation, vitesse. Fondations propres.</li>
+                <li><strong>Construire</strong> — Contenu ciblé, architecture en silos, maillage interne intelligent.</li>
+                <li><strong>Amplifier</strong> — Netlinking, SEO local, optimisation continue.</li>
+            </ol>
+
+            <h2>Questions fréquentes — SEO à Limoges</h2>
+            <h3>Limoges est une petite ville, le SEO a-t-il du sens ?</h3>
+            <p><strong>Encore plus.</strong> Moins de concurrence = résultats plus rapides. Et vous ne ciblez pas que Limoges : le SEO vous rend visible dans tout le Limousin, voire toute la France si vous vendez en ligne.</p>
+
+            <h3>Combien ça coûte ?</h3>
+            <p>Entre <strong>500€ et 2 500€/mois</strong>. <a href="/blog/combien-coute-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/">Tarifs détaillés →</a></p>
+
+            <h3>Comment fonctionne la collaboration ?</h3>
+            <p><strong>Simple et efficace.</strong> Point visio mensuel, rapports clairs, accès partagé à vos données. Vous voyez exactement ce qui est fait et ce que ça rapporte.</p>
+
+            <div class="not-prose mt-10">
+                <div class="card bg-primary/10 border border-primary/20 p-8 text-center">
+                    <h3 class="text-2xl font-bold mb-3">La concurrence dort. Pas vous.</h3>
+                    <p class="text-base-content/70 mb-6 max-w-lg mx-auto">30 minutes pour analyser votre site, vos concurrents limougeauds et votre potentiel de croissance organique.</p>
+                    <a href="/contact/" class="btn btn-primary btn-lg">Réserver mon audit gratuit →</a>
+                    <p class="text-xs text-base-content/40 mt-3">Gratuit · Sans engagement · Résultats en 48h</p>
+                </div>
+            </div>
+
+            <h3 class="mt-8">À lire aussi</h3>
+            <ul>
+                <li><a href="/blog/audit-seo-technique--les-10-erreurs-fatales-qui-ruinent-votre-visibilite-en-2026/">Les 10 erreurs techniques fatales</a></li>
+                <li><a href="/blog/freelance-seo-vs-agence-seo--le-guide-pour-choisir-sans-se-tromper/">Freelance SEO vs Agence</a></li>
+                <li><a href="/blog/comment-verifier-si-votre-prestataire-seo-fait-du-bon-travail-les-10-signaux/">Votre prestataire SEO fait-il du bon travail ?</a></li>
+            </ul>
+        </div>
+    </div>
+</BaseLayout>

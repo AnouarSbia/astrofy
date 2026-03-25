@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+    { label: "Accueil", href: "/" },
+    { label: "Consultant SEO Dijon" },
+];
+
+const localSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "AnouarLab — Consultant SEO Dijon",
+    description: "Consultant SEO pour les entreprises de Dijon et de Côte-d'Or. Expert e-commerce Shopify et WordPress. Audit technique, stratégie de contenu et SEO local.",
+    url: "https://anouarlab.fr/consultant-seo-dijon/",
+    areaServed: { "@type": "City", name: "Dijon" },
+    provider: { "@type": "Person", name: "Anouar Sbia", jobTitle: "Consultant SEO & CRO" },
+    serviceType: ["Audit SEO", "SEO E-commerce", "SEO Shopify", "SEO WordPress", "CRO"],
+};
+---
+
+<BaseLayout
+    title="Consultant SEO Dijon — Boostez votre Visibilité en Bourgogne | AnouarLab"
+    description="Entreprise dijonnaise invisible sur Google ? Consultant SEO e-commerce spécialisé Shopify & WordPress. Audit gratuit 30 min. Résultats prouvés : +300% de trafic."
+    sideBarActiveItemID="seo"
+>
+    <script type="application/ld+json" set:html={JSON.stringify(localSchema)} />
+
+    <div class="pb-12 mt-5">
+        <Breadcrumbs items={breadcrumbItems} />
+
+        <div class="py-12">
+            <p class="text-sm uppercase tracking-widest text-primary/60 mb-4">Consultant SEO · Dijon</p>
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                La Bourgogne a du goût. <span class="text-primary">Votre site devrait avoir du trafic.</span>
+            </h1>
+            <p class="text-xl text-base-content/70 max-w-2xl mb-4">
+                Dijon est connue pour sa gastronomie, ses vins et son patrimoine. Mais sur Google, vos clients ne cherchent pas des églises — ils cherchent <strong>votre expertise</strong>.
+            </p>
+            <p class="text-lg text-base-content/70 max-w-2xl mb-8">
+                <strong>Est-ce qu'ils vous trouvent ? Ou est-ce qu'ils trouvent la concurrence ?</strong>
+            </p>
+            <div class="flex gap-3 flex-wrap">
+                <a href="/contact/" class="btn btn-primary btn-lg">Réserver mon audit gratuit →</a>
+                <span class="btn btn-ghost btn-lg no-animation cursor-default text-base-content/50">30 min · Sans engagement</span>
+            </div>
+        </div>
+
+        <div class="prose prose-lg max-w-none">
+            <h2>Dijon : capitale de la gastronomie… et bientôt du digital ?</h2>
+            <p>
+                On ne présente plus Dijon : <strong>Cité de la Gastronomie et du Vin</strong>, patrimoine UNESCO, économie viticole mondiale. Mais derrière cette vitrine touristique, il y a un tissu économique dynamique qui se digitalise à grande vitesse.
+            </p>
+            <p>
+                Pharmacie, agroalimentaire, logistique (Dijon est un carrefour ferroviaire), services aux entreprises — des secteurs entiers où la visibilité en ligne fait la différence entre croître et stagner.
+            </p>
+            <p>
+                <strong>Le problème :</strong> les PME dijonnaises sous-estiment le SEO. Elles investissent dans des événements, des flyers, parfois du Google Ads. Mais le trafic organique — le canal le plus rentable à long terme — reste inexploité.
+            </p>
+
+            <h2>Ce que je fais pour les entreprises bourguignonnes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose mb-8">
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🔍 Audit Technique</h3>
+                    <p class="text-sm text-base-content/70">Votre site a des freins que vous ne voyez pas. Indexation, vitesse, erreurs de crawl. Je diagnostique et je corrige — <strong>résultats mesurables</strong>.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🍷 SEO pour le Tourisme & Vin</h3>
+                    <p class="text-sm text-base-content/70">Domaines viticoles, caves, hôtels, restaurants — le tourisme bourguignon se joue sur Google. Je vous place devant les yeux des visiteurs qui planifient leur séjour.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🛒 SEO E-commerce</h3>
+                    <p class="text-sm text-base-content/70">Vente de vin en ligne, produits régionaux, artisanat — votre boutique Shopify ou WordPress mérite des visiteurs qui achètent, pas juste qui regardent.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">📍 SEO Local Côte-d'Or</h3>
+                    <p class="text-sm text-base-content/70">Google Business, Pack Local, avis clients. Quand un Dijonnais ou un touriste cherche votre métier, <strong>c'est vous qui apparaissez en premier</strong>.</p>
+                </div>
+            </div>
+
+            <h2>La preuve : +300% de trafic. Sans pub.</h2>
+            <p>Un client e-commerce : 1 200 → 4 800 visiteurs organiques mensuels en 6 mois. <strong>Méthode documentée, chiffres vérifiables.</strong></p>
+            <p><a href="/blog/cas-client--300-de-trafic-organique-en-6-mois-preuve-et-methode/">Lire l'étude de cas →</a></p>
+
+            <h2>Méthode en 3 phases</h2>
+            <ol>
+                <li><strong>Corriger</strong> — Audit technique. Zéro erreur. Fondations solides.</li>
+                <li><strong>Construire</strong> — Contenu ciblé, architecture en silos, maillage interne. Autorité thématique.</li>
+                <li><strong>Amplifier</strong> — Netlinking, SEO local, optimisation continue. On accélère.</li>
+            </ol>
+
+            <h2>Questions fréquentes — SEO à Dijon</h2>
+            <h3>Le SEO fonctionne-t-il pour les domaines viticoles ?</h3>
+            <p><strong>C'est même l'un des meilleurs cas d'usage.</strong> "Dégustation vin Bourgogne", "domaine viticole Côte de Nuits", "acheter vin en ligne" — ces requêtes ont un volume massif et une intention d'achat forte. Un bon SEO = des réservations et des ventes directes.</p>
+
+            <h3>Combien ça coûte ?</h3>
+            <p>Entre <strong>500€ et 2 500€/mois</strong>. <a href="/blog/combien-coute-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/">Voir les tarifs →</a></p>
+
+            <h3>Comment fonctionne l'accompagnement ?</h3>
+            <p>Point mensuel en visio, rapports clairs, accès partagé à votre Search Console. <strong>Chaque euro investi est traçable.</strong> Vous voyez les actions réalisées et leur impact sur votre trafic.</p>
+
+            <div class="not-prose mt-10">
+                <div class="card bg-primary/10 border border-primary/20 p-8 text-center">
+                    <h3 class="text-2xl font-bold mb-3">Votre site mérite mieux que l'anonymat</h3>
+                    <p class="text-base-content/70 mb-6 max-w-lg mx-auto">30 minutes pour analyser votre site, vos concurrents dijonnais et votre potentiel de croissance organique.</p>
+                    <a href="/contact/" class="btn btn-primary btn-lg">Réserver mon audit gratuit →</a>
+                    <p class="text-xs text-base-content/40 mt-3">Gratuit · Sans engagement · Résultats en 48h</p>
+                </div>
+            </div>
+
+            <h3 class="mt-8">À lire aussi</h3>
+            <ul>
+                <li><a href="/blog/audit-seo-technique--les-10-erreurs-fatales-qui-ruinent-votre-visibilite-en-2026/">Les 10 erreurs techniques qui tuent votre visibilité</a></li>
+                <li><a href="/blog/le-roi-du-seo--combien-rapporte-vraiment-la-1ere-place--analyse-2026/">Combien rapporte la 1ère place Google ?</a></li>
+                <li><a href="/blog/le-guide-du-maillage-interne--comment-booster-vos-pages-sans-un-seul-backlink/">Le maillage interne : booster vos pages sans backlinks</a></li>
+            </ul>
+        </div>
+    </div>
+</BaseLayout>

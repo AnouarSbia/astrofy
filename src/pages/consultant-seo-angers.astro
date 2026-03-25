@@ -1,0 +1,237 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+    { label: "Accueil", href: "/" },
+    { label: "Consultant SEO Angers" },
+];
+
+const localSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "AnouarLab — Consultant SEO Angers",
+    description:
+        "Consultant SEO spécialisé en e-commerce Shopify et WordPress pour les entreprises d'Angers et du Maine-et-Loire. Audit technique, stratégie de contenu et optimisation des conversions.",
+    url: "https://anouarlab.fr/consultant-seo-angers/",
+    areaServed: {
+        "@type": "City",
+        name: "Angers",
+    },
+    provider: {
+        "@type": "Person",
+        name: "Anouar Sbia",
+        jobTitle: "Consultant SEO & CRO",
+    },
+    serviceType: ["Audit SEO", "SEO E-commerce", "SEO Shopify", "SEO WordPress", "CRO"],
+};
+---
+
+<BaseLayout
+    title="Consultant SEO Angers — +300% de Trafic pour les PME | AnouarLab"
+    description="Votre site angevin est invisible sur Google ? Consultant SEO spécialisé e-commerce Shopify & WordPress. Audit gratuit, résultats mesurables, zéro blabla."
+    sideBarActiveItemID="seo"
+>
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(localSchema)}
+    />
+
+    <div class="pb-12 mt-5">
+        <Breadcrumbs items={breadcrumbItems} />
+
+        <!-- Hero — Hook PAS -->
+        <div class="py-12">
+            <p class="text-sm uppercase tracking-widest text-primary/60 mb-4">
+                Consultant SEO · Angers
+            </p>
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                Votre site angevin <span class="text-primary">mérite d'être vu</span>
+            </h1>
+            <p class="text-xl text-base-content/70 max-w-2xl mb-4">
+                Vos concurrents à Angers investissent déjà dans le SEO.
+                Chaque jour sans stratégie, c'est du chiffre d'affaires
+                que vous laissez sur la table.
+            </p>
+            <p class="text-lg text-base-content/70 max-w-2xl mb-8">
+                <strong>Et si votre site devenait votre meilleur commercial — 24h/24, 7j/7 ?</strong>
+            </p>
+            <div class="flex gap-3 flex-wrap">
+                <a href="/contact/" class="btn btn-primary btn-lg">
+                    Réserver mon audit gratuit →
+                </a>
+                <span class="btn btn-ghost btn-lg no-animation cursor-default text-base-content/50">
+                    30 min · Sans engagement
+                </span>
+            </div>
+        </div>
+
+        <div class="prose prose-lg max-w-none">
+
+            <!-- Problème — Agitation -->
+            <h2>Le problème que personne ne vous dit à Angers</h2>
+            <p>
+                <strong>46% des recherches Google sont locales.</strong> Quand un dirigeant
+                angevin tape "agence web Angers" ou "comptable Maine-et-Loire",
+                il ne va pas à la page 2.
+            </p>
+            <p>
+                Si votre site n'apparaît pas dans les 3 premiers résultats,
+                vous êtes invisible. Et invisible = inexistant.
+            </p>
+            <p>
+                Le pire ? Vos concurrents le savent déjà. Ils investissent
+                pendant que vous hésitez. Chaque mois qui passe, l'écart se
+                creuse.
+            </p>
+
+            <!-- Solution -->
+            <h2>Ce que je fais pour les entreprises d'Angers</h2>
+            <p>
+                Je transforme votre site en <strong>machine à clients</strong>.
+                Pas avec des promesses vagues — avec des données, des
+                corrections techniques et une stratégie qui se mesure en euros.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose mb-8">
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🔍 Audit SEO Technique</h3>
+                    <p class="text-sm text-base-content/70">
+                        Votre site a des fuites invisibles. Je les trouve :
+                        erreurs d'indexation, vitesse, architecture cassée.
+                        <strong>Résultat : +45% de pages indexées</strong> en moyenne.
+                    </p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">📝 Contenu qui Convertit</h3>
+                    <p class="text-sm text-base-content/70">
+                        Pas du contenu pour faire joli. Du contenu qui répond
+                        aux questions de vos clients angevins et les transforme
+                        en prospects qualifiés.
+                    </p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🛒 SEO E-commerce</h3>
+                    <p class="text-sm text-base-content/70">
+                        Shopify ou WordPress ? Je connais les deux.
+                        Fiches produits optimisées, catégories structurées,
+                        conversions maximisées.
+                    </p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">📍 SEO Local Angers</h3>
+                    <p class="text-sm text-base-content/70">
+                        Google Business, citations locales, avis clients.
+                        Apparaissez dans le <strong>Pack Local</strong> quand
+                        les Angevins cherchent votre métier.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Preuve -->
+            <h2>Des résultats, pas des promesses</h2>
+            <p>
+                Un client e-commerce est passé de <strong>1 200 à 4 800
+                visiteurs organiques mensuels en 6 mois</strong>. Soit +300%.
+                Sans pub. Sans magie. Juste une méthode rigoureuse.
+            </p>
+            <p>
+                <a href="/blog/cas-client--300-de-trafic-organique-en-6-mois-preuve-et-methode/">
+                    Lisez l'étude de cas complète →
+                </a>
+            </p>
+
+            <!-- Pourquoi Angers -->
+            <h2>Angers : une ville qui grandit — votre SEO devrait suivre</h2>
+            <p>
+                Entre <strong>Vegepolys Valley</strong>, le pôle santé, le
+                tourisme du Val de Loire et un écosystème startup en pleine
+                expansion, Angers attire. De nouvelles entreprises s'installent
+                chaque mois.
+            </p>
+            <p>
+                Que vous soyez un commerce Place du Ralliement, un e-commerçant
+                dans la technopole, ou un prestataire B2B du Maine-et-Loire —
+                vos futurs clients vous cherchent déjà sur Google.
+            </p>
+            <p>
+                <strong>La seule question : est-ce qu'ils vous trouvent, ou qu'ils
+                trouvent vos concurrents ?</strong>
+            </p>
+
+            <!-- Méthode -->
+            <h2>Ma méthode en 3 phases</h2>
+            <ol>
+                <li>
+                    <strong>Corriger</strong> — Audit technique complet. Je
+                    trouve les erreurs qui bloquent votre visibilité et je les
+                    corrige. C'est la fondation.
+                </li>
+                <li>
+                    <strong>Construire</strong> — Stratégie de contenu ciblée
+                    sur vos mots-clés locaux. Architecture en silos. Maillage
+                    interne intelligent. On bâtit l'autorité.
+                </li>
+                <li>
+                    <strong>Amplifier</strong> — Netlinking propre, SEO local,
+                    optimisation continue. On accélère la machine.
+                </li>
+            </ol>
+
+            <!-- FAQ -->
+            <h2>Vos questions sur le SEO à Angers</h2>
+
+            <h3>Combien coûte un consultant SEO à Angers ?</h3>
+            <p>
+                Entre <strong>500€ et 2 500€/mois</strong> selon la taille du
+                site et les objectifs. Un audit ponctuel : 800€ à 2 000€.
+                <a href="/blog/combien-coute-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/">
+                    Voir le détail des tarifs →
+                </a>
+            </p>
+
+            <h3>Comment se déroule la collaboration ?</h3>
+            <p>
+                Simple et efficace. Un point mensuel en visio pour analyser
+                les résultats, un accès partagé à votre Search Console,
+                et des rapports clairs avec les actions réalisées et les
+                prochaines étapes. <strong>Zéro réunion inutile, 100% orienté résultats.</strong>
+            </p>
+            <h3>En combien de temps voit-on des résultats ?</h3>
+            <p>
+                Premiers signaux en <strong>4 à 8 semaines</strong>
+                (impressions, indexation). Résultats significatifs en trafic
+                entre <strong>3 et 6 mois</strong>. Le SEO est un
+                investissement, pas une dépense.
+            </p>
+
+            <!-- CTA Final -->
+            <div class="not-prose mt-10">
+                <div class="card bg-primary/10 border border-primary/20 p-8 text-center">
+                    <h3 class="text-2xl font-bold mb-3">
+                        On regarde votre site ensemble ?
+                    </h3>
+                    <p class="text-base-content/70 mb-6 max-w-lg mx-auto">
+                        30 minutes. Votre site, vos données, vos concurrents
+                        angevins. Je vous montre exactement où vous perdez du
+                        trafic — et comment le récupérer.
+                    </p>
+                    <a href="/contact/" class="btn btn-primary btn-lg">
+                        Réserver mon audit gratuit →
+                    </a>
+                    <p class="text-xs text-base-content/40 mt-3">
+                        Gratuit · Sans engagement · Résultats en 48h
+                    </p>
+                </div>
+            </div>
+
+            <!-- Liens internes -->
+            <h3 class="mt-8">À lire aussi</h3>
+            <ul>
+                <li><a href="/blog/audit-seo-technique--les-10-erreurs-fatales-qui-ruinent-votre-visibilite-en-2026/">Les 10 erreurs techniques qui ruinent votre visibilité</a></li>
+                <li><a href="/blog/freelance-seo-vs-agence-seo--le-guide-pour-choisir-sans-se-tromper/">Freelance SEO vs Agence : comment choisir ?</a></li>
+                <li><a href="/blog/e-e-a-t--le-guide-pratique-pour-prouver-votre-expertise-a-google/">E-E-A-T : Prouver votre expertise à Google</a></li>
+            </ul>
+        </div>
+    </div>
+</BaseLayout>

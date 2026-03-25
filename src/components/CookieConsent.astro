@@ -1,0 +1,120 @@
+---
+// GDPR Cookie Consent Banner
+// Blocks GTM/Analytics until user accepts
+// Stores consent in localStorage
+---
+
+<!-- Cookie Banner -->
+<div
+    id="cookie-banner"
+    class="fixed bottom-0 left-0 right-0 z-[9999] p-4 transition-transform duration-300 translate-y-full"
+    role="dialog"
+    aria-label="Gestion des cookies"
+>
+    <div class="max-w-4xl mx-auto bg-base-200 border border-base-300 rounded-2xl shadow-2xl p-6 md:p-8">
+        <div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
+            <div class="flex-1">
+                <h3 class="font-bold text-lg mb-2">🍪 Ce site utilise des cookies</h3>
+                <p class="text-sm text-base-content/70 leading-relaxed">
+                    Nous utilisons des cookies pour analyser le trafic et améliorer votre expérience.
+                    Aucune donnée personnelle n'est vendue.
+                    <a href="/mentions-legales/" class="text-primary hover:underline">Politique de confidentialité</a>
+                </p>
+            </div>
+            <div class="flex gap-3 flex-shrink-0">
+                <button
+                    id="cookie-reject"
+                    class="btn btn-ghost btn-sm"
+                >
+                    Refuser
+                </button>
+                <button
+                    id="cookie-accept"
+                    class="btn btn-primary btn-sm"
+                >
+                    Accepter
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function initCookieConsent() {
+        const banner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('cookie-accept');
+        const rejectBtn = document.getElementById('cookie-reject');
+
+        if (!banner || !acceptBtn || !rejectBtn) return;
+
+        const consent = localStorage.getItem('cookie-consent');
+
+        // If already answered, don't show banner
+        if (consent === 'accepted' || consent === 'rejected') {
+            banner.style.display = 'none';
+            if (consent === 'accepted') {
+                enableTracking();
+            }
+            return;
+        }
+
+        // Show banner with animation
+        setTimeout(() => {
+            banner.classList.remove('translate-y-full');
+        }, 1000);
+
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookie-consent', 'accepted');
+            hideBanner();
+            enableTracking();
+        });
+
+        rejectBtn.addEventListener('click', () => {
+            localStorage.setItem('cookie-consent', 'rejected');
+            hideBanner();
+            disableTracking();
+        });
+    }
+
+    function hideBanner() {
+        const banner = document.getElementById('cookie-banner');
+        if (banner) {
+            banner.classList.add('translate-y-full');
+            setTimeout(() => {
+                banner.style.display = 'none';
+            }, 300);
+        }
+    }
+
+    function enableTracking() {
+        // Enable GTM dataLayer consent
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'cookie_consent_granted'
+        });
+    }
+
+    function disableTracking() {
+        // Signal rejection to GTM
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'cookie_consent_denied'
+        });
+
+        // Remove GA cookies if they exist
+        const cookies = document.cookie.split(';');
+        for (let cookie of cookies) {
+            const name = cookie.split('=')[0].trim();
+            if (name.startsWith('_ga') || name.startsWith('_gid') || name.startsWith('_gat')) {
+                document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=' + window.location.hostname;
+                document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+            }
+        }
+    }
+
+    // Run on initial load
+    initCookieConsent();
+
+    // Re-run after Astro page transitions
+    document.addEventListener('astro:after-swap', initCookieConsent);
+</script>

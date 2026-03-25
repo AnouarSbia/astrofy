@@ -223,6 +223,13 @@ Je fais le diagnostic pour vous. 15 minutes, on regarde ensemble votre site, vos
 
 ---
 
+### Consultant SEO dans votre ville
+
+Votre site est mal référencé ? Un consultant SEO local peut vous aider :
+[Angers](/consultant-seo-angers/) · [Valence](/consultant-seo-valence/) · [Clermont-Ferrand](/consultant-seo-clermont-ferrand/) · [Caen](/consultant-seo-caen/) · [Dijon](/consultant-seo-dijon/) · [Perpignan](/consultant-seo-perpignan/) · [Vannes](/consultant-seo-vannes/) · [Limoges](/consultant-seo-limoges/) · [Saint-Étienne](/consultant-seo-saint-etienne/) · [Brest](/consultant-seo-brest/)
+
+---
+
 ### À lire aussi
 
 - [Audit SEO Technique : les 10 erreurs fatales en 2026](/blog/audit-seo-technique--les-10-erreurs-fatales-qui-ruinent-votre-visibilite-en-2026/)

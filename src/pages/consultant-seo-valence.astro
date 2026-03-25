@@ -1,0 +1,122 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+    { label: "Accueil", href: "/" },
+    { label: "Consultant SEO Valence" },
+];
+
+const localSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "AnouarLab — Consultant SEO Valence",
+    description:
+        "Consultant SEO pour les entreprises de Valence et de la Drôme. Spécialiste e-commerce Shopify et WordPress. Audit technique, stratégie de contenu, résultats mesurables.",
+    url: "https://anouarlab.fr/consultant-seo-valence/",
+    areaServed: { "@type": "City", name: "Valence" },
+    provider: { "@type": "Person", name: "Anouar Sbia", jobTitle: "Consultant SEO & CRO" },
+    serviceType: ["Audit SEO", "SEO E-commerce", "SEO Shopify", "SEO WordPress", "CRO"],
+};
+---
+
+<BaseLayout
+    title="Consultant SEO Valence — Boostez votre Visibilité en Drôme | AnouarLab"
+    description="PME valentinoise invisible sur Google ? Consultant SEO spécialisé e-commerce. Audit gratuit 30 min, méthode data-driven, +300% de trafic prouvé."
+    sideBarActiveItemID="seo"
+>
+    <script type="application/ld+json" set:html={JSON.stringify(localSchema)} />
+
+    <div class="pb-12 mt-5">
+        <Breadcrumbs items={breadcrumbItems} />
+
+        <div class="py-12">
+            <p class="text-sm uppercase tracking-widest text-primary/60 mb-4">Consultant SEO · Valence</p>
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                PME valentinoise ? <span class="text-primary">Google devrait vous connaître.</span>
+            </h1>
+            <p class="text-xl text-base-content/70 max-w-2xl mb-4">
+                La Drôme regorge d'entreprises ambitieuses. Mais combien sont réellement visibles sur Google ? Si vos clients potentiels ne vous trouvent pas en ligne, ils trouvent vos concurrents.
+            </p>
+            <p class="text-lg text-base-content/70 max-w-2xl mb-8">
+                <strong>Imaginez : votre site en première page pour les requêtes qui comptent vraiment.</strong>
+            </p>
+            <div class="flex gap-3 flex-wrap">
+                <a href="/contact/" class="btn btn-primary btn-lg">Réserver mon audit gratuit →</a>
+                <span class="btn btn-ghost btn-lg no-animation cursor-default text-base-content/50">30 min · Sans engagement</span>
+            </div>
+        </div>
+
+        <div class="prose prose-lg max-w-none">
+            <h2>Valence grandit. Votre visibilité en ligne devrait suivre.</h2>
+            <p>
+                Valence n'est plus la "petite ville entre Lyon et Marseille". C'est un <strong>pôle économique en pleine accélération</strong> : agroalimentaire, tourisme provençal, industrie, start-ups tech.
+            </p>
+            <p>
+                Le parc technologique Rovaltain, la zone de Lautagne, les commerces du centre-ville — tous ces acteurs se battent pour la même chose : <strong>être trouvés en premier sur Google</strong>.
+            </p>
+            <p>
+                Le problème ? La plupart des PME drômoises dépensent 100% de leur budget digital en Google Ads. Le jour où elles arrêtent de payer, le trafic tombe à zéro. Le SEO construit un actif qui travaille <strong>même quand vous dormez</strong>.
+            </p>
+
+            <h2>Ce que je fais concrètement pour vous</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose mb-8">
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🔍 Audit Technique</h3>
+                    <p class="text-sm text-base-content/70">Je scanne votre site comme Google le voit. Erreurs d'indexation, vitesse, architecture — je trouve ce qui vous freine et je le corrige.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">📝 Contenu Stratégique</h3>
+                    <p class="text-sm text-base-content/70">Des articles et pages qui répondent aux vraies questions de vos clients valentinois. Pas du remplissage — du contenu qui <strong>convertit</strong>.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🛒 SEO E-commerce</h3>
+                    <p class="text-sm text-base-content/70">Shopify, WordPress, WooCommerce — fiches produits optimisées, catégories structurées, tunnel de conversion fluide.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">📍 SEO Local Drôme</h3>
+                    <p class="text-sm text-base-content/70">Google Business, avis clients, citations locales. Quand un Valentinois cherche votre métier, <strong>c'est vous qui apparaissez</strong>.</p>
+                </div>
+            </div>
+
+            <h2>+300% de trafic organique. En 6 mois. Prouvé.</h2>
+            <p>
+                Ce n'est pas une promesse marketing. C'est un <strong>cas client documenté</strong> avec des chiffres réels, des captures d'écran et une méthodologie détaillée.
+            </p>
+            <p><a href="/blog/cas-client--300-de-trafic-organique-en-6-mois-preuve-et-methode/">Voir l'étude de cas complète →</a></p>
+
+            <h2>Ma méthode : Corriger, Construire, Amplifier</h2>
+            <ol>
+                <li><strong>Corriger</strong> — Audit technique. On assainit les fondations. Sans base solide, rien ne tient.</li>
+                <li><strong>Construire</strong> — Contenu ciblé, architecture en silos, maillage interne. On bâtit votre autorité thématique.</li>
+                <li><strong>Amplifier</strong> — Netlinking, SEO local, Digital PR. On accélère ce qui fonctionne déjà.</li>
+            </ol>
+
+            <h2>Questions fréquentes — SEO à Valence</h2>
+            <h3>Combien coûte un consultant SEO à Valence ?</h3>
+            <p>Entre <strong>500€ et 2 500€/mois</strong>. Un audit ponctuel : 800€ à 2 000€. <a href="/blog/combien-coute-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/">Détail des tarifs →</a></p>
+
+            <h3>Comment se passe la collaboration ?</h3>
+            <p>Un point mensuel en visio, un accès partagé à votre Search Console, et des rapports clairs. <strong>100% du temps est consacré à votre projet</strong>, pas à des déplacements ou des réunions inutiles. Les résultats se mesurent en données concrètes.</p>
+
+            <h3>En combien de temps voit-on des résultats ?</h3>
+            <p>Premiers signaux en <strong>4 à 8 semaines</strong>. Résultats significatifs entre <strong>3 et 6 mois</strong>. C'est un investissement, pas une baguette magique.</p>
+
+            <div class="not-prose mt-10">
+                <div class="card bg-primary/10 border border-primary/20 p-8 text-center">
+                    <h3 class="text-2xl font-bold mb-3">Envie de voir ce que Google pense de votre site ?</h3>
+                    <p class="text-base-content/70 mb-6 max-w-lg mx-auto">30 minutes. Votre site, vos données, vos concurrents drômois. Je vous montre où vous perdez du trafic — et comment le récupérer.</p>
+                    <a href="/contact/" class="btn btn-primary btn-lg">Réserver mon audit gratuit →</a>
+                    <p class="text-xs text-base-content/40 mt-3">Gratuit · Sans engagement · Résultats en 48h</p>
+                </div>
+            </div>
+
+            <h3 class="mt-8">À lire aussi</h3>
+            <ul>
+                <li><a href="/blog/audit-seo-technique--les-10-erreurs-fatales-qui-ruinent-votre-visibilite-en-2026/">Les 10 erreurs techniques fatales</a></li>
+                <li><a href="/blog/pourquoi-votre-site-est-mal-reference-sur-google--les-7-causes-cachees/">Pourquoi votre site est mal référencé</a></li>
+                <li><a href="/blog/e-e-a-t--le-guide-pratique-pour-prouver-votre-expertise-a-google/">E-E-A-T : Prouver votre expertise à Google</a></li>
+            </ul>
+        </div>
+    </div>
+</BaseLayout>

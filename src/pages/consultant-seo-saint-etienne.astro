@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+    { label: "Accueil", href: "/" },
+    { label: "Consultant SEO Saint-Étienne" },
+];
+
+const localSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "AnouarLab — Consultant SEO Saint-Étienne",
+    description: "Consultant SEO pour les entreprises de Saint-Étienne et de la Loire. Expert e-commerce Shopify et WordPress. Audit technique et stratégie data-driven pour PME stéphanoises.",
+    url: "https://anouarlab.fr/consultant-seo-saint-etienne/",
+    areaServed: { "@type": "City", name: "Saint-Étienne" },
+    provider: { "@type": "Person", name: "Anouar Sbia", jobTitle: "Consultant SEO & CRO" },
+    serviceType: ["Audit SEO", "SEO E-commerce", "SEO Shopify", "SEO WordPress", "CRO"],
+};
+---
+
+<BaseLayout
+    title="Consultant SEO Saint-Étienne — Propulsez les PME Stéphanoises sur Google | AnouarLab"
+    description="Entreprise stéphanoise invisible sur Google ? Consultant SEO e-commerce. Audit gratuit 30 min. Méthode prouvée (+300% trafic). La reconversion digitale commence ici."
+    sideBarActiveItemID="seo"
+>
+    <script type="application/ld+json" set:html={JSON.stringify(localSchema)} />
+
+    <div class="pb-12 mt-5">
+        <Breadcrumbs items={breadcrumbItems} />
+
+        <div class="py-12">
+            <p class="text-sm uppercase tracking-widest text-primary/60 mb-4">Consultant SEO · Saint-Étienne</p>
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                Saint-Étienne se réinvente. <span class="text-primary">Votre visibilité aussi.</span>
+            </h1>
+            <p class="text-xl text-base-content/70 max-w-2xl mb-4">
+                Ville UNESCO de design, pôle d'innovation, reconversion industrielle réussie. Saint-Étienne a tout pour attirer — mais encore faut-il que vos clients vous trouvent sur Google.
+            </p>
+            <p class="text-lg text-base-content/70 max-w-2xl mb-8">
+                <strong>Ils cherchent. Vous êtes là ? Ou c'est Lyon qui gagne ?</strong>
+            </p>
+            <div class="flex gap-3 flex-wrap">
+                <a href="/contact/" class="btn btn-primary btn-lg">Réserver mon audit gratuit →</a>
+                <span class="btn btn-ghost btn-lg no-animation cursor-default text-base-content/50">30 min · Sans engagement</span>
+            </div>
+        </div>
+
+        <div class="prose prose-lg max-w-none">
+            <h2>Saint-Étienne : l'outsider qui a tout à gagner</h2>
+            <p>
+                Pendant que tout le monde regarde Lyon, <strong>Saint-Étienne construit silencieusement son avenir digital</strong>. Cité du Design, French Tech, pôle optique et vision, industries créatives.
+            </p>
+            <p>
+                Le problème ? Most stéphanois pensent que le SEO, c'est pour les Parisiens et les Lyonnais. <strong>Erreur fatale.</strong> C'est exactement là où la concurrence est faible que les résultats sont les plus rapides.
+            </p>
+            <p>
+                Un commerçant des Halles, un industriel de la Plaine du Forez, un e-commerçant de la Loire — avec la bonne stratégie SEO, chacun peut dominer son marché local sur Google.
+            </p>
+
+            <h2>Ce que le SEO apporte aux entreprises stéphanoises</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose mb-8">
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🔍 Audit Technique</h3>
+                    <p class="text-sm text-base-content/70">Votre site a des problèmes techniques invisibles. Indexation, vitesse, erreurs — <strong>je trouve, je corrige, vous montez dans les résultats</strong>.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🎨 SEO pour le Design & l'Innovation</h3>
+                    <p class="text-sm text-base-content/70">Ville UNESCO de Design, ça veut dire des entreprises créatives qui méritent une vitrine digitale à la hauteur. Je vous rends visible auprès des bons clients.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🛒 SEO E-commerce</h3>
+                    <p class="text-sm text-base-content/70">Shopify ou WordPress — fiches produits optimisées, catégories structurées, taux de conversion amélioré. <strong>Du trafic qui achète, pas qui rebondit.</strong></p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">📍 SEO Local Loire</h3>
+                    <p class="text-sm text-base-content/70">Sortez de l'ombre de Lyon. Quand un Ligérien cherche votre métier sur Google, c'est <strong>votre entreprise stéphanoise qui apparaît</strong>, pas une lyonnaise.</p>
+                </div>
+            </div>
+
+            <h2>+300% de trafic organique. Prouvé.</h2>
+            <p>Un client e-commerce : de 1 200 à 4 800 visiteurs/mois. Zéro publicité. Méthode rigoureuse documentée pas à pas.</p>
+            <p><a href="/blog/cas-client--300-de-trafic-organique-en-6-mois-preuve-et-methode/">Voir les résultats →</a></p>
+
+            <h2>3 phases. Aucun blabla.</h2>
+            <ol>
+                <li><strong>Corriger</strong> — Audit technique complet. Fondations propres. Indexation optimisée.</li>
+                <li><strong>Construire</strong> — Contenu ciblé sur vos mots-clés locaux, architecture en silos, maillage interne.</li>
+                <li><strong>Amplifier</strong> — Netlinking, SEO local, optimisation continue. Croissance durable.</li>
+            </ol>
+
+            <h2>Questions fréquentes — SEO à Saint-Étienne</h2>
+            <h3>Saint-Étienne n'est pas Lyon. Le SEO a-t-il du sens ici ?</h3>
+            <p><strong>C'est justement votre avantage.</strong> À Lyon, un consultant SEO se bat contre 50 concurrents pour chaque mot-clé. À Saint-Étienne, vous pouvez verrouiller les premières positions avec une fraction de l'effort. Le ROI est meilleur ici.</p>
+
+            <h3>Combien ça coûte ?</h3>
+            <p>Entre <strong>500€ et 2 500€/mois</strong>. <a href="/blog/combien-coute-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/">Tarifs détaillés →</a></p>
+
+            <h3>Comment se déroule l'accompagnement ?</h3>
+            <p>Point visio mensuel, rapports détaillés, accès partagé à Search Console. <strong>Chaque action est documentée, chaque résultat est mesurable.</strong> Vous gardez le contrôle total.</p>
+
+            <div class="not-prose mt-10">
+                <div class="card bg-primary/10 border border-primary/20 p-8 text-center">
+                    <h3 class="text-2xl font-bold mb-3">Sortez de l'ombre. Dominez Google dans la Loire.</h3>
+                    <p class="text-base-content/70 mb-6 max-w-lg mx-auto">30 minutes. Votre site, vos concurrents stéphanois, votre potentiel. On regarde ensemble ce que Google voit — et ce qu'il ne voit pas.</p>
+                    <a href="/contact/" class="btn btn-primary btn-lg">Réserver mon audit gratuit →</a>
+                    <p class="text-xs text-base-content/40 mt-3">Gratuit · Sans engagement · Résultats en 48h</p>
+                </div>
+            </div>
+
+            <h3 class="mt-8">À lire aussi</h3>
+            <ul>
+                <li><a href="/blog/pourquoi-votre-site-est-mal-reference-sur-google--les-7-causes-cachees/">Pourquoi votre site est mal référencé</a></li>
+                <li><a href="/blog/le-roi-du-seo--combien-rapporte-vraiment-la-1ere-place--analyse-2026/">Le ROI du SEO : combien vaut la 1ère place ?</a></li>
+                <li><a href="/blog/e-e-a-t--le-guide-pratique-pour-prouver-votre-expertise-a-google/">Guide E-E-A-T pour prouver votre expertise</a></li>
+            </ul>
+        </div>
+    </div>
+</BaseLayout>

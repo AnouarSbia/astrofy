@@ -140,6 +140,13 @@ Un freelance propose généralement des engagements de **3 à 6 mois**, le temps
 
 ---
 
+### Consultant SEO près de chez vous
+
+Vous cherchez un consultant SEO dans votre ville ? Découvrez mes services locaux :
+[Angers](/consultant-seo-angers/) · [Valence](/consultant-seo-valence/) · [Clermont-Ferrand](/consultant-seo-clermont-ferrand/) · [Caen](/consultant-seo-caen/) · [Dijon](/consultant-seo-dijon/) · [Perpignan](/consultant-seo-perpignan/) · [Vannes](/consultant-seo-vannes/) · [Limoges](/consultant-seo-limoges/) · [Saint-Étienne](/consultant-seo-saint-etienne/) · [Brest](/consultant-seo-brest/)
+
+---
+
 ### À lire aussi
 
 - [Pourquoi un Consultant SEO "pas cher" va vous coûter cher](/blog/pourquoi-un-consultant-seo-pas-cher-va-vous-couter-cher-analyse-2026/)

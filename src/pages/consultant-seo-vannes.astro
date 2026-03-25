@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+    { label: "Accueil", href: "/" },
+    { label: "Consultant SEO Vannes" },
+];
+
+const localSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "AnouarLab — Consultant SEO Vannes",
+    description: "Consultant SEO pour les entreprises de Vannes et du Morbihan. Spécialiste e-commerce Shopify et WordPress. Audit technique, SEO local et stratégie pour le tourisme breton.",
+    url: "https://anouarlab.fr/consultant-seo-vannes/",
+    areaServed: { "@type": "City", name: "Vannes" },
+    provider: { "@type": "Person", name: "Anouar Sbia", jobTitle: "Consultant SEO & CRO" },
+    serviceType: ["Audit SEO", "SEO E-commerce", "SEO Shopify", "SEO WordPress", "CRO"],
+};
+---
+
+<BaseLayout
+    title="Consultant SEO Vannes — Boostez votre Visibilité en Morbihan | AnouarLab"
+    description="PME vannetaise invisible sur Google ? Consultant SEO e-commerce spécialisé. Audit gratuit 30 min, +300% de trafic organique prouvé. Zéro blabla, des résultats."
+    sideBarActiveItemID="seo"
+>
+    <script type="application/ld+json" set:html={JSON.stringify(localSchema)} />
+
+    <div class="pb-12 mt-5">
+        <Breadcrumbs items={breadcrumbItems} />
+
+        <div class="py-12">
+            <p class="text-sm uppercase tracking-widest text-primary/60 mb-4">Consultant SEO · Vannes</p>
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                Le Golfe du Morbihan attire. <span class="text-primary">Votre site devrait aussi.</span>
+            </h1>
+            <p class="text-xl text-base-content/70 max-w-2xl mb-4">
+                Vannes est l'une des villes les plus attractives de Bretagne. Touristes, nouveaux habitants, entreprises en croissance — tout le monde cherche sur Google avant d'agir.
+            </p>
+            <p class="text-lg text-base-content/70 max-w-2xl mb-8">
+                <strong>Votre question : quand ils cherchent, est-ce qu'ils vous trouvent ?</strong>
+            </p>
+            <div class="flex gap-3 flex-wrap">
+                <a href="/contact/" class="btn btn-primary btn-lg">Réserver mon audit gratuit →</a>
+                <span class="btn btn-ghost btn-lg no-animation cursor-default text-base-content/50">30 min · Sans engagement</span>
+            </div>
+        </div>
+
+        <div class="prose prose-lg max-w-none">
+            <h2>Vannes : une perle bretonne qui se digitalise</h2>
+            <p>
+                Entre le <strong>Golfe du Morbihan</strong>, le centre médiéval classé et une qualité de vie reconnue nationalement, Vannes attire. Des milliers de recherches Google chaque mois ciblent des entreprises locales — et la concurrence SEO y est encore faible.
+            </p>
+            <p>
+                Ostréiculture, nautisme, tourisme, artisanat, services aux entreprises — peu de ces secteurs ont une vraie stratégie SEO. <strong>C'est votre fenêtre de tir.</strong>
+            </p>
+            <p>
+                Une PME vannetaise qui investit maintenant dans le SEO peut verrouiller les premières places Google avant que la concurrence ne se réveille.
+            </p>
+
+            <h2>Ce que le SEO change pour une entreprise du Morbihan</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose mb-8">
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🔍 Audit Technique</h3>
+                    <p class="text-sm text-base-content/70">Votre site freine sans que vous le sachiez. Erreurs d'indexation, vitesse, architecture — <strong>je trouve ce qui bloque et je corrige</strong>.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">⛵ SEO Tourisme & Nautisme</h3>
+                    <p class="text-sm text-base-content/70">Hébergements, écoles de voile, restaurants de fruits de mer — les touristes planifient tout sur Google. Si vous n'y êtes pas, c'est Booking qui gagne.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">🛒 SEO E-commerce</h3>
+                    <p class="text-sm text-base-content/70">Produits bretons en ligne, conserverie, artisanat — votre boutique Shopify ou WordPress mérite des acheteurs, pas juste des visiteurs.</p>
+                </div>
+                <div class="card bg-base-200 p-6">
+                    <h3 class="font-bold text-lg mb-2">📍 SEO Local Morbihan</h3>
+                    <p class="text-sm text-base-content/70">Google Maps, avis clients, citations locales. Vannes, Lorient, Auray, Carnac — <strong>dominez le Pack Local</strong> dans tout le département.</p>
+                </div>
+            </div>
+
+            <h2>+300% de trafic organique. Documenté.</h2>
+            <p>Un client e-commerce : de 1 200 à 4 800 visiteurs/mois en 6 mois. Zéro pub. Méthode rigoureuse et résultats vérifiables.</p>
+            <p><a href="/blog/cas-client--300-de-trafic-organique-en-6-mois-preuve-et-methode/">Lire l'étude de cas →</a></p>
+
+            <h2>Méthode en 3 phases</h2>
+            <ol>
+                <li><strong>Corriger</strong> — Audit technique. Indexation propre. Vitesse optimisée.</li>
+                <li><strong>Construire</strong> — Contenu local ciblé, architecture en silos, maillage interne.</li>
+                <li><strong>Amplifier</strong> — Netlinking, SEO local, croissance continue.</li>
+            </ol>
+
+            <h2>Questions fréquentes — SEO à Vannes</h2>
+            <h3>Le SEO est-il utile pour une petite entreprise à Vannes ?</h3>
+            <p><strong>Plus que pour une grande.</strong> Les grandes entreprises ont des budgets pub énormes. Le SEO est le seul canal où une PME peut rivaliser à armes égales — et même gagner. C'est la qualité du contenu qui prime, pas le budget.</p>
+
+            <h3>Combien ça coûte ?</h3>
+            <p>Entre <strong>500€ et 2 500€/mois</strong>. <a href="/blog/combien-coute-un-audit-seo-en-2026--le-vrai-prix-de-la-performance/">Voir les tarifs →</a></p>
+
+            <h3>Comment se passe la collaboration ?</h3>
+            <p>Point mensuel en visio, rapports clairs, accès partagé à Search Console. <strong>Vous suivez les progrès en temps réel.</strong> Chaque action est documentée, chaque résultat est mesurable.</p>
+
+            <div class="not-prose mt-10">
+                <div class="card bg-primary/10 border border-primary/20 p-8 text-center">
+                    <h3 class="text-2xl font-bold mb-3">On analyse votre visibilité sur le Golfe ?</h3>
+                    <p class="text-base-content/70 mb-6 max-w-lg mx-auto">30 minutes. Votre site, vos concurrents morbihannais, votre potentiel. Gratuit, concret, sans bla-bla.</p>
+                    <a href="/contact/" class="btn btn-primary btn-lg">Réserver mon audit gratuit →</a>
+                    <p class="text-xs text-base-content/40 mt-3">Gratuit · Sans engagement · Résultats en 48h</p>
+                </div>
+            </div>
+
+            <h3 class="mt-8">À lire aussi</h3>
+            <ul>
+                <li><a href="/blog/audit-seo-technique--les-10-erreurs-fatales-qui-ruinent-votre-visibilite-en-2026/">Les 10 erreurs techniques fatales</a></li>
+                <li><a href="/blog/pourquoi-un-consultant-seo-pas-cher-va-vous-couter-cher-analyse-2026/">Pourquoi un consultant SEO pas cher coûte cher</a></li>
+                <li><a href="/blog/le-guide-du-maillage-interne--comment-booster-vos-pages-sans-un-seul-backlink/">Guide du maillage interne</a></li>
+            </ul>
+        </div>
+    </div>
+</BaseLayout>
