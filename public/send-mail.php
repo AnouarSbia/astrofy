@@ -38,7 +38,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 // =====================================================
 // Configuration — UPDATE THIS EMAIL ADDRESS
 // =====================================================
-$to = 'contact@anouarlab.fr';  // Change to your actual email
+$to = 'sbiaanouar@gmail.com';  // Change to your actual email
 
 // Build the email
 $email_subject = "[AnouarLab Contact] $subject — $name";
